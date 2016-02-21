@@ -1,5 +1,5 @@
 {
-    "name": "medienpol/yii2-materialize",
+    "name": "macgyer/yii2-materializecss",
     "minimum-stability": "stable",
     "description": "Materialize implementation for Yii2",
     "keywords": "materialize, yii2, widgets, material design",
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "medienpol\\yii2materialize\\": "src"
+            "macgyer\\yii2materializecss\\": "src"
         }
     }
 }
