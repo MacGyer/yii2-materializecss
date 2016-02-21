@@ -1,0 +1,26 @@
+{
+    "name": "medienpol/yii2-materialize",
+    "minimum-stability": "stable",
+    "description": "Materialize implementation for Yii2",
+    "keywords": "materialize, yii2, widgets, material design",
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "Christoph Erdmann",
+            "homepage": "http://www.medienpol.de",
+            "role": "Developer"
+        }
+    ],
+    "version": "1.0.0",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0",
+
+        "bower-asset/materialize": "0.97.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "medienpol\\yii2materialize\\": "src"
+        }
+    }
+}
