@@ -18,6 +18,9 @@ class Button extends BaseWidget
     public $encodeLabel = true;
     public $icon;
 
+    /**
+     * initialize the widget
+     */
     public function init()
     {
         parent::init();
