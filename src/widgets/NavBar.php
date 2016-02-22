@@ -26,6 +26,7 @@ class NavBar extends BaseWidget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = [];
+
     /**
      * @var array the HTML attributes for the container tag. The following special options are recognized:
      *
@@ -34,11 +35,13 @@ class NavBar extends BaseWidget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $containerOptions = [];
+
     /**
      * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
      * @see http://getbootstrap.com/components/#navbar
      */
     public $brandLabel = false;
+
     /**
      * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
      * and will be used for the "href" attribute of the brand link. Default value is false that means
@@ -46,20 +49,24 @@ class NavBar extends BaseWidget
      * You may set it to `null` if you want to have no link at all.
      */
     public $brandUrl = false;
+
     /**
      * @var array the HTML attributes of the brand link.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $brandOptions = [];
+
     /**
      * @var string text to show for screen readers for the button to toggle the navbar.
      */
     public $screenReaderToggleText = 'Toggle navigation';
+
     /**
      * @var boolean whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
     public $renderInnerContainer = true;
+
     /**
      * @var array the HTML attributes of the inner container.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.

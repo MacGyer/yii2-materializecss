@@ -13,9 +13,34 @@ use yii\helpers\ArrayHelper;
  */
 class Button extends BaseWidget
 {
+    /**
+     * @var string the tag used to render the button
+     */
     public $tagName = 'button';
+
+    /**
+     * @var string the label on the button
+     */
     public $label = 'Button';
+
+    /**
+     * @var bool whether the label should be HTML-encoded.
+     */
     public $encodeLabel = true;
+
+    /**
+     * @var array the options for the optional icon
+     *
+     * To specify an icon you can use the following parameters
+     *
+     * ```php
+     * [
+     *     'name' => 'name of the icon',                    // required
+     *     'position' => 'position of the icon',            // optional, 'left' or 'right', defaults to 'left'
+     *     'options' => 'the HTML attributes for the img',  // optional
+     * ]
+     * ```
+     */
     public $icon;
 
     /**
@@ -29,7 +54,8 @@ class Button extends BaseWidget
     }
 
     /**
-     * @return string
+     * Executes the widget.
+     * @return string the result of widget execution to be outputted.
      */
     public function run()
     {
@@ -41,8 +67,12 @@ class Button extends BaseWidget
     }
 
     /**
+     * Renders an icon.
+     *
      * @return string
-     * @throws InvalidConfigException
+     * @throws \yii\base\InvalidConfigException if icon name is not specified
+     *
+     * @see macgyer\yii2materializecss\widgetsIcon::run()
      */
     private function renderIcon()
     {
@@ -50,16 +80,10 @@ class Button extends BaseWidget
             return '';
         }
 
-        $iconName = ArrayHelper::getValue($this->icon, 'name', null);
-        $iconPosition = ArrayHelper::getValue($this->icon, 'position', null);
-        $iconOptions = ArrayHelper::getValue($this->icon, 'options', null);
-
-        if (!$iconName) {
-            throw new InvalidConfigException('The icon name must be specified.');
-        }
-
-        Html::addCssClass($iconOptions, ['material-icons', $iconPosition]);
-
-        return Html::tag('i', $iconName, $iconOptions);
+        return Icon::widget([
+            'name' => ArrayHelper::getValue($this->icon, 'name', null),
+            'position' => ArrayHelper::getValue($this->icon, 'position', null),
+            'options' => ArrayHelper::getValue($this->icon, 'options', [])
+        ]);
     }
 }
