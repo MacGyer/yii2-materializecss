@@ -94,23 +94,24 @@ class Chip extends BaseWidget
     public function run()
     {
         $tag = ArrayHelper::remove($this->options, 'tag', 'div');
-        echo Html::beginTag($tag, $this->options);
+        $html = Html::beginTag($tag, $this->options);
 
         if ($this->imageOptions) {
             $src = ArrayHelper::remove($this->imageOptions, 'src', '');
-            echo Html::img($src, $this->imageOptions);
+            $html .= Html::img($src, $this->imageOptions);
         }
 
-        echo $this->encodeContent ? Html::encode($this->content) : $this->content;
+        $html .= $this->encodeContent ? Html::encode($this->content) : $this->content;
 
         if ($this->renderIcon) {
-            echo Icon::widget([
+            $html .= Icon::widget([
                 'name' => ArrayHelper::getValue($this->icon, 'name', null),
                 'position' => ArrayHelper::getValue($this->icon, 'position', ''),
                 'options' => ArrayHelper::getValue($this->icon, 'options', [])
             ]);
         }
 
-        echo Html::endTag($tag);
+        $html .= Html::endTag($tag);
+        return $html;
     }
 }
