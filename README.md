@@ -60,11 +60,13 @@ The following widgets are currently available:
 * Icon
 * Nav
 * NavBar
+* ActiveForm
+* ActiveField
+* SwitchButton
 
 These widgets are planned for development:
 
 * GridView with ActionColumn and DataColumn
-* ActiveForm and ActiveField
 * Collection
 * Pagination
 * Modal
