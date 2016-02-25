@@ -62,6 +62,7 @@ The following widgets are currently available:
 * NavBar
 * ActiveForm
 * ActiveField
+* SwitchButton
 
 These widgets are planned for development:
 
