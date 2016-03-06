@@ -63,12 +63,36 @@ The following widgets are currently available:
 * ActiveForm
 * ActiveField
 * SwitchButton
+* GridView with ActionColumn
+* DetailView
 
 These widgets are planned for development:
 
-* GridView with ActionColumn and DataColumn
 * Collection
 * Pagination
 * Modal
 * Toast
 * Collapsible
+
+## Gii Support
+
+If you are creating your CRUD controller and view files using Gii you can get materialized view files by integrating the adapted Gii templates.
+
+```php
+// @app/config/main-local.php
+
+$config['modules']['gii'] = [
+    'class' => 'yii\gii\Module',      
+    'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '192.168.178.20'],  
+    'generators' => [
+        'crud' => [
+            'class' => 'yii\gii\generators\crud\Generator',
+            'templates' => [ // setting materializecss templates
+                'materializecss' => '@vendor/macgyer/yii2-materializecss/src/gii-templates/generators/crud/materializecss', 
+            ]
+        ]
+    ],
+];
+```
+
+You can copy those templates to any location you wish for further customization. Make sure you adapt the path accordingly in your config.
