@@ -65,11 +65,12 @@ The following widgets are currently available:
 * SwitchButton
 * GridView with ActionColumn
 * DetailView
+* Fixed Action Button
+* DatePicker
 
 These widgets are planned for development:
 
 * Collection
-* Pagination
 * Modal
 * Toast
 * Collapsible
@@ -96,3 +97,30 @@ $config['modules']['gii'] = [
 ```
 
 You can copy those templates to any location you wish for further customization. Make sure you adapt the path accordingly in your config.
+
+## Known issues
+
+Currently there is an issue with jQuery version 2.2.x and the datepicker pickadate.js.
+Please check out the issues at https://github.com/Dogfalo/materialize/issues/2808#issuecomment-191642171.
+
+To circumvent problems with the datepicker, use jQuery version 2.1.4 until further notice.
+You can implement this in your asset bundle config:
+
+```php
+// @app/config/main.php
+
+'components' => [
+    // more components
+    'assetManager' => [
+        'bundles' => [
+            'yii\web\JqueryAsset' => [
+                'sourcePath' => null,
+                'js' => [
+                    '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+                ]
+            ],
+        ],
+    ],
+    // more components
+],
+```

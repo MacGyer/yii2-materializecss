@@ -17,6 +17,6 @@ class MaterializeAsset extends AssetBundle
     ];
 
     public $depends = [
-        'macgyer\yii2materializecss\assets\MaterializeFontAsset'
+        'macgyer\yii2materializecss\assets\MaterializeFontAsset',
     ];
 }
