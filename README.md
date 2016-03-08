@@ -67,11 +67,11 @@ The following widgets are currently available:
 * DetailView
 * Fixed Action Button
 * DatePicker
+* Modal
 
 These widgets are planned for development:
 
 * Collection
-* Modal
 * Toast
 * Collapsible
 
