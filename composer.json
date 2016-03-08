@@ -2,7 +2,7 @@
     "name": "macgyer/yii2-materializecss",
     "minimum-stability": "stable",
     "description": "Materialize CSS implementation for Yii2",
-    "keywords": "materialize, yii2, widgets, material design",
+    "keywords": ["materialize, yii2, widgets, material design"],
     "type": "yii2-extension",
     "authors": [
         {
