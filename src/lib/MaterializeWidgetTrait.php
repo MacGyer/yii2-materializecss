@@ -26,7 +26,7 @@ trait MaterializeWidgetTrait
     /**
      * @param $name
      */
-    protected function registerPlugin($name)
+    protected function registerPlugin($name, $selector = null)
     {
         $view = $this->getView();
 
@@ -34,9 +34,13 @@ trait MaterializeWidgetTrait
 
         $id = $this->options['id'];
 
+        if (is_null($selector)) {
+            $selector = '#' . $id;
+        }
+
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
-            $js = "jQuery('#$id').$name($options);";
+            $js = "jQuery('$selector').$name($options);";
             $view->registerJs($js);
         }
 
