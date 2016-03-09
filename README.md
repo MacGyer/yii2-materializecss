@@ -58,6 +58,8 @@ The following widgets are currently available:
 * Fixed Action Button
 * DatePicker
 * Modal
+* Spinner
+* Progress
 
 These widgets are planned for development:
 
