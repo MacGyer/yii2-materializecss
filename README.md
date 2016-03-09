@@ -11,18 +11,8 @@ If you don't have Composer you can get it here: https://getcomposer.org/
 To install the package add the following to the ```required``` section of your composer.json:
 ```
 "require": {
-    "macgyer/yii2-materializecss": "@dev"
+    "macgyer/yii2-materializecss": "*"
 },
-```
-
-And make Composer aware of the corresponding Github repository in the ```repositories``` section of your composer.json:
-```
-"repositories" : [
-    {
-        "type": "vcs",
-        "url": "https://github.com/macgyer/yii2-materializecss.git"
-    }
-]
 ```
 
 ## Usage
