@@ -10,44 +10,8 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Nav renders a nav HTML component.
- *
- * For example:
- *
- * ```php
- * echo Nav::widget([
- *     'items' => [
- *         [
- *             'label' => 'Home',
- *             'url' => ['site/index'],
- *             'linkOptions' => [...],
- *         ],
- *         [
- *             'label' => 'Dropdown',
- *             'items' => [
- *                  ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
- *                  '<li class="divider"></li>',
- *                  '<li class="dropdown-header">Dropdown Header</li>',
- *                  ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
- *             ],
- *         ],
- *         [
- *             'label' => 'Login',
- *             'url' => ['site/login'],
- *             'visible' => Yii::$app->user->isGuest
- *         ],
- *     ],
- *     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
- * ]);
- * ```
- *
- * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 3.
- *
- * @see http://getbootstrap.com/components/#dropdowns
- * @see http://getbootstrap.com/components/#nav
- *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
+ * Class Nav
+ * @package macgyer\yii2materializecss\widgets
  */
 class Nav extends BaseWidget
 {
@@ -69,20 +33,24 @@ class Nav extends BaseWidget
      * If a menu item is a string, it will be rendered directly without HTML encoding.
      */
     public $items = [];
+
     /**
      * @var boolean whether the nav items labels should be HTML-encoded.
      */
     public $encodeLabels = true;
+
     /**
      * @var boolean whether to automatically activate items according to whether their route setting
      * matches the currently requested route.
      * @see isItemActive
      */
     public $activateItems = true;
+
     /**
      * @var boolean whether to activate parent menu items when one of the corresponding child menu items is active.
      */
     public $activateParents = false;
+
     /**
      * @var string the route used to determine if a menu item is active or not.
      * If not set, it will use the route of the current request.
@@ -90,6 +58,7 @@ class Nav extends BaseWidget
      * @see isItemActive
      */
     public $route;
+
     /**
      * @var array the parameters used to determine if a menu item is active or not.
      * If not set, it will use `$_GET`.
@@ -97,10 +66,12 @@ class Nav extends BaseWidget
      * @see isItemActive
      */
     public $params;
+
     /**
      * @var string this property allows you to customize the HTML which is used to generate the drop down caret symbol,
      * which is displayed next to the button text to indicate the drop down functionality.
-     * Defaults to `null` which means `<b class="caret"></b>` will be used. To disable the caret, set this property to be an empty string.
+     * Defaults to `null` which means `<i class="material-icons right">arrow_drop_down</i>` will be used.
+     * To disable the caret, set this property to be an empty string.
      */
     public $dropDownCaret;
 
@@ -120,7 +91,6 @@ class Nav extends BaseWidget
         if ($this->dropDownCaret === null) {
             $this->dropDownCaret = Html::tag('i', 'arrow_drop_down', ['class' => 'material-icons right']);
         }
-//        Html::addCssClass($this->options, ['widget' => 'nav']);
     }
 
     /**

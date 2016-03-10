@@ -42,30 +42,30 @@ public $depends = [
 
 The following widgets are currently available:
 
+* ActiveField
+* ActiveForm
 * Alert
 * Breadcrumbs
 * Button
 * Chip
+* DatePicker
+* DetailView
 * Dropdown
+* Fixed Action Button
+* GridView with ActionColumn
 * Icon
+* Modal
 * Nav
 * NavBar
-* ActiveForm
-* ActiveField
-* SwitchButton
-* GridView with ActionColumn
-* DetailView
-* Fixed Action Button
-* DatePicker
-* Modal
-* Spinner
 * Progress
+* Spinner
+* SwitchButton
 
 These widgets are planned for development:
 
+* Collapsible
 * Collection
 * Toast
-* Collapsible
 
 ## Gii Support
 
