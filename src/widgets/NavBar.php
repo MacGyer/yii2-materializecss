@@ -100,7 +100,6 @@ class NavBar extends BaseWidget
             Html::addCssClass($this->brandOptions, ['widget' => 'brand-logo']);
             echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
         }
-        
 
         if (!isset($this->containerOptions['id'])) {
             $this->containerOptions['id'] = "{$this->id}-collapse";
@@ -114,7 +113,9 @@ class NavBar extends BaseWidget
      */
     public function run()
     {
-        echo Html::endTag('div');
+        echo Html::endTag('div'); // container
+        
+        echo Html::endTag('div'); // nav-wrapper
         
         echo Html::endTag('nav');
 
