@@ -24,15 +24,6 @@ class NavBar extends BaseWidget
     public $options = [];
 
     /**
-     * @var array the HTML attributes for the container tag. The following special options are recognized:
-     *
-     * - tag: string, defaults to "div", the name of the container tag.
-     *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     */
-    public $containerOptions = [];
-
-    /**
      * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
      * @see http://getbootstrap.com/components/#navbar
      */
@@ -67,19 +58,19 @@ class NavBar extends BaseWidget
      * @var boolean whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
-    public $renderContainer = true;
-
-    /**
-     * @var boolean whether the navbar content should be included in an inner div container which by default
-     * adds left and right padding. Set this to false for a 100% width navbar.
-     */
     public $fixedContainerOptions = [];
 
     /**
      * @var array the HTML attributes of the inner container.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    public $innerContainerOptions = [];
+    public $containerOptions = [];
+    
+    /**
+     * @var array the HTML attributes of the inner container.
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     */
+    public $wrapperOptions = [];
 
 
     /**
@@ -102,12 +93,8 @@ class NavBar extends BaseWidget
         $options = $this->options;
         echo Html::beginTag('nav', $this->options);
 
-        echo Html::beginTag('div', ['class' => 'nav-wrapper']);
-        
-        if ($this->renderContainer) {
-            Html::addCssClass($this->containerOptions, 'container');
-            echo Html::beginTag('div', $this->containerOptions);
-        }
+        Html::addCssClass($this->wrapperOptions, 'nav-wrapper');
+        echo Html::beginTag('div', $this->wrapperOptions);
         
         if ($this->brandLabel !== false) {
             Html::addCssClass($this->brandOptions, ['widget' => 'brand-logo']);
@@ -115,13 +102,11 @@ class NavBar extends BaseWidget
         }
         
 
-//        if ($this->renderInnerContainer) {
-            if (!isset($this->innerContainerOptions['id'])) {
-                $this->innerContainerOptions['id'] = "{$this->id}-collapse";
-            }
-            echo $this->renderToggleButton();
-            echo Html::beginTag('div', $this->innerContainerOptions);
-//        }
+        if (!isset($this->containerOptions['id'])) {
+            $this->containerOptions['id'] = "{$this->id}-collapse";
+        }
+        echo $this->renderToggleButton();
+        echo Html::beginTag('div', $this->containerOptions);
     }
 
     /**
@@ -129,15 +114,7 @@ class NavBar extends BaseWidget
      */
     public function run()
     {
-        $tag = ArrayHelper::remove($this->containerOptions, 'tag', 'div');
-        echo Html::endTag($tag);
-//        if ($this->renderInnerContainer) {
-            echo Html::endTag('div');
-//        }
-        
-        if ($this->renderContainer) {
-            echo Html::endTag('div');
-        }
+        echo Html::endTag('div');
         
         echo Html::endTag('nav');
 
@@ -174,7 +151,7 @@ class NavBar extends BaseWidget
 
         $selector = '#' . $this->options['id'] . ' .button-collapse';
 
-        $js = "var sideNav = jQuery('#{$this->innerContainerOptions['id']} > ul').clone();";
+        $js = "var sideNav = jQuery('#{$this->containerOptions['id']} > ul').clone();";
         $js .= "sideNav.removeClass().addClass('side-nav').attr('id', '{$targetId}').appendTo('body');";
         $js .= "jQuery('{$selector}').sideNav();";
         $view->registerJs($js);
