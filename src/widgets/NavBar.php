@@ -16,8 +16,6 @@ use yii\helpers\Json;
  */
 class NavBar extends BaseWidget
 {
-    use MaterializeWidgetTrait;
-
     /**
      * @var array the HTML attributes for the widget container tag. The following special options are recognized:
      *
@@ -38,7 +36,7 @@ class NavBar extends BaseWidget
 
     /**
      * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
-     * @see http://getbootstrap.com/components/#navbar
+     * @see http://materializecss.com/navbar.html
      */
     public $brandLabel = false;
 
