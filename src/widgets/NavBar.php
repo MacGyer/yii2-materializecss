@@ -5,10 +5,8 @@ namespace macgyer\yii2materializecss\widgets;
 use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
-use macgyer\yii2materializecss\lib\MaterializeWidgetTrait;
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Json;
 
 /**
  * Class NavBar
@@ -26,19 +24,16 @@ class NavBar extends BaseWidget
     public $options = [];
 
     /**
-     * @var array the HTML attributes for the container tag. The following special options are recognized:
-     *
-     * - tag: string, defaults to "div", the name of the container tag.
-     *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     */
-    public $containerOptions = [];
-
-    /**
      * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
      * @see http://materializecss.com/navbar.html
      */
     public $brandLabel = false;
+    
+    /**
+     * @var boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
+     * @see http://getbootstrap.com/components/#navbar
+     */
+    public $fixed = false;
 
     /**
      * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
@@ -58,18 +53,24 @@ class NavBar extends BaseWidget
      * @var string text to show for screen readers for the button to toggle the navbar.
      */
     public $screenReaderToggleText = 'Toggle navigation';
-
+    
     /**
      * @var boolean whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
-    public $renderInnerContainer = true;
+    public $fixedContainerOptions = [];
 
     /**
      * @var array the HTML attributes of the inner container.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    public $innerContainerOptions = [];
+    public $containerOptions = [];
+    
+    /**
+     * @var array the HTML attributes of the inner container.
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     */
+    public $wrapperOptions = [];
 
 
     /**
@@ -78,48 +79,33 @@ class NavBar extends BaseWidget
     public function init()
     {
         parent::init();
-        $this->clientOptions = [];
-
-        if (empty($this->options['class'])) {
-            Html::addCssClass($this->options, ['navbar', 'navbar-default']);
-        } else {
-            Html::addCssClass($this->options, ['widget' => 'navbar']);
-        }
+        $this->clientOptions = false;
 
         if (empty($this->options['role'])) {
             $this->options['role'] = 'navigation';
         }
 
-        $options = $this->options;
-        $tag = ArrayHelper::remove($options, 'tag', 'div');
-
-        echo Html::beginTag($tag, $options);
-
-        echo Html::beginTag('nav');
-
-        echo Html::beginTag('div', ['class' => 'nav-wrapper']);
-
-        if ($this->renderInnerContainer) {
-            if (!isset($this->innerContainerOptions['class'])) {
-                Html::addCssClass($this->innerContainerOptions, 'container');
-            }
-            echo Html::beginTag('div', $this->innerContainerOptions);
+        if ($this->fixed) {
+            Html::addCssClass($this->fixedContainerOptions, 'navbar-fixed');
+            echo Html::beginTag('div', $this->fixedContainerOptions);
         }
 
+        $options = $this->options;
+        echo Html::beginTag('nav', $this->options);
+
+        Html::addCssClass($this->wrapperOptions, 'nav-wrapper');
+        echo Html::beginTag('div', $this->wrapperOptions);
+        
         if ($this->brandLabel !== false) {
             Html::addCssClass($this->brandOptions, ['widget' => 'brand-logo']);
             echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
         }
 
         if (!isset($this->containerOptions['id'])) {
-            $this->containerOptions['id'] = "{$this->options['id']}-collapse";
+            $this->containerOptions['id'] = "{$this->id}-collapse";
         }
         echo $this->renderToggleButton();
-
-//        Html::addCssClass($this->containerOptions, ['collapse' => 'collapse', 'widget' => 'navbar-collapse']);
-        $options = $this->containerOptions;
-        $tag = ArrayHelper::remove($options, 'tag', 'div');
-        echo Html::beginTag($tag, $options);
+        echo Html::beginTag('div', $this->containerOptions);
     }
 
     /**
@@ -127,18 +113,15 @@ class NavBar extends BaseWidget
      */
     public function run()
     {
-        $tag = ArrayHelper::remove($this->containerOptions, 'tag', 'div');
-        echo Html::endTag($tag);
-        if ($this->renderInnerContainer) {
-            echo Html::endTag('div');
-        }
-
-        echo Html::endTag('div');
-
+        echo Html::endTag('div'); // container
+        
+        echo Html::endTag('div'); // nav-wrapper
+        
         echo Html::endTag('nav');
 
-        $tag = ArrayHelper::remove($this->options, 'tag', 'div');
-        echo Html::endTag($tag);
+        if ($this->fixed) {
+            echo Html::endTag('div');
+        }
 
         MaterializePluginAsset::register($this->getView());
     }
