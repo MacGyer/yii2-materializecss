@@ -80,6 +80,7 @@ class NavBar extends BaseWidget
     {
         parent::init();
         $this->clientOptions = false;
+        $html = [];
 
         if (empty($this->options['role'])) {
             $this->options['role'] = 'navigation';
@@ -87,25 +88,26 @@ class NavBar extends BaseWidget
 
         if ($this->fixed) {
             Html::addCssClass($this->fixedContainerOptions, 'navbar-fixed');
-            echo Html::beginTag('div', $this->fixedContainerOptions);
+            $html[] = Html::beginTag('div', $this->fixedContainerOptions);
         }
 
-        $options = $this->options;
-        echo Html::beginTag('nav', $this->options);
+        $html[] = Html::beginTag('nav', $this->options);
 
         Html::addCssClass($this->wrapperOptions, 'nav-wrapper');
-        echo Html::beginTag('div', $this->wrapperOptions);
+        $html[] = Html::beginTag('div', $this->wrapperOptions);
 
         if ($this->brandLabel !== false) {
             Html::addCssClass($this->brandOptions, ['widget' => 'brand-logo']);
-            echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
+            $html[] = Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
         }
 
         if (!isset($this->containerOptions['id'])) {
             $this->containerOptions['id'] = "{$this->id}-collapse";
         }
-        echo $this->renderToggleButton();
-        echo Html::beginTag('div', $this->containerOptions);
+        $html[] = $this->renderToggleButton();
+        $html[] = Html::beginTag('div', $this->containerOptions);
+
+        echo implode("\n", $html);
     }
 
     /**
@@ -113,17 +115,20 @@ class NavBar extends BaseWidget
      */
     public function run()
     {
-        echo Html::endTag('div'); // container
+        $html = [];
+        $html[] = Html::endTag('div'); // container
 
-        echo Html::endTag('div'); // nav-wrapper
+        $html[] = Html::endTag('div'); // nav-wrapper
 
-        echo Html::endTag('nav');
+        $html[] = Html::endTag('nav');
 
         if ($this->fixed) {
-            echo Html::endTag('div');
+            $html[] = Html::endTag('div');
         }
 
         MaterializePluginAsset::register($this->getView());
+
+        return implode("\n", $html);
     }
 
     /**
