@@ -20,13 +20,6 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     public $tag = 'div';
 
     /**
-     * @var array the HTML options for the wrapper tag
-     *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     */
-    public $options;
-
-    /**
      * @var array the HTML options for the surrounding "nav" tag
      *
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
@@ -34,57 +27,24 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     public $containerOptions = [];
 
     /**
-     * @var boolean whether to HTML-encode the link labels.
+     * @var array the HTML options for the wrapper tag
+     *
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    public $encodeLabels = true;
+    public $options = [];
 
     /**
-     * @var array the first hyperlink in the breadcrumbs (called home link).
-     * Please refer to [[links]] on the format of the link.
-     * If this property is not set, it will default to a link pointing to [[\yii\web\Application::homeUrl]]
-     * with the label 'Home'. If this property is false, the home link will not be rendered.
+     * @var array the HTML options for the inner container tag.
+     *
+     * Set this to 'false' if you do not want the inner container to be rendered.
+     * The following special options are recognized:
+     *
+     * - tag: string, defaults to "div", the name of the inner container tag.
+     *
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see https://github.com/MacGyer/yii2-materializecss/pull/5
      */
-    public $homeLink;
-
-    /**
-     * @var array list of links to appear in the breadcrumbs. If this property is empty,
-     * the widget will not render anything. Each array element represents a single link in the breadcrumbs
-     * with the following structure:
-     *
-     * ```php
-     * [
-     *     'label' => 'label of the link',  // required
-     *     'url' => 'url of the link',      // optional, will be processed by Url::to()
-     *     'template' => 'own template of the item', // optional, if not set $this->itemTemplate will be used
-     * ]
-     * ```
-     *
-     * If a link is active, you only need to specify its "label", and instead of writing `['label' => $label]`,
-     * you may simply use `$label`.
-     *
-     * Since version 2.0.1, any additional array elements for each link will be treated as the HTML attributes
-     * for the hyperlink tag. For example, the following link specification will generate a hyperlink
-     * with CSS class `external`:
-     *
-     * ```php
-     * [
-     *     'label' => 'demo',
-     *     'url' => 'http://example.com',
-     *     'class' => 'external',
-     * ]
-     * ```
-     *
-     * Since version 2.0.3 each individual link can override global [[encodeLabels]] param like the following:
-     *
-     * ```php
-     * [
-     *     'label' => '<strong>Hello!</strong>',
-     *     'encode' => false,
-     * ]
-     * ```
-     *
-     */
-    public $links = [];
+    public $innerContainerOptions = [];
 
     /**
      * @var string the template used to render each inactive item in the breadcrumbs. The token `{link}`
@@ -99,7 +59,25 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     public $activeItemTemplate = "<span class=\"breadcrumb active\">{link}</span>\n";
 
     /**
-     * @inheritdoc
+     * Initialize the widget.
+     */
+    public function init()
+    {
+        if (!isset($this->containerOptions['class'])) {
+            Html::addCssClass($this->containerOptions, ['breadcrumbsContainer' => 'breadcrumbs']);
+        }
+
+        if (!isset($this->options['class'])) {
+            Html::addCssClass($this->options, ['wrapper' => 'nav-wrapper']);
+        }
+
+        if ($this->innerContainerOptions !== false && !isset($this->innerContainerOptions['class'])) {
+            Html::addCssClass($this->innerContainerOptions, ['innerContainer' => 'col s12']);
+        }
+    }
+
+    /**
+     * Renders the widget.
      */
     public function run()
     {
@@ -107,33 +85,20 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
             return;
         }
 
-        if (!isset($this->containerOptions['class'])) {
-            Html::addCssClass($this->containerOptions, ['breadcrumbsContainer' => 'breadcrumbs']);
-        }
         echo Html::beginTag('nav', $this->containerOptions);
+        echo Html::beginTag($this->tag, $this->options);
 
-        $links = [];
-        if ($this->homeLink === null) {
-            $links[] = $this->renderItem([
-                'label' => Yii::t('yii', 'Home'),
-                'url' => Yii::$app->homeUrl,
-            ], $this->itemTemplate);
-        } elseif ($this->homeLink !== false) {
-            $links[] = $this->renderItem($this->homeLink, $this->itemTemplate);
+        if ($this->innerContainerOptions !== false) {
+            $innerContainerTag = ArrayHelper::remove($this->innerContainerOptions, 'tag', 'div');
+            echo Html::beginTag($innerContainerTag, $this->innerContainerOptions);
+        }
+        echo implode('', $this->prepareLinks());
+
+        if ($this->innerContainerOptions !== false) {
+            echo Html::endTag($innerContainerTag);
         }
 
-        foreach ($this->links as $link) {
-            if (!is_array($link)) {
-                $link = ['label' => $link];
-            }
-            $links[] = $this->renderItem($link, isset($link['url']) ? $this->itemTemplate : $this->activeItemTemplate);
-        }
-
-        if (!isset($this->options['class'])) {
-            Html::addCssClass($this->options, ['wrapper' => 'nav-wrapper']);
-        }
-        echo Html::tag($this->tag, implode('', $links), $this->options);
-
+        echo Html::endTag($this->tag);
         echo Html::endTag('nav');
     }
 
@@ -168,5 +133,31 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
         }
 
         return strtr($template, ['{link}' => $link]);
+    }
+
+    /**
+     * @return array
+     * @throws InvalidConfigException
+     */
+    private function prepareLinks()
+    {
+        $links = [];
+        if ($this->homeLink === null) {
+            $links[] = $this->renderItem([
+                'label' => Yii::t('yii', 'Home'),
+                'url' => Yii::$app->homeUrl,
+            ], $this->itemTemplate);
+        } elseif ($this->homeLink !== false) {
+            $links[] = $this->renderItem($this->homeLink, $this->itemTemplate);
+        }
+
+        foreach ($this->links as $link) {
+            if (!is_array($link)) {
+                $link = ['label' => $link];
+            }
+            $links[] = $this->renderItem($link, isset($link['url']) ? $this->itemTemplate : $this->activeItemTemplate);
+        }
+
+        return $links;
     }
 }
