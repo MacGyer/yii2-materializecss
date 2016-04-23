@@ -112,6 +112,8 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
         }
         echo Html::beginTag('nav', $this->containerOptions);
 
+        echo Html::beginTag('div', ['class' => 'col s12']);
+
         $links = [];
         if ($this->homeLink === null) {
             $links[] = $this->renderItem([
@@ -133,6 +135,8 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
             Html::addCssClass($this->options, ['wrapper' => 'nav-wrapper']);
         }
         echo Html::tag($this->tag, implode('', $links), $this->options);
+
+        echo Html::endTag('div');
 
         echo Html::endTag('nav');
     }
