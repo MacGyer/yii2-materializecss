@@ -92,6 +92,16 @@ You can copy those templates to any location you wish for further customization.
 
 ## Known issues
 
+### Datepicker & jQuery 2.2.x
+
+Update 2016/04/04
+
+As of release 0.97.6 the issue mentioned below has been fixed by the Materialize team.
+You do not need to apply the workaround below. 
+
+For further information visit [Dogfalo/materialize v0.97.6](https://github.com/Dogfalo/materialize/releases/tag/v0.97.6).
+*This notice is going to be removed in a future release.*
+
 Currently there is an issue with jQuery version 2.2.x and the datepicker pickadate.js.
 Please check out the issues at https://github.com/Dogfalo/materialize/issues/2808#issuecomment-191642171.
 
