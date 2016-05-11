@@ -446,6 +446,27 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#linear
 
+Determinate Lineal Preloader
+----------------------------
+
+To generate a Determinate Lineal Preloader (formally called "Determinate Lineal Spinner"), please add the following snippet source code into your project:
+
+```php
+use macgyer\yii2materializecss\widgets\Progress;
+
+echo Progress::widget([
+    // the HTML attributes for the widget container tag.
+    'options' => ['class' => 'progress'],
+    //  HTML attributes for the progress tag.
+    'progressOptions' => [
+        'type' => 'determinate',
+        'width' => 55,
+    ],
+]);
+```
+
+More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#linear
+
 Circular Preloader renders with materialize
 ------------------------------------------
 
