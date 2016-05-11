@@ -1,8 +1,10 @@
 Usage Materialize for Yii2
 ==========================
 
-Breadcrumbs renders with materialize.
+Breadcrumbs renders with materialize
 ------------------------------------
+
+To generate the Breadcrumbs, please add the following snippet source code into your project:
 
 ```php
 use Yii;
@@ -57,11 +59,8 @@ More details information at Materialize Reference, please see the following URL:
 
 Navbar Widget
 -------------
-NavBar renders a navbar HTML component.
 
-Any content enclosed between the [[begin()]] and [[end()]] calls of NavBar
-is treated as the content of the navbar. You may use widgets such as [[Nav]]
-or [[\yii\widgets\Menu]] to build up such content. For example,
+NavBar renders a navbar HTML component. To generate the NavBar, please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Nav;
@@ -119,6 +118,9 @@ More details information at Materialize Reference, please see the following URL:
 
 Navbar Widget with dropdown elemets
 ------------------------------------
+
+To generate the NavBar with dropdown elemets, please add the following snippet source code into your project:
+
 ```php
 
 use macgyer\yii2materializecss\widgets\Nav;
@@ -180,8 +182,11 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/navbar.html#navbar-dropdown
 
-Button renders a materialize button.
+Button renders a materialize button
 ------------------------------------
+
+To generate the Button, please add the following snippet source code into your project:
+
 ```php
 use macgyer\yii2materializecss\widgets\Button;
 
@@ -208,8 +213,11 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/buttons.html#raised
 
-Fixed action button renders a materialize button.
+Fixed action button renders a materialize button
 -------------------------------------------------
+
+To generate a Fixed action button, please add the following snippet source code into your project:
+
 ```php
 use macgyer\yii2materializecss\widgets\FixedActionButton;
 
@@ -306,8 +314,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/buttons.html#floating
 
-Icon renders a materialize icon.
+Icon renders a materialize icon
 --------------------------------
+
+To generate a Icon, please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Icon;
@@ -333,6 +343,8 @@ More details information at Materialize Reference, please see the following URL:
 Chip renders with image and materialize Chip.
 ---------------------------------------------
 
+To generate a Chip with image, please add the following snippet source code into your project:
+
 ```php
 use macgyer\yii2materializecss\widgets\Chip;
 
@@ -357,8 +369,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/chips.html
 
-Chip renders with a materialize icon.
+Chip renders with a materialize icon
 -------------------------------------
+
+To generate a Chip with icon, please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Chip;
@@ -391,8 +405,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/chips.html#tag
 
-Indeterminate Lineal Spinner (Lineal Preloader) renders with materialize.
--------------------------------------------------------------------------
+Indeterminate Lineal Spinner renders with materialize
+------------------------------------------------------
+
+To generate a Indeterminate Lineal Spinner (formally called "Lineal Preloader"), please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Progress;
@@ -415,8 +431,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#linear
 
-Circular Spinner (Circular Preloader) renders with materialize.
----------------------------------------------------------------
+Circular Spinner renders with materialize
+------------------------------------------
+
+To generate a Circular Spinner (formally called "Circular Preloader"), please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Spinner;
@@ -449,8 +467,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#circular
 
-Circular Spinner with Flashing Colors (Circular Preloader) renders with materialize.
-------------------------------------------------------------------------------------
+Circular Spinner with Flashing Colors renders with materialize
+---------------------------------------------------------------
+
+To generate a Circular Spinner with Flashing Colors (formally called "Circular Preloader"), please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Spinner;
