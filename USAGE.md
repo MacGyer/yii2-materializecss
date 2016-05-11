@@ -1,6 +1,20 @@
 Usage Materialize for Yii2
 ==========================
 
+Alert box message
+-----------------
+
+To generate a Alert box message, please add the following snippet source code into your project:
+
+
+```php
+use macgyer\yii2materializecss\widgets\Alert;
+
+#TODO Added a Alert widget example.
+```
+
+More details information at Materialize Reference, please see the following URL: http://materializecss.com/
+
 Breadcrumbs
 -----------
 
