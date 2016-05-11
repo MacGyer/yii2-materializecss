@@ -496,8 +496,8 @@ echo Progress::widget([
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#linear
 
-Circular Preloader renders with materialize
-------------------------------------------
+Circular Preloader
+------------------
 
 To generate a Circular Preloader (formally called "Circular Spinner"), please add the following snippet source code into your project:
 
@@ -533,7 +533,7 @@ The above described source code render the HTML source code like this:
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#circular
 
 Circular Preloader with Flashing Colors
--------------------------------------
+---------------------------------------
 
 To generate a Circular Preloader with Flashing Colors (formally called "Circular Spinner"), please add the following snippet source code into your project:
 
