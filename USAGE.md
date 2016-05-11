@@ -15,6 +15,21 @@ use macgyer\yii2materializecss\widgets\Alert;
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/
 
+Dialog boxes and confirmation messages
+--------------------------------------
+
+To generate a Dialog box message and confirmation message, please add the following snippet source code into your project:
+
+
+```php
+use macgyer\yii2materializecss\widgets\Modal;
+
+#TODO Added a alert message example.
+#TODO Added a confirmation message example.
+```
+
+More details information at Materialize Reference, please see the following URL: http://materializecss.com/modals.html
+
 Breadcrumbs
 -----------
 
