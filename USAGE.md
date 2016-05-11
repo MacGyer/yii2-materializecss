@@ -484,14 +484,25 @@ To generate a Determinate Lineal Preloader (formally called "Determinate Lineal 
 use macgyer\yii2materializecss\widgets\Progress;
 
 echo Progress::widget([
+    // The type of the progress bar. Options supported
+    // are indeterminate (default) and determinate.
+    'type' => 'determinate',
+    // The (initial) value for 'determinate' progress bars.
+    // The supported range is [0 ... 100].
+    'value' => 55,
     // the HTML attributes for the widget container tag.
-    'options' => ['class' => 'progress'],
+    'options' => ['class' => 'progress my-progress-bar '],
     //  HTML attributes for the progress tag.
-    'progressOptions' => [
-        'type' => 'determinate',
-        'width' => 55,
-    ],
+    'progressOptions' => ['title' => '55% load'],
 ]);
+```
+
+The above described source code render the HTML source code like this:
+
+```html
+<div class="progress my-progress-bar">
+    <div class="determinate" title="55% load" style="width: 55%;"></div>
+</div>
 ```
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#linear
