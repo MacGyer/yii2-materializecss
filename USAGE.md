@@ -1,8 +1,8 @@
 Usage Materialize for Yii2
 ==========================
 
-Breadcrumbs renders with materialize
-------------------------------------
+Breadcrumbs
+-----------
 
 To generate the Breadcrumbs, please add the following snippet source code into your project:
 
@@ -117,13 +117,26 @@ The above described source code render the HTML source code like this:
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/navbar.html#right
 
 Navbar Widget with dropdown elemets
-------------------------------------
+-----------------------------------
 
 To generate the NavBar with dropdown elemets, please add the following snippet source code into your project:
 
 ```php
 
+use macgyer\yii2materializecss\widgets\NavBar;
 use macgyer\yii2materializecss\widgets\Nav;
+
+NavBar::begin([
+    'brandLabel' => '&nbsp;&nbsp;NavBar Test',
+    'brandUrl' => Yii::$app->homeUrl,
+    'brandOptions' => [
+        'title' => 'This a NavBar Test',
+    ],
+    'options' => [
+        'class' => 'navbar navbar-default navbar-fixed-top',
+        'id' => 'my-background-brand-logo',
+    ],
+]);
 
 echo Nav::widget([
     'items' => [
@@ -147,6 +160,8 @@ echo Nav::widget([
         'class' =>'nav-pills right'
     ],
 ]);
+
+NavBar::end();
 ```
 
 The above described source code render the HTML source code like this:
@@ -182,8 +197,8 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/navbar.html#navbar-dropdown
 
-Button renders a materialize button
-------------------------------------
+Buttons
+-------
 
 To generate the Button, please add the following snippet source code into your project:
 
@@ -213,8 +228,8 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/buttons.html#raised
 
-Fixed action button renders a materialize button
--------------------------------------------------
+Fixed action buttons
+--------------------
 
 To generate a Fixed action button, please add the following snippet source code into your project:
 
@@ -314,8 +329,8 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/buttons.html#floating
 
-Icon renders a materialize icon
---------------------------------
+Icons
+-----
 
 To generate a Icon, please add the following snippet source code into your project:
 
@@ -340,8 +355,8 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/icons.html
 
-Chip renders with image and materialize Chip.
----------------------------------------------
+Chip renders with a image
+-------------------------
 
 To generate a Chip with image, please add the following snippet source code into your project:
 
@@ -369,8 +384,8 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/chips.html
 
-Chip renders with a materialize icon
--------------------------------------
+Chip renders with a icon
+------------------------
 
 To generate a Chip with icon, please add the following snippet source code into your project:
 
@@ -405,10 +420,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/chips.html#tag
 
-Indeterminate Lineal Spinner renders with materialize
-------------------------------------------------------
+Indeterminate Lineal Preloader
+------------------------------
 
-To generate a Indeterminate Lineal Spinner (formally called "Lineal Preloader"), please add the following snippet source code into your project:
+To generate a Indeterminate Lineal Preloader (formally called "Indeterminate Lineal Spinner"), please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Progress;
@@ -431,10 +446,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#linear
 
-Circular Spinner renders with materialize
+Circular Preloader renders with materialize
 ------------------------------------------
 
-To generate a Circular Spinner (formally called "Circular Preloader"), please add the following snippet source code into your project:
+To generate a Circular Preloader (formally called "Circular Spinner"), please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Spinner;
@@ -467,10 +482,10 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/preloader.html#circular
 
-Circular Spinner with Flashing Colors renders with materialize
----------------------------------------------------------------
+Circular Preloader with Flashing Colors
+-------------------------------------
 
-To generate a Circular Spinner with Flashing Colors (formally called "Circular Preloader"), please add the following snippet source code into your project:
+To generate a Circular Preloader with Flashing Colors (formally called "Circular Spinner"), please add the following snippet source code into your project:
 
 ```php
 use macgyer\yii2materializecss\widgets\Spinner;
