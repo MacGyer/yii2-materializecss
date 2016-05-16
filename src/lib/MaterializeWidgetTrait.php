@@ -25,6 +25,7 @@ trait MaterializeWidgetTrait
 
     /**
      * @param $name
+     * @param string|null $selector
      */
     protected function registerPlugin($name, $selector = null)
     {
