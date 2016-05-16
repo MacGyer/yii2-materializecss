@@ -67,7 +67,7 @@ These widgets are planned for development:
 * Collection
 * Toast
 
-## Gii Support
+## Gii support
 
 If you are creating your CRUD controller and view files using Gii you can get materialized view files by integrating the adapted Gii templates.
 
@@ -92,37 +92,37 @@ You can copy those templates to any location you wish for further customization.
 
 ## Known issues
 
-### Datepicker & jQuery 2.2.x
+Yay, everything seems to be fine ...
 
-Update 2016/04/04
+## Sample layout
 
-As of release 0.97.6 the issue mentioned below has been fixed by the Materialize team.
-You do not need to apply the workaround below. 
+As of version 1.0.6 there is a sample layout file included in the package. You can use this file to get inspiration for
+your own layout or replace the respective ```views/layouts/main.php``` with the file provided.
 
-For further information visit [Dogfalo/materialize v0.97.6](https://github.com/Dogfalo/materialize/releases/tag/v0.97.6).
-*This notice is going to be removed in a future release.*
+You can find the sample layout file in ```src/layout/main.php```.
 
-Currently there is an issue with jQuery version 2.2.x and the datepicker pickadate.js.
-Please check out the issues at https://github.com/Dogfalo/materialize/issues/2808#issuecomment-191642171.
+## Change log
 
-To circumvent problems with the datepicker, use jQuery version 2.1.4 until further notice.
-You can implement this in your asset bundle config:
+### 1.0.6 - 2016-05-16
+* added sample layout
+* fixed line separators
+* removed Datepicker issue from section "Known issues"
 
-```php
-// @app/config/main.php
+### 1.0.5 - 2016-04-24
+* updated README with fixed Datepicker issue
+* refactored Breadcrumbs
 
-'components' => [
-    // more components
-    'assetManager' => [
-        'bundles' => [
-            'yii\web\JqueryAsset' => [
-                'sourcePath' => null,
-                'js' => [
-                    '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
-                ]
-            ],
-        ],
-    ],
-    // more components
-],
-```
+### 1.0.3 - 2016-03-10
+* fixed multiple usage of MaterializeWidgetTrait producing bugs
+* updated PHPDoc in NavBar
+
+### 1.0.2 - 2016-03-09
+* added Spinner
+* added Progress
+
+### 1.0.1 - 2016-03-09
+* updated README
+* added Packagist support
+
+### 1.0.0 - 2016-03-09
+* Initial release
