@@ -90,9 +90,39 @@ $config['modules']['gii'] = [
 
 You can copy those templates to any location you wish for further customization. Make sure you adapt the path accordingly in your config.
 
+## Known issues
+
+Yay, everything seems to be fine ...
+
 ## Sample layout
 
 As of version 1.0.6 there is a sample layout file included in the package. You can use this file to get inspiration for
 your own layout or replace the respective ```views/layouts/main.php``` with the file provided.
 
 You can find the sample layout file in ```src/layout/main.php```.
+
+## Change log
+
+### 1.0.6 - 2016-05-16
+* added sample layout
+* fixed line separators
+* removed Datepicker issue from section "Known issues"
+
+### 1.0.5 - 2016-04-24
+* updated README with fixed Datepicker issue
+* refactored Breadcrumbs
+
+### 1.0.3 - 2016-03-10
+* fixed multiple usage of MaterializeWidgetTrait producing bugs
+* updated PHPDoc in NavBar
+
+### 1.0.2 - 2016-03-09
+* added Spinner
+* added Progress
+
+### 1.0.1 - 2016-03-09
+* updated README
+* added Packagist support
+
+### 1.0.0 - 2016-03-09
+* Initial release
