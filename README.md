@@ -3,6 +3,8 @@
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
 [Materialize](http://materializecss.com/) is a modern responsive front-end framework based on Material Design.
 
+See [official documentation](http://macgyer.github.io/yii2-materializecss/) for detailed information.
+
 ## Installation
 
 The preferred way of installation is through Composer.
