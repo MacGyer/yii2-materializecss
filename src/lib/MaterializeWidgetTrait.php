@@ -7,14 +7,46 @@ use Yii;
 use yii\helpers\Json;
 
 /**
- * Trait MaterializeWidgetTrait
- * @package macgyer\yii2materializecss\lib
+ * MaterializeWidgetTrait provides the basics for all Materialize widgets features.
+ *
+ * Please note: a class using this trait must declare a public field named `options` with the array default value:
+ *
+ * ```php
+ * class MyWidget extends \yii\base\Widget
+ * {
+ *     use MaterializeWidgetTrait;
+ *
+ *     public $options = [];
+ * }
+ * ```
+ *
+ * This field is not present in the trait in order to avoid possible PHP Fatal error on definition conflict.
+ *
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  */
 trait MaterializeWidgetTrait
 {
+    /**
+     * @var array the options for the underlying Materialize JS plugin.
+     * Please refer to the corresponding Materialize documentation web page.
+     *
+     * @see http://materializecss.com/
+     */
     public $clientOptions = [];
+
+    /**
+     * @var array the event handlers for the underlying Materialize JS plugin.
+     * Please refer to the corresponding Materialize documentation web page.
+     *
+     * @see http://materializecss.com/
+     */
     public $clientEvents = [];
 
+    /**
+     * Initializes the widget.
+     * This method will register the MaterializeAsset bundle. When overriding this method,
+     * make sure to call the parent implementation first.
+     */
     public function init()
     {
         parent::init();
@@ -24,8 +56,9 @@ trait MaterializeWidgetTrait
     }
 
     /**
-     * @param $name
-     * @param string|null $selector
+     * Registers a specific Materialize plugin and the related events.
+     * @param string $name the name of the Materialize plugin
+     * @param string|null $selector the name of the select the plugin shall be attached to
      */
     protected function registerPlugin($name, $selector = null)
     {
@@ -49,7 +82,7 @@ trait MaterializeWidgetTrait
     }
 
     /**
-     * register the event handlers
+     * Registers JS event handlers that are listed in [[clientEvents]].
      */
     protected function registerClientEvents()
     {

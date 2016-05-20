@@ -5,8 +5,9 @@ namespace macgyer\yii2materializecss\lib;
 use yii\helpers\BaseHtml;
 
 /**
- * Class Html
- * @package macgyer\yii2materializecss\lib
+ * Html is the individual HTML helper implementation.
+ * 
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  */
 class Html extends BaseHtml
 {
