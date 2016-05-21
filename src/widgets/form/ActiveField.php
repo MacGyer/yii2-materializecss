@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets\form;
 
@@ -17,7 +22,7 @@ use yii\helpers\ArrayHelper;
 
 /**
  * Class ActiveField
- * @package macgyer\yii2materializecss\widgets\form
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  */
 class ActiveField extends \yii\widgets\ActiveField
 {

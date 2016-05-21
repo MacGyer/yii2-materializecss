@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\lib;
 
@@ -15,7 +20,7 @@ class BaseWidget extends Widget
 
     /**
      * @var array the HTML attributes for the widget container tag.
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on how attributes are being rendered.
      */
     public $options = [];
 }

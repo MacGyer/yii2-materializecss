@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -8,11 +13,18 @@ use Yii;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Alert
- * @package macgyer\yii2materializecss\widgets
+ * Alert renders Yii's session flash messages.
+ *
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  */
 class Alert extends BaseWidget
 {
+    /**
+     * @var array the default alert levels.
+     * This array is setup as $key => $value, where:
+     * - $key is the name of the session flash variable
+     * - $value is the alert type (will be uses as CSS class)
+     */
     private $predefinedAlertLevels = [
         'error'   => 'error',
         'danger'  => 'danger',
@@ -20,7 +32,16 @@ class Alert extends BaseWidget
         'info'    => 'info',
         'warning' => 'warning'
     ];
+
+    /**
+     * @var array use this property to define own alert levels and their corresponding CSS classes or to overrride the
+     * default levels.
+     * @see [[$predefinedAlertLevels]]
+     */
     public $alertLevels = [];
+    /**
+     * @var array
+     */
     public $options = [];
 
     /**

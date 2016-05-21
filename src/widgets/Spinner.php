@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -7,7 +12,8 @@ use macgyer\yii2materializecss\lib\Html;
 
 /**
  * Class Spinner
- * @package macgyer\yii2materializecss\widgets
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @since 1.0.2
  */
 class Spinner extends BaseWidget
 {
