@@ -14,6 +14,7 @@ use macgyer\yii2materializecss\lib\Html;
  * Class Spinner
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @since 1.0.2
+ * @package widgets
  */
 class Spinner extends BaseWidget
 {

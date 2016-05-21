@@ -13,6 +13,8 @@ use macgyer\yii2materializecss\lib\Html;
 /**
  * Class DatePicker
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage form
  */
 class DatePicker extends BaseInputWidget
 {

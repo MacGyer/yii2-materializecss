@@ -13,6 +13,7 @@ use yii\base\Widget;
  * BaseWidget is the base class for all non-input widgets in this extension.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package lib
  */
 class BaseWidget extends Widget
 {

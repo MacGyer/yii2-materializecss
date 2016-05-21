@@ -14,6 +14,7 @@ use yii\base\InvalidConfigException;
 /**
  * Class Icon
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class Icon extends BaseWidget
 {

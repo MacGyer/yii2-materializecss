@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Class Button
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class Button extends BaseWidget
 {

@@ -10,6 +10,8 @@ namespace macgyer\yii2materializecss\widgets\form;
 /**
  * Class ActiveForm
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage form
  */
 class ActiveForm extends \yii\widgets\ActiveForm
 {

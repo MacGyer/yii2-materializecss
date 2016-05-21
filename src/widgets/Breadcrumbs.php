@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Class Breadcrumbs
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class Breadcrumbs extends \yii\widgets\Breadcrumbs
 {

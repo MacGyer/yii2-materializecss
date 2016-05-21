@@ -17,6 +17,7 @@ use yii\helpers\ArrayHelper;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  *
  * @see http://materializecss.com/chips.html
+ * @package widgets
  */
 class Chip extends BaseWidget
 {

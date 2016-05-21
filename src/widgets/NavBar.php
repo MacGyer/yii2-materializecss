@@ -16,6 +16,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Class NavBar
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class NavBar extends BaseWidget
 {

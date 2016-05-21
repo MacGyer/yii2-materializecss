@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Class FixedActionButton
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class FixedActionButton extends BaseWidget
 {

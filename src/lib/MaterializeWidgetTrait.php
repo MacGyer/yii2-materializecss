@@ -28,6 +28,7 @@ use yii\helpers\Json;
  * This field is not present in the trait in order to avoid possible PHP Fatal error on definition conflict.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package lib
  */
 trait MaterializeWidgetTrait
 {

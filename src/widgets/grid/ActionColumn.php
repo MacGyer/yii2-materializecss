@@ -14,11 +14,14 @@ use Yii;
 /**
  * Class ActionColumn
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage grid
  */
 class ActionColumn extends \yii\grid\ActionColumn
 {
     /**
-     * @inheritdoc
+     * Initializes the action column and triggers rendering of default buttons.
+     * See [[initDefaultButtons]] for details.
      */
     public function init()
     {
@@ -28,6 +31,7 @@ class ActionColumn extends \yii\grid\ActionColumn
 
     /**
      * Initializes the default button rendering callbacks.
+     * This method uses [[macgyer\yii2materializecss\widgets\Icon]] to display iconic buttons.
      */
     protected function initDefaultButtons()
     {

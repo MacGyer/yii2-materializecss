@@ -16,6 +16,7 @@ use yii\helpers\ArrayHelper;
  * Alert renders Yii's session flash messages.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class Alert extends BaseWidget
 {
@@ -24,8 +25,11 @@ class Alert extends BaseWidget
      * This array is setup as $key => $value, where:
      * - $key is the name of the session flash variable
      * - $value is the alert type (will be uses as CSS class)
+     *
+     * To define own alert levels and their corresponding CSS classes or to overrride the
+     * default levels use [[alertLevels]]
      */
-    private $predefinedAlertLevels = [
+    protected $predefinedAlertLevels = [
         'error'   => 'error',
         'danger'  => 'danger',
         'success' => 'success',
@@ -34,18 +38,20 @@ class Alert extends BaseWidget
     ];
 
     /**
-     * @var array use this property to define own alert levels and their corresponding CSS classes or to overrride the
-     * default levels.
-     * @see [[$predefinedAlertLevels]]
+     * @var array custom alert levels
      */
     public $alertLevels = [];
+
     /**
-     * @var array
+     * @var array the HTML attributes for the widget container tag.
+     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on how attributes are being rendered.
      */
     public $options = [];
 
     /**
-     * initialize the widget
+     * Initializes the widget.
+     *
+     * @uses http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#merge()-detail
      */
     public function init()
     {
@@ -55,7 +61,10 @@ class Alert extends BaseWidget
     }
 
     /**
-     * @inheritdoc
+     * Executes the widget.
+     * @return string the result of widget execution to be outputted.
+     * 
+     * @uses http://www.yiiframework.com/doc-2.0/yii-web-session.html
      */
     public function run()
     {
@@ -81,8 +90,9 @@ class Alert extends BaseWidget
     }
 
     /**
-     * @param $message
-     * @param array $options
+     * Renders a single flash message.
+     * @param string $message the content of the message
+     * @param array $options the HTML attributes for the container tag
      * @return string
      */
     private function renderHtml($message, $options = [])

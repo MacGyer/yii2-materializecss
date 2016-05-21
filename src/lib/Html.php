@@ -13,6 +13,7 @@ use yii\helpers\BaseHtml;
  * Html is the individual HTML helper implementation.
  * 
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package lib
  */
 class Html extends BaseHtml
 {

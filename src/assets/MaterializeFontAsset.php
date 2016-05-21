@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  * MaterializeFontAsset provides the Material Icons font family CSS.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @package Assets
+ * @package assets
  */
 class MaterializeFontAsset extends AssetBundle
 {

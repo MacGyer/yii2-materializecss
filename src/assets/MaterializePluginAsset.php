@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  * MaterializePluginAsset provides the Materialize JS files.
  * 
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @package Assets
+ * @package assets
  */
 class MaterializePluginAsset extends AssetBundle
 {

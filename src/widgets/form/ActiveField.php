@@ -23,6 +23,8 @@ use yii\helpers\ArrayHelper;
 /**
  * Class ActiveField
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage form
  */
 class ActiveField extends \yii\widgets\ActiveField
 {

@@ -34,6 +34,7 @@ use yii\helpers\ArrayHelper;
  * @see http://getbootstrap.com/javascript/#dropdowns
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @since 2.0
+ * @package widgets
  */
 class Dropdown extends BaseWidget
 {

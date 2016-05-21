@@ -14,6 +14,7 @@ use macgyer\yii2materializecss\lib\Html;
  * Class Progress
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @since 1.0.2
+ * @package widgets
  */
 class Progress extends BaseWidget
 {

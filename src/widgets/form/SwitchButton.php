@@ -15,6 +15,8 @@ use yii\helpers\ArrayHelper;
 /**
  * Class SwitchButton
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage form
  */
 class SwitchButton extends BaseInputWidget
 {
