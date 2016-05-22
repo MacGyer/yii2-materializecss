@@ -11,7 +11,10 @@ use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * Class Spinner
+ * Spinner render a circular loading animation.
+ *
+ *
+ * @see [[Progress]]
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @since 1.0.2
  * @package widgets
@@ -19,21 +22,25 @@ use macgyer\yii2materializecss\lib\Html;
 class Spinner extends BaseWidget
 {
     /**
-     * @var array the HTML attributes for the widget container tag
+     * @var array the HTML attributes for the widget container tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $options = [];
 
     /**
-     * @var array the HTML attributes for the spinner
+     * @var array the HTML attributes for the spinner.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $spinnerOptions = [];
 
     /**
-     * @var bool whether to show alternating colors in spinner
+     * @var bool whether to show alternating colors in spinner.
+     *
+     * If this is set to "true" the spinner will continously alternate its colors between blue, red, yellow and green.
      *
      * @see http://materializecss.com/preloader.html
      */
@@ -50,7 +57,7 @@ class Spinner extends BaseWidget
     ];
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      */
     public function init()
     {
@@ -63,6 +70,7 @@ class Spinner extends BaseWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @uses [[renderSpinner()]]
      */
     public function run()
     {
@@ -90,9 +98,10 @@ class Spinner extends BaseWidget
     }
 
     /**
+     * Renders a single spinner.
      * @return string
      */
-    private function renderSpinner()
+    protected function renderSpinner()
     {
         $html = [
             '<div class="circle-clipper left">',
