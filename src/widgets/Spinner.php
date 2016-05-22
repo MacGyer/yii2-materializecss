@@ -11,10 +11,10 @@ use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * Spinner render a circular loading animation.
+ * Spinner renders a circular loading animation.
  *
  *
- * @see [[Progress]]
+ * @see Progress|Progress
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @since 1.0.2
  * @package widgets
@@ -38,7 +38,7 @@ class Spinner extends BaseWidget
     public $spinnerOptions = [];
 
     /**
-     * @var bool whether to show alternating colors in spinner.
+     * @var boolean whether to show alternating colors in spinner.
      *
      * If this is set to "true" the spinner will continously alternate its colors between blue, red, yellow and green.
      *

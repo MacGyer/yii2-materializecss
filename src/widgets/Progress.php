@@ -36,7 +36,7 @@ use macgyer\yii2materializecss\lib\Html;
  * ]) ?>
  * ```
  *
- * @see [[Spinner]]
+ * @see Spinner|Spinner
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @since 1.0.2
  * @package widgets
@@ -72,7 +72,7 @@ class Progress extends BaseWidget
     public $type = 'indeterminate';
 
     /**
-     * @var int the (initial) value for 'determinate' progress bars.
+     * @var integer the (initial) value for 'determinate' progress bars.
      *
      * The supported range is [0 ... 100].
      * This value will be applied as inline CSS style to show the progress:
