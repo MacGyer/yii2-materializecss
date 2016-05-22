@@ -20,12 +20,12 @@ use yii\helpers\ArrayHelper;
 class Button extends BaseWidget
 {
     /**
-     * @var string the tag used to render the button
+     * @var string the tag used to render the button.
      */
     public $tagName = 'button';
 
     /**
-     * @var string the label on the button
+     * @var string the label on the button.
      */
     public $label = 'Button';
 
@@ -35,7 +35,7 @@ class Button extends BaseWidget
     public $encodeLabel = true;
 
     /**
-     * @var array the options for the optional icon
+     * @var array the options for the optional icon.
      *
      * To specify an icon you can use the following parameters
      *
@@ -46,11 +46,13 @@ class Button extends BaseWidget
      *     'options' => 'the HTML attributes for the img',  // optional
      * ]
      * ```
+     *
+     * @see [[Icon]]
      */
-    public $icon;
+    public $icon = [];
 
     /**
-     * initialize the widget
+     * Initializes the widget.
      */
     public function init()
     {
@@ -62,6 +64,7 @@ class Button extends BaseWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @uses [[renderIcon]]
      */
     public function run()
     {
@@ -75,10 +78,11 @@ class Button extends BaseWidget
     /**
      * Renders an icon.
      *
-     * @return string
+     * @return string the rendered icon
      * @throws \yii\base\InvalidConfigException if icon name is not specified
      *
-     * @see macgyer\yii2materializecss\widgetsIcon::run()
+     * @uses http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#getValue()-detail
+     * @see [[Icon::run]]
      */
     private function renderIcon()
     {

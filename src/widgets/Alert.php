@@ -13,7 +13,20 @@ use Yii;
 use yii\helpers\ArrayHelper;
 
 /**
- * Alert renders Yii's session flash messages.
+ * Alert renders Yii's session flash messages. All flash messages are displayed
+ * in the sequence they were assigned using `setFlash()`. You can set messages as follows:
+ *
+ * ```php
+ * Yii::$app->session->setFlash('error', 'This is the message');
+ * Yii::$app->session->setFlash('success', 'This is the message');
+ * Yii::$app->session->setFlash('info', 'This is the message');
+ * ```
+ *
+ * Multiple messages can be set by specifying an array:
+ *
+ * ```php
+ * Yii::$app->session->setFlash('error', ['Error 1', 'Error 2']);
+ * ```
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
@@ -44,7 +57,8 @@ class Alert extends BaseWidget
 
     /**
      * @var array the HTML attributes for the widget container tag.
-     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on how attributes are being rendered.
+     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on 
+     * how attributes are being rendered.
      */
     public $options = [];
 
