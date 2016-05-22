@@ -12,7 +12,21 @@ use macgyer\yii2materializecss\widgets\Icon;
 use Yii;
 
 /**
- * Class ActionColumn
+ * ActionColumn is a column for the [[GridView]] widget that displays buttons for viewing and manipulating the items.
+ *
+ * To add an ActionColumn to the grid view, add it to the `$columns` (inherited from [yii\grid\GridView](http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html#$columns-detail)) 
+ * configuration as follows:
+ *
+ * ```php
+ * 'columns' => [
+ *     // ...
+ *     [
+ *         'class' => ActionColumn::className(),
+ *         // you may configure additional properties here
+ *     ],
+ * ]
+ * ```
+ * 
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage grid

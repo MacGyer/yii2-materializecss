@@ -13,7 +13,9 @@ use Yii;
 use yii\helpers\ArrayHelper;
 
 /**
- * Alert renders Yii's session flash messages. All flash messages are displayed
+ * Alert renders Yii's session flash messages. 
+ * 
+ * All flash messages are displayed
  * in the sequence they were assigned using `setFlash()`. You can set messages as follows:
  *
  * ```php
@@ -57,7 +59,7 @@ class Alert extends BaseWidget
 
     /**
      * @var array the HTML attributes for the widget container tag.
-     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on 
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on 
      * how attributes are being rendered.
      */
     public $options = [];

@@ -19,7 +19,11 @@ use yii\helpers\ArrayHelper;
  * for the "Sample Post". He can click on "Sample Post" to view that page, or he can click on "Home"
  * to return to the homepage.
  *
- * To use Breadcrumbs, you need to configure its [[links]] property, which specifies the links to be displayed. For example,
+ * To use Breadcrumbs, you need to configure its `$links` property (inherited from 
+ * [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)) , which specifies the links to be 
+ * displayed. 
+ * 
+ * For example,
  *
  * ```php
  * // $this is the view object currently being used
@@ -39,7 +43,7 @@ use yii\helpers\ArrayHelper;
  *
  * Because breadcrumbs usually appear in nearly every page of a website, you may consider placing it in a layout view.
  * You can use a view parameter (e.g. `$this->params['breadcrumbs']`) to configure the links in different
- * views. In the layout view, you assign this view parameter to the [[links]] property like the following:
+ * views. In the layout view, you assign this view parameter to the `$links` property like the following:
  *
  * ```php
  * // $this is the view object currently being used
@@ -47,7 +51,8 @@ use yii\helpers\ArrayHelper;
  *     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
  * ]);
  * ```
- * 
+ *
+ * @see [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  */
@@ -62,7 +67,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     /**
      * @var array the HTML options for the surrounding "nav" tag.
      *
-     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
      * how attributes are being rendered.
      */
     public $containerOptions = [];
@@ -70,7 +75,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     /**
      * @var array the HTML options for the wrapper tag.
      *
-     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
      * how attributes are being rendered.
      */
     public $options = [];
@@ -83,7 +88,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
      *
      * - tag: string, defaults to "div", the name of the inner container tag.
      *
-     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
      * how attributes are being rendered.
      * @see https://github.com/MacGyer/yii2-materializecss/pull/5
      */

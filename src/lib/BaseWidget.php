@@ -21,7 +21,8 @@ class BaseWidget extends Widget
 
     /**
      * @var array the HTML attributes for the widget container tag.
-     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) 
+     * for details on how attributes are being rendered.
      */
     public $options = [];
 }

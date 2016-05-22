@@ -64,7 +64,11 @@ trait MaterializeWidgetTrait
     /**
      * Registers a specific Materialize plugin and the related events.
      * @param string $name the name of the Materialize plugin
-     * @param string|null $selector the name of the select the plugin shall be attached to
+     * @param string|null $selector the name of the selector the plugin shall be attached to
+     * @uses [yii\helper\BaseJson::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basejson.html#encode()-detail)
+     * to encode the [[clientOptions]]
+     * @uses [[MaterializePluginAsset::register()]]
+     * @uses [[registerClientEvents()]]
      */
     protected function registerPlugin($name, $selector = null)
     {
