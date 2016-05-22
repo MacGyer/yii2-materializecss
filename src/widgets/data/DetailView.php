@@ -8,14 +8,16 @@
 namespace macgyer\yii2materializecss\widgets\data;
 
 /**
- * DetailView displays the detail of a single data `$model` (inherited from [[yii\widgets\DetailView]](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html)).
+ * DetailView displays the detail of a single data model.
+ * 
+ * This data model is represented by `$model` (inherited from [yii\widgets\DetailView](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html)).
  *
  * DetailView is best used for displaying a model in a regular format (e.g. each model attribute
  * is displayed as a row in a table.) The model can be either an instance of [yii\base\Model](http://www.yiiframework.com/doc-2.0/yii-base-model.html)
  * or an associative array.
  *
- * DetailView uses the `$attributes` (inherited from [[yii\widgets\DetailView]](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html)) 
- * property to determine which model attributes should be displayed and how they should be formatted.
+ * DetailView uses the `$attributes` property (inherited from [yii\widgets\DetailView](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html))
+ * to determine which model attributes should be displayed and how they should be formatted.
  *
  * A typical usage of DetailView is as follows:
  *
@@ -33,6 +35,8 @@ namespace macgyer\yii2materializecss\widgets\data;
  *     ],
  * ]);
  * ```
+ * 
+ * @see [yii\widgets\DetailView](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html)
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage data

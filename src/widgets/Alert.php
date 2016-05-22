@@ -15,8 +15,10 @@ use yii\helpers\ArrayHelper;
 /**
  * Alert renders Yii's session flash messages. 
  * 
- * All flash messages are displayed
- * in the sequence they were assigned using `setFlash()`. You can set messages as follows:
+ * All flash messages are displayed in the sequence they were assigned using 
+ * [yii\web\Session::setFlash()](http://www.yiiframework.com/doc-2.0/yii-web-session.html#setFlash()-detail). 
+ * 
+ * You can set messages as follows:
  *
  * ```php
  * Yii::$app->session->setFlash('error', 'This is the message');
@@ -67,7 +69,7 @@ class Alert extends BaseWidget
     /**
      * Initializes the widget.
      *
-     * @uses http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#merge()-detail
+     * @uses [yii\helper\BaseArrayHelper::merge()](http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#merge()-detail)
      */
     public function init()
     {
@@ -80,7 +82,7 @@ class Alert extends BaseWidget
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
      * 
-     * @uses http://www.yiiframework.com/doc-2.0/yii-web-session.html
+     * @uses [yii\web\Session](http://www.yiiframework.com/doc-2.0/yii-web-session.html)
      */
     public function run()
     {
