@@ -31,50 +31,52 @@ class Chip extends BaseWidget
     public $options;
 
     /**
-     * @var string the content of the chip besides the optional image and/or icon
+     * @var string the content of the chip besides the optional image and/or icon.
      */
     public $content;
 
     /**
-     * @var bool whether to encode the content
+     * @var bool whether to encode the content.
+     *
+     * If this property is set to "false" the content will be rendered without the encoding of HTML special characters.
      */
     public $encodeContent = true;
 
     /**
-     * @var array the HTML attributes for the img tag
+     * @var array the HTML attributes for the img tag.
      *
-     * Specifiy at least the "src" key representing the source of the image
+     * Specifiy at least the `src` key representing the source of the image.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $imageOptions;
 
     /**
-     * @var array the options for the optional icon
+     * @var array the options for the optional icon.
      *
-     * if there is an icon present in the chip element, materializecss will treat it as a close (i. e. remove) trigger.
+     * If there is an icon present in the chip element, Materialize will treat it as a close (i. e. remove) trigger.
      *
-     * To specify an icon you can use the following parameters
-     *
+     * To specify an icon you can use the following parameters:
      * ```php
      * [
      *     'name' => 'name of the icon',                    // optional, defaults to 'close'
      *     'position' => 'position of the icon',            // optional, 'left' or 'right', defaults to 'left'
-     *     'options' => 'the HTML attributes for the img',  // optional
+     *     'options' => 'the HTML attributes for the icon', // optional
      * ]
      * ```
      *
-     * @see macgyer\yii2materializecss\widgetsIcon::run()
+     * @see Icon::run()
      */
     public $icon;
 
     /**
-     * @var bool whether to render the icon inside the chip
+     * @var bool whether to render the icon inside the chip.
      */
     public $renderIcon = false;
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      *
      * @throws InvalidConfigException if the src property ot the image is not defined
      */
@@ -96,6 +98,7 @@ class Chip extends BaseWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @uses [[Icon]]
      */
     public function run()
     {

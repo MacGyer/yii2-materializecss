@@ -13,6 +13,7 @@ use macgyer\yii2materializecss\lib\Html;
 /**
  * Spinner renders a circular loading animation.
  *
+ * When displaying a spinner you can choose to let the colors change with every rotation.
  *
  * @see Progress|Progress
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
@@ -31,6 +32,8 @@ class Spinner extends BaseWidget
 
     /**
      * @var array the HTML attributes for the spinner.
+     *
+     * If [[flashColors]] is set to "true" these options will be applied to all spinner simultaneously.
      *
      * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
      * for details on how attributes are being rendered.

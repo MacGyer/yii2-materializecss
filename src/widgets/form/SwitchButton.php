@@ -13,7 +13,8 @@ use yii\base\Model;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class SwitchButton
+ * SwitchButton renders a toggle button.
+ *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
@@ -38,7 +39,7 @@ class SwitchButton extends BaseInputWidget
     /**
      * @var string the input value.
      *
-     * If not set, it will take the default value '1'.
+     * If not set, it will take the default value "1".
      */
     public $value;
 
@@ -57,7 +58,8 @@ class SwitchButton extends BaseInputWidget
      *
      * - tag: string, defaults to "div", the name of the container tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $options;
 
@@ -74,7 +76,8 @@ class SwitchButton extends BaseInputWidget
     /**
      * @var array the HTML attributes for the underlying input tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $inputOptions = [];
 
@@ -111,6 +114,7 @@ class SwitchButton extends BaseInputWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @uses [[renderSwitch()]]
      */
     public function run()
     {
@@ -125,9 +129,11 @@ class SwitchButton extends BaseInputWidget
     }
 
     /**
+     * Render the switch button checkbox.
      * @return string
+     * @uses [yii\helper\BaseHtml::checkbox()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#checkbox()-detail)
      */
-    private function renderSwitch()
+    protected function renderSwitch()
     {
         $value = ArrayHelper::getValue($this->inputOptions, 'value', null);
 
