@@ -32,7 +32,7 @@ class Chip extends BaseWidget
     public $options;
 
     /**
-     * @var string the content of the chip besides the optional image and/or [[macgyer\yii2materializecss\widgets\Icon|Icon]].
+     * @var string the content of the chip besides the optional image and/or [[Icon|Icon]].
      */
     public $content;
 
@@ -54,12 +54,12 @@ class Chip extends BaseWidget
     public $imageOptions;
 
     /**
-     * @var array the options for the optional [[macgyer\yii2materializecss\widgets\Icon|Icon]].
+     * @var array the options for the optional [[Icon|Icon]].
      *
      * If there is an icon present in the chip element, Materialize will 
      * treat it as a close (i. e. remove) trigger.
      *
-     * To specify an [[macgyer\yii2materializecss\widgets\Icon|Icon]] you can use the following parameters:
+     * To specify an [[Icon|Icon]] you can use the following parameters:
      * 
      * ```php
      * [
@@ -74,7 +74,7 @@ class Chip extends BaseWidget
     public $icon;
 
     /**
-     * @var bool whether to render the [[macgyer\yii2materializecss\widgets\Icon|Icon]] inside the chip.
+     * @var bool whether to render the [[Icon|Icon]] inside the chip.
      */
     public $renderIcon = false;
 
