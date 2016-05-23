@@ -26,12 +26,13 @@ class Chip extends BaseWidget
      *
      * - tag: string, defaults to "div", the name of the container tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $options;
 
     /**
-     * @var string the content of the chip besides the optional image and/or icon.
+     * @var string the content of the chip besides the optional image and/or [[macgyer\yii2materializecss\widgets\Icon|Icon]].
      */
     public $content;
 
@@ -53,11 +54,13 @@ class Chip extends BaseWidget
     public $imageOptions;
 
     /**
-     * @var array the options for the optional icon.
+     * @var array the options for the optional [[macgyer\yii2materializecss\widgets\Icon|Icon]].
      *
-     * If there is an icon present in the chip element, Materialize will treat it as a close (i. e. remove) trigger.
+     * If there is an icon present in the chip element, Materialize will 
+     * treat it as a close (i. e. remove) trigger.
      *
-     * To specify an icon you can use the following parameters:
+     * To specify an [[macgyer\yii2materializecss\widgets\Icon|Icon]] you can use the following parameters:
+     * 
      * ```php
      * [
      *     'name' => 'name of the icon',                    // optional, defaults to 'close'
@@ -66,12 +69,12 @@ class Chip extends BaseWidget
      * ]
      * ```
      *
-     * @see Icon::run()
+     * @see Icon|Icon
      */
     public $icon;
 
     /**
-     * @var bool whether to render the icon inside the chip.
+     * @var bool whether to render the [[macgyer\yii2materializecss\widgets\Icon|Icon]] inside the chip.
      */
     public $renderIcon = false;
 

@@ -16,10 +16,11 @@ use yii\helpers\ArrayHelper;
  * Icon can be used to display a Materialize icon.
  *
  * Please note that the Materialize icons are shipped in a separate font file. This font file is automatically registered
- * by the [[MaterializeAsset]].
+ * by the [[\macgyer\yii2materializecss\assets\MaterializeAsset|MaterializeAsset]].
  *
- * If you do not load the default [[MaterializeAsset]] make sure to at least load [[MaterializeFontAsset]] (or another source
- * providing the font file) to correctly display the icons.
+ * If you do not load the default [[\macgyer\yii2materializecss\assets\MaterializeAsset|MaterializeAsset]] make sure to at least load 
+ * [[\macgyer\yii2materializecss\assets\MaterializeFontAsset|MaterializeFontAsset]] (or another source providing the font file) to correctly 
+ * display the icons.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
