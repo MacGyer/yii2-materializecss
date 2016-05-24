@@ -13,7 +13,15 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Button
+ * Button renders a HTML button.
+ *
+ * There are three main button types described in Materialize.
+ * - the raised button is a standard button that signifies actions and seek to give depth to a mostly flat page
+ * - the floating circular action button is meant for very important functions
+ * - flat buttons are usually used within elements that already have depth like cards or modals
+ *
+ * The button can be displayed with an optional icon. This class uses the Icon widget to show icons.
+ *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  */
@@ -47,7 +55,7 @@ class Button extends BaseWidget
      * ]
      * ```
      *
-     * @see [[Icon]]
+     * @see Icon
      */
     public $icon = [];
 
@@ -82,9 +90,9 @@ class Button extends BaseWidget
      * @throws \yii\base\InvalidConfigException if icon name is not specified
      *
      * @uses http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#getValue()-detail
-     * @see [[Icon::run]]
+     * @see Icon::run
      */
-    private function renderIcon()
+    protected function renderIcon()
     {
         if (!$this->icon) {
             return '';

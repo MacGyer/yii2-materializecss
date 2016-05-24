@@ -88,6 +88,8 @@ class Dropdown extends BaseWidget
      */
     public function init()
     {
+        // TODO: combined rendering of trigger and dropdown 1.0.8
+
         if ($this->submenuOptions === null) {
             $this->submenuOptions = $this->options;
             unset($this->submenuOptions['id']);
@@ -103,9 +105,9 @@ class Dropdown extends BaseWidget
      *
      * @return string the result of widget execution to be outputted.
      * @uses [[renderItems()]]
-     * @uses [[MaterializePluginAsset]]
-     * @see [[MaterializePluginAsset]]
-     * @see [[MaterializeWidgetTrait]]
+     * @uses MaterializePluginAsset
+     * @see MaterializePluginAsset|MaterializePluginAsset
+     * @see \macgyer\yii2materializecss\lib\MaterializeWidgetTrait|MaterializeWidgetTrait
      */
     public function run()
     {

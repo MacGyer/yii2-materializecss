@@ -40,7 +40,7 @@ class Chip extends BaseWidget
     public $content;
 
     /**
-     * @var bool whether to encode the content.
+     * @var boolean whether to encode the content.
      *
      * If this property is set to "false" the content will be rendered without the encoding of HTML special characters.
      */
@@ -77,7 +77,7 @@ class Chip extends BaseWidget
     public $icon;
 
     /**
-     * @var bool whether to render the [[Icon|Icon]] inside the chip.
+     * @var boolean whether to render the [[Icon|Icon]] inside the chip.
      */
     public $renderIcon = false;
 
