@@ -13,7 +13,10 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Chip
+ * Chip renders small units of information.
+ *
+ * An Usual use case is the displaying of tags or contact information.
+ *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  *
  * @see http://materializecss.com/chips.html
