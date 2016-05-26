@@ -42,7 +42,7 @@ class FixedActionButton extends BaseWidget
      * or an array representing a single item with the following specification:
      *
      * - label: string, required, the label of the item link
-     * - url: string|array, optional, the url of the item link. This will be processed by [[Url::to()]].
+     * - url: string|array, optional, the url of the item link. This will be processed by [yii\helpers\Url::to()](http://www.yiiframework.com/doc-2.0/yii-helpers-baseurl.html#to()-detail).
      * - visible: boolean, optional, whether this menu item is visible. Defaults to true.
      * - linkOptions: array, optional, the HTML attributes of the item link.
      * - options: array, optional, the HTML attributes of the item.
@@ -71,12 +71,12 @@ class FixedActionButton extends BaseWidget
     public $itemsContainerOptions = [];
 
     /**
-     * @var bool whether the button items are only visible after click.
+     * @var boolean whether the button items are only visible after click.
      */
     public $clickToToggle = false;
 
     /**
-     * @var bool whether to display a horizontal FAB.
+     * @var boolean whether to display a horizontal FAB.
      */
     public $horizontal = false;
 
@@ -93,7 +93,7 @@ class FixedActionButton extends BaseWidget
     public $buttonLabel = 'Button';
 
     /**
-     * @var bool whether the label should be HTML-encoded.
+     * @var boolean whether the label should be HTML-encoded.
      */
     public $buttonEncodeLabel = true;
 
@@ -166,6 +166,7 @@ class FixedActionButton extends BaseWidget
     }
 
     /**
+     * Renders a list representing the single button items.
      * @return string
      * @throws InvalidConfigException
      */
