@@ -20,8 +20,9 @@ use yii\helpers\ArrayHelper;
  * - the floating circular action button is meant for very important functions
  * - flat buttons are usually used within elements that already have depth like cards or modals
  *
- * The button can be displayed with an optional icon. This class uses the Icon widget to show icons.
+ * The button can be displayed with an optional icon. This class uses the [[Icon|Icon]] widget to show icons.
  *
+ * @see http://materializecss.com/buttons.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  */
@@ -38,14 +39,14 @@ class Button extends BaseWidget
     public $label = 'Button';
 
     /**
-     * @var bool whether the label should be HTML-encoded.
+     * @var boolean whether the label should be HTML-encoded.
      */
     public $encodeLabel = true;
 
     /**
      * @var array the options for the optional icon.
      *
-     * To specify an icon you can use the following parameters
+     * To specify an icon you can use the following parameters:
      *
      * ```php
      * [
@@ -55,7 +56,7 @@ class Button extends BaseWidget
      * ]
      * ```
      *
-     * @see Icon
+     * @see Icon|Icon
      */
     public $icon = [];
 
