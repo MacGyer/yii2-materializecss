@@ -1,6 +1,16 @@
 Usage Materialize for Yii2
 ==========================
 
+Main layout
+-----------
+
+Yii 2 project have a main layout in ``@app/views/layouts/main.php``.
+Then this extension have a sample layout file included. You can use
+this file to get inspiration for your own layout or replace the
+respective ``views/layouts/main.php`` with the file provided.
+
+You can find the sample layout file in ``src/layout/main.php``.
+
 Alert box message
 -----------------
 
