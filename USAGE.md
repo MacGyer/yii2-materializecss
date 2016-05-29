@@ -277,7 +277,7 @@ Then to generate a DatePicker widget, please add the following snippet source co
 ```php
 use macgyer\yii2materializecss\widgets\form\DatePicker;
 
-<?php $form->field($model,'birthdate')->
+<?= $form->field($model,'birthdate')->
     widget(DatePicker::className(), [
         // More client options http://amsul.ca/pickadate.js/date/#options
         'clientOptions' => [
