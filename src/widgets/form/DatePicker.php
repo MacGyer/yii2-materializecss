@@ -11,7 +11,14 @@ use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * Class DatePicker
+ * DatePicker renders an date picker input element.
+ *
+ * Materialize is shipped with the JS library pickadate.js. Please see the [official documentation](http://amsul.ca/pickadate.js/)
+ * for all options and details.
+ *
+ * Be aware that not all options of pickadate are currently supported by the Materialize implementation.
+ *
+ * @see http://amsul.ca/pickadate.js/
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form

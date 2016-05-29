@@ -21,7 +21,8 @@ use yii\helpers\ArrayHelper;
 
 
 /**
- * Class ActiveField
+ * ActiveField represents a form input field within an [yii\widgets\ActiveForm](http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html).
+ * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
@@ -30,7 +31,7 @@ class ActiveField extends \yii\widgets\ActiveField
 {
     /**
      * @var array the HTML attributes (name-value pairs) for the field container tag.
-     * The values will be HTML-encoded using [[Html::encode()]].
+     * The values will be HTML-encoded using [Html::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
      * If a value is null, the corresponding attribute will not be rendered.
      * The following special options are recognized:
      *
@@ -38,7 +39,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * If you set a custom `id` for the container element, you may need to adjust the [[$selectors]] accordingly.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $options = ['class' => 'input-field'];
 
@@ -52,9 +53,9 @@ class ActiveField extends \yii\widgets\ActiveField
      * @var array the default options for the input tags. The parameter passed to individual input methods
      * (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
      *
-     * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
+     * If you set a custom `id` for the input element, you may need to adjust the [$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $inputOptions = [];
 
@@ -68,7 +69,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * If you set a custom `id` for the error element, you may need to adjust the [[$selectors]] accordingly.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $errorOptions = ['class' => 'help-block'];
 
@@ -86,7 +87,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * - tag: the tag name of the container element. Defaults to "div".
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $hintOptions = ['class' => 'hint-block'];
 
@@ -101,11 +102,12 @@ class ActiveField extends \yii\widgets\ActiveField
      *     'options' => 'the HTML attributes for the img',  // optional
      * ]
      * ```
+     * @see Icon|Icon
      */
     public $icon;
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      */
     public function init()
     {
@@ -158,6 +160,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders an icon.
      * @return ActiveField
      * @throws \Exception
      */
@@ -178,6 +181,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a color input.
      * @param array $options
      * @return ActiveField
      */
@@ -188,6 +192,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders a date input.
      * @param array $options
      * @return ActiveField
      */
@@ -198,6 +203,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders a datetime input.
      * @param array $options
      * @return ActiveField
      */
@@ -208,6 +214,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders a datetime local input.
      * @param array $options
      * @return ActiveField
      */
@@ -218,6 +225,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders an email input.
      * @param array $options
      * @return ActiveField
      */
@@ -230,6 +238,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a month input.
      * @param array $options
      * @return ActiveField
      */
@@ -240,6 +249,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a number input.
      * @param array $options
      * @return ActiveField
      */
@@ -250,6 +260,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a range input.
      * @param array $options
      * @return ActiveField
      */
@@ -260,6 +271,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a search input.
      * @param array $options
      * @return ActiveField
      */
@@ -270,6 +282,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a phone input.
      * @param array $options
      * @return ActiveField
      */
@@ -280,6 +293,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a time input.
      * @param array $options
      * @return ActiveField
      */
@@ -290,6 +304,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders an URL input.
      * @param array $options
      * @return ActiveField
      */
@@ -300,6 +315,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a week input.
      * @param array $options
      * @return ActiveField
      */
@@ -310,6 +326,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a textarea.
      * @param array $options
      * @return ActiveField
      */
