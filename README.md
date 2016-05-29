@@ -10,7 +10,7 @@ See [official documentation](http://macgyer.github.io/yii2-materializecss/) for 
 The preferred way of installation is through Composer.
 If you don't have Composer you can get it here: https://getcomposer.org/
 
-To install the package add the following to the ```required``` section of your composer.json:
+To install the package add the following to the ```require``` section of your composer.json:
 ```
 "require": {
     "macgyer/yii2-materializecss": "*"
