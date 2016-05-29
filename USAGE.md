@@ -236,6 +236,79 @@ The above described source code render the HTML source code like this:
 
 More details information at Materialize Reference, please see the following URL: http://materializecss.com/navbar.html#navbar-dropdown
 
+DatePicker widget
+-----------------
+
+The DatePicker widget builded with Materialize CSS use pickadate.js library.
+
+Here a simple demo to render the DatePicker widget:
+
+```php
+use macgyer\yii2materializecss\widgets\form\DatePicker;
+
+echo DatePicker::widget([
+    // More client options http://amsul.ca/pickadate.js/date/#options
+    'clientOptions' => [
+        // The format to show on the `input` element
+        'format' => 'yyyy-mm-dd',
+        // Accessibility labels
+        'labelMonthNext' => 'Go to the next month',
+        'labelMonthPrev' => 'Go to the previous month',
+        'labelMonthSelect' => 'Pick a month from the dropdown',
+        'labelYearSelect' => 'Pick a year from the dropdown',
+        // Creates a dropdown to control month
+        'selectMonths' => true,
+        // Creates a dropdown to control year
+        'selectYears' => true,
+        // Min limits date
+        // 'min' => [2015, 7, 14],
+        // Today as Max limits date
+        'max' => 'now',
+    ],
+    'options' => [
+        'class' => 'my-datepicker',
+        'readonly' => true
+    ]
+]);
+```
+
+Then to generate a DatePicker widget, please add the following snippet source code into your ``_form.php`` file is like this:
+
+```php
+use macgyer\yii2materializecss\widgets\form\DatePicker;
+```
+
+```html
+<?php $form->field($model,'birthdate')->
+    widget(DatePicker::className(), [
+        // More client options http://amsul.ca/pickadate.js/date/#options
+        'clientOptions' => [
+            // The format to show on the `input` element
+            'format' => 'yyyy-mm-dd',
+            // Accessibility labels
+            'labelMonthNext' => 'Go to the next month',
+            'labelMonthPrev' => 'Go to the previous month',
+            'labelMonthSelect' => 'Pick a month from the dropdown',
+            'labelYearSelect' => 'Pick a year from the dropdown',
+            // Creates a dropdown to control month
+            'selectMonths' => true,
+            // Creates a dropdown to control year
+            'selectYears' => true,
+            // Min limits date
+            // 'min' => [2015, 7, 14],
+            // Today as Max limits date
+            'max' => 'now',
+        ],
+        'options' => [
+            'class' => 'my-datepicker',
+            'readonly' => true
+        ]
+    ])->label('Birthdate')
+?>
+```
+
+More details information at pickadate.js Reference, please see the following URL: http://amsul.ca/pickadate.js/date/#options
+
 Buttons
 -------
 
