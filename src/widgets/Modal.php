@@ -14,7 +14,10 @@ use yii\helpers\ArrayHelper;
 /**
  * Modal renders a modal window that can be toggled by clicking on a button.
  *
- * The following example will show the content enclosed between the begin() and end() calls within the modal window:
+ * The following example will show the content enclosed between the 
+ * [\yii\base\Widget::begin()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#begin()-detail) and 
+ * [\yii\base\Widget::end()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#end()-detail) calls within the 
+ * modal window:
  *
  * ```php
  * Modal::begin([
@@ -34,6 +37,7 @@ use yii\helpers\ArrayHelper;
  * ```
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
+ * @see http://materializecss.com/modals.html
  */
 class Modal extends BaseWidget
 {
@@ -88,7 +92,7 @@ class Modal extends BaseWidget
 
     /**
      * @var array the HTML attributes for the widget container tag. These special options are recognized:
-     * - tag, string, the name of the widget container tag, defaults to "div"
+     * - tag: string, defaults to "div", the name of the container tag.
      *
      * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
@@ -125,18 +129,18 @@ class Modal extends BaseWidget
     public $closeButton = [];
 
     /**
-     * @var string the position of the close button
+     * @var string the position of the close button.
      *
      * The following options are supported:
      *
-     * - beforeContent, right before the content, inside the container ".modal-content"
-     * - afterContent, right after the content, inside the container ".modal-content"
-     * - beforeFooter, right before the footer content, inside the container ".modal-footer"
-     * - afterFooter, right before the footer content, inside the container ".modal-footer"
-     * - precedeContainer, directly before the container ".modal-content" opens
-     * - succeedContainer, directly after the container ".modal-content" closes
+     * - `beforeContent`, right before the content, inside the container ".modal-content"
+     * - `afterContent`, right after the content, inside the container ".modal-content"
+     * - `beforeFooter`, right before the footer content, inside the container ".modal-footer"
+     * - `afterFooter`, right before the footer content, inside the container ".modal-footer"
+     * - `precedeContainer`, directly before the container ".modal-content" opens
+     * - `succeedContainer`, directly after the container ".modal-content" closes
      *
-     * Defaults to 'beforeContent'.
+     * Defaults to "beforeContent".
      */
     public $closeButtonPosition = self::CLOSE_BUTTON_POSITION_BEFORE_CONTENT;
 
@@ -232,7 +236,7 @@ class Modal extends BaseWidget
 
     /**
      * Renders the Modal's toggle button.
-     * @see [[toggleButton]]
+     * @see toggleButton
      * @return null|string the rendered result.
      */
     protected function renderToggleButton()
@@ -257,7 +261,7 @@ class Modal extends BaseWidget
 
     /**
      * Renders the close button.
-     * @see [[closeButton]]
+     * @see closeButton
      * @return null|string the rendered result.
      */
     protected function renderCloseButton()
