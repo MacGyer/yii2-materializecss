@@ -37,7 +37,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * - tag: the tag name of the container element. Defaults to "div".
      *
-     * If you set a custom `id` for the container element, you may need to adjust the [[$selectors]] accordingly.
+     * If you set a custom `id` for the container element, you may need to adjust the [$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
      * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
@@ -51,7 +51,7 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * @var array the default options for the input tags. The parameter passed to individual input methods
-     * (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
+     * (e.g. [textInput()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#textInput()-detail)) will be merged with this property when rendering the input tag.
      *
      * If you set a custom `id` for the input element, you may need to adjust the [$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
@@ -60,28 +60,28 @@ class ActiveField extends \yii\widgets\ActiveField
     public $inputOptions = [];
 
     /**
-     * @var array the default options for the error tags. The parameter passed to [[error()]] will be
+     * @var array the default options for the error tags. The parameter passed to [yii\widgets\ActiveField::error()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#error()-detail) will be
      * merged with this property when rendering the error tag.
      * The following special options are recognized:
      *
      * - tag: the tag name of the container element. Defaults to "div".
      * - encode: whether to encode the error output. Defaults to true.
      *
-     * If you set a custom `id` for the error element, you may need to adjust the [[$selectors]] accordingly.
+     * If you set a custom `id` for the error element, you may need to adjust the [yii\widgets\ActiveField::$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
      * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $errorOptions = ['class' => 'help-block'];
 
     /**
-     * @var array the default options for the label tags. The parameter passed to [[label()]] will be
+     * @var array the default options for the label tags. The parameter passed to [label()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#label()-detail) will be
      * merged with this property when rendering the label tag.
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $labelOptions = [];
 
     /**
-     * @var array the default options for the hint tags. The parameter passed to [[hint()]] will be
+     * @var array the default options for the hint tags. The parameter passed to [yii\widgets\ActiveField::hint()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#hint()-detail) will be
      * merged with this property when rendering the hint tag.
      * The following special options are recognized:
      *
@@ -92,7 +92,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public $hintOptions = ['class' => 'hint-block'];
 
     /**
-     * @var array the options for the optional prefix icon
+     * @var array the options for the optional prefix icon.
      *
      * To specify an icon you can use the following parameters
      *
