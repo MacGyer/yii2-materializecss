@@ -18,7 +18,7 @@ use yii\helpers\ArrayHelper;
  *
  * Any content enclosed between the [\yii\base\Widget::begin()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#begin()-detail)
  * and [\yii\base\Widget::end()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#end()-detail) calls of NavBar
- * is treated as the content of the navbar. You may use widgets such as [[Nav]]
+ * is treated as the content of the navbar. You may use widgets such as [[Nav|Nav]]
  * or [\yii\widgets\Menu](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html) to build up such content. For example,
  *
  * ```php
@@ -31,7 +31,6 @@ use yii\helpers\ArrayHelper;
  *         ['label' => 'Home', 'url' => ['/site/index']],
  *         ['label' => 'About', 'url' => ['/site/about']],
  *     ],
- *     'options' => ['class' => 'navbar-nav'],
  * ]);
  * NavBar::end();
  * ```
@@ -63,7 +62,8 @@ class NavBar extends BaseWidget
     public $fixed = false;
 
     /**
-     * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
+     * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by
+     * [\yii\helpers\Url::to()](http://www.yiiframework.com/doc-2.0/yii-helpers-baseurl.html#to()-detail)
      * and will be used for the "href" attribute of the brand link. Default value is false that means
      * [\yii\web\Application::homeUrl](http://www.yiiframework.com/doc-2.0/yii-web-application.html#$homeUrl-detail) will be used.
      * You may set it to `null` if you want to have no link at all.
