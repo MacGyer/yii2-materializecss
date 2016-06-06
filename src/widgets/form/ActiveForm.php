@@ -42,8 +42,8 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
     /**
      * Generates a form field.
-     * @param $model the data model.
-     * @param $attribute the attribute name or expression. See [yii\helpers\Html::getAttributeName()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#getAttributeName()-detail) for the format about attribute expression.
+     * @param \yii\base\Model $model the data model.
+     * @param string $attribute the attribute name or expression. See [yii\helpers\Html::getAttributeName()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#getAttributeName()-detail) for the format about attribute expression.
      * @param array $options the additional configurations for the field object. These are properties of [yii\widgets\ActiveField](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html) or a subclass, depending on the value of [$fieldClass](http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html#$fieldClass-detail).
      * @return ActiveField the created ActiveField object
      */

@@ -26,6 +26,22 @@ use macgyer\yii2materializecss\lib\Html;
 class DatePicker extends BaseInputWidget
 {
     /**
+     * @var array the options for the underlying datepicker JS plugin.
+     * Please refer to the corresponding [documentation web page](http://amsul.ca/pickadate.js/).
+     *
+     * @see http://amsul.ca/pickadate.js/date/#options
+     */
+    public $clientOptions = [];
+
+    /**
+     * @var array the event handlers for the underlying date picker JS plugin.
+     * Please refer to the corresponding [documentation web page](http://amsul.ca/pickadate.js/).
+     *
+     * @see http://amsul.ca/pickadate.js/date/#events
+     */
+    public $clientEvents = [];
+
+    /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
      */
