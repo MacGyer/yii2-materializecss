@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/936b3706/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/1df9fa34/solarized_light.css" rel="stylesheet">
+<link href="./assets/ee6d4738/style.css" rel="stylesheet">
+<script src="./assets/ba5c5eb/jquery.js"></script>
+<script src="./assets/936b3706/js/bootstrap.js"></script>
+<script src="./assets/3a66db3c/jssearch.js"></script>    <title>BaseInputWidget, macgyer\yii2materializecss\lib\BaseInputWidget - yii2-materializecss API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w174" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w174-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">yii2-materializecss API Documentation</a></div><div id="w174-collapse" class="collapse navbar-collapse"><ul id="w175" class="navbar-nav nav"><li><a href="../">Back to README</a></li>
+<li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-168" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\assets <b class="caret"></b></a><div id="navigation-168" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializeasset.html">MaterializeAsset</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializefontasset.html">MaterializeFontAsset</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializepluginasset.html">MaterializePluginAsset</a></div>
+<a class="list-group-item active" href="#navigation-169" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\lib <b class="caret"></b></a><div id="navigation-169" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./macgyer-yii2materializecss-lib-baseinputwidget.html">BaseInputWidget</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-basewidget.html">BaseWidget</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-html.html">Html</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-materializewidgettrait.html">MaterializeWidgetTrait</a></div>
+<a class="list-group-item" href="#navigation-170" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets <b class="caret"></b></a><div id="navigation-170" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-alert.html">Alert</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-breadcrumbs.html">Breadcrumbs</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-button.html">Button</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-chip.html">Chip</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-dropdown.html">Dropdown</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-fixedactionbutton.html">FixedActionButton</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-icon.html">Icon</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-modal.html">Modal</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-nav.html">Nav</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-navbar.html">NavBar</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-progress.html">Progress</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-spinner.html">Spinner</a></div>
+<a class="list-group-item" href="#navigation-171" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\data <b class="caret"></b></a><div id="navigation-171" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-data-detailview.html">DetailView</a></div>
+<a class="list-group-item" href="#navigation-172" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\form <b class="caret"></b></a><div id="navigation-172" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-activefield.html">ActiveField</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-activeform.html">ActiveForm</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-datepicker.html">DatePicker</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-switchbutton.html">SwitchButton</a></div>
+<a class="list-group-item" href="#navigation-173" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\grid <b class="caret"></b></a><div id="navigation-173" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-grid-actioncolumn.html">ActionColumn</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-grid-gridview.html">GridView</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class macgyer\yii2materializecss\lib\BaseInputWidget</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="macgyer-yii2materializecss-lib-baseinputwidget.html">macgyer\yii2materializecss\lib\BaseInputWidget</a> &raquo;
+yii\widgets\InputWidget</td></tr>
+                        <tr><th>Uses Traits</th><td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html">macgyer\yii2materializecss\lib\MaterializeWidgetTrait</a></td></tr>
+                <tr><th>Subclasses</th><td><a href="macgyer-yii2materializecss-widgets-form-datepicker.html">macgyer\yii2materializecss\widgets\form\DatePicker</a>, <a href="macgyer-yii2materializecss-widgets-form-switchbutton.html">macgyer\yii2materializecss\widgets\form\SwitchButton</a></td></tr>
+                        </table>
+
+<div class="class-description">
+    <p><strong>BaseInputWidget is the base class for all input widgets in this extension.</strong></p>
+    
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="$clientEvents">
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html#$clientEvents-detail">$clientEvents</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The event handlers for the underlying Materialize JS plugin.</td>
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html">macgyer\yii2materializecss\lib\MaterializeWidgetTrait</a></td>
+    </tr>
+            <tr class="inherited" id="$clientOptions">
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html#$clientOptions-detail">$clientOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The options for the underlying Materialize JS plugin.</td>
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html">macgyer\yii2materializecss\lib\MaterializeWidgetTrait</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr class="inherited" id="init()">
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html#init()-detail">init()</a></td>
+        <td>Initializes the widget.</td>
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html">macgyer\yii2materializecss\lib\MaterializeWidgetTrait</a></td>
+    </tr>
+            </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+            <tr class="inherited" id="registerClientEvents()">
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html#registerClientEvents()-detail">registerClientEvents()</a></td>
+        <td>Registers JS event handlers that are listed in <a href="macgyer-yii2materializecss-lib-materializewidgettrait.html#$clientEvents-detail">$clientEvents</a>.</td>
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html">macgyer\yii2materializecss\lib\MaterializeWidgetTrait</a></td>
+    </tr>
+            <tr class="inherited" id="registerPlugin()">
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html#registerPlugin()-detail">registerPlugin()</a></td>
+        <td>Registers a specific Materialize plugin and the related events.</td>
+        <td><a href="macgyer-yii2materializecss-lib-materializewidgettrait.html">macgyer\yii2materializecss\lib\MaterializeWidgetTrait</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+    <div class="wrap">
+                <p class="pull-right"><small>Page generated on Mon, 06 Jun 2016 20:22:03 +0000</small></p>
+        Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>    </div>
+</footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

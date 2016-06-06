@@ -1,0 +1,30 @@
+span.badge {
+    background-color: $blueGreyDarken4;
+    color: #fff;
+    font-size: 0.85rem;
+
+    &.default {
+
+    }
+
+    &.since {
+
+        &:before {
+            content: 'since ';
+        }
+    }
+
+    &.updated {
+
+        &:before {
+            content: 'updated ';
+        }
+    }
+
+    &.planned {
+
+        &:before {
+            content: 'planned ';
+        }
+    }
+}

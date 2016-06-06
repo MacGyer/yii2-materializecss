@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/936b3706/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/1df9fa34/solarized_light.css" rel="stylesheet">
+<link href="./assets/ee6d4738/style.css" rel="stylesheet">
+<script src="./assets/ba5c5eb/jquery.js"></script>
+<script src="./assets/936b3706/js/bootstrap.js"></script>
+<script src="./assets/3a66db3c/jssearch.js"></script>    <title>ActiveField, macgyer\yii2materializecss\widgets\form\ActiveField - yii2-materializecss API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w78" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w78-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">yii2-materializecss API Documentation</a></div><div id="w78-collapse" class="collapse navbar-collapse"><ul id="w79" class="navbar-nav nav"><li><a href="../">Back to README</a></li>
+<li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-72" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\assets <b class="caret"></b></a><div id="navigation-72" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializeasset.html">MaterializeAsset</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializefontasset.html">MaterializeFontAsset</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializepluginasset.html">MaterializePluginAsset</a></div>
+<a class="list-group-item" href="#navigation-73" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\lib <b class="caret"></b></a><div id="navigation-73" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-lib-baseinputwidget.html">BaseInputWidget</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-basewidget.html">BaseWidget</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-html.html">Html</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-materializewidgettrait.html">MaterializeWidgetTrait</a></div>
+<a class="list-group-item" href="#navigation-74" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets <b class="caret"></b></a><div id="navigation-74" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-alert.html">Alert</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-breadcrumbs.html">Breadcrumbs</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-button.html">Button</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-chip.html">Chip</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-dropdown.html">Dropdown</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-fixedactionbutton.html">FixedActionButton</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-icon.html">Icon</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-modal.html">Modal</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-nav.html">Nav</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-navbar.html">NavBar</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-progress.html">Progress</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-spinner.html">Spinner</a></div>
+<a class="list-group-item" href="#navigation-75" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\data <b class="caret"></b></a><div id="navigation-75" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-data-detailview.html">DetailView</a></div>
+<a class="list-group-item active" href="#navigation-76" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\form <b class="caret"></b></a><div id="navigation-76" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./macgyer-yii2materializecss-widgets-form-activefield.html">ActiveField</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-activeform.html">ActiveForm</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-datepicker.html">DatePicker</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-switchbutton.html">SwitchButton</a></div>
+<a class="list-group-item" href="#navigation-77" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\grid <b class="caret"></b></a><div id="navigation-77" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-grid-actioncolumn.html">ActionColumn</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-grid-gridview.html">GridView</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class macgyer\yii2materializecss\widgets\form\ActiveField</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a> &raquo;
+yii\widgets\ActiveField</td></tr>
+                                        </table>
+
+<div class="class-description">
+    <p><strong>ActiveField represents a form input field within an <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html">yii\widgets\ActiveForm</a>.</strong></p>
+    
+    <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html">http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html</a>.</p></div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$errorOptions">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$errorOptions-detail">$errorOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The default options for the error tags.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="$hintOptions">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$hintOptions-detail">$hintOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The default options for the hint tags.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="$icon">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$icon-detail">$icon</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The options for the optional prefix icon.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="$inputOptions">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$inputOptions-detail">$inputOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The default options for the input tags.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="$labelOptions">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$labelOptions-detail">$labelOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The default options for the label tags.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="$options">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$options-detail">$options</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The HTML attributes (name-value pairs) for the field container tag.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="$template">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#$template-detail">$template</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The template that is used to arrange the label, the input field, the error message and the hint text.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="colorInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#colorInput()-detail">colorInput()</a></td>
+        <td>Renders a color input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="dateInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#dateInput()-detail">dateInput()</a></td>
+        <td>Renders a date input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="datetimeInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#datetimeInput()-detail">datetimeInput()</a></td>
+        <td>Renders a datetime input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="datetimeLocalInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#datetimeLocalInput()-detail">datetimeLocalInput()</a></td>
+        <td>Renders a datetime local input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="emailInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#emailInput()-detail">emailInput()</a></td>
+        <td>Renders an email input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="icon()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#icon()-detail">icon()</a></td>
+        <td>Renders an icon.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="init()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#init()-detail">init()</a></td>
+        <td>Initializes the widget.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="monthInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#monthInput()-detail">monthInput()</a></td>
+        <td>Renders a month input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="numberInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#numberInput()-detail">numberInput()</a></td>
+        <td>Renders a number input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="rangeInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#rangeInput()-detail">rangeInput()</a></td>
+        <td>Renders a range input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="render()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#render()-detail">render()</a></td>
+        <td>Renders the whole field.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="searchInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#searchInput()-detail">searchInput()</a></td>
+        <td>Renders a search input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="telInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#telInput()-detail">telInput()</a></td>
+        <td>Renders a phone input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="textarea()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#textarea()-detail">textarea()</a></td>
+        <td>Renders a textarea.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="timeInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#timeInput()-detail">timeInput()</a></td>
+        <td>Renders a time input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="urlInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#urlInput()-detail">urlInput()</a></td>
+        <td>Renders an URL input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+            <tr id="weekInput()">
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html#weekInput()-detail">weekInput()</a></td>
+        <td>Renders a week input.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$errorOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$errorOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $errorOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The default options for the error tags. The parameter passed to <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#error()-detail">yii\widgets\ActiveField::error()</a> will be
+merged with this property when rendering the error tag.
+The following special options are recognized:</p>
+<ul>
+<li>tag: the tag name of the container element. Defaults to "div".</li>
+<li>encode: whether to encode the error output. Defaults to true.</li>
+</ul>
+<p>If you set a custom <code>id</code> for the error element, you may need to adjust the <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail">yii\widgets\ActiveField::$selectors</a> accordingly.</p>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">\yii\helpers\Html::renderTagAttributes()</a> for details on how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$errorOptions-detail">$errorOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'help-block'</span><span style="color: #007700">]</span></div>
+
+
+    <div class="detail-header h3" id="$hintOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$hintOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $hintOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The default options for the hint tags. The parameter passed to <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#hint()-detail">yii\widgets\ActiveField::hint()</a> will be
+merged with this property when rendering the hint tag.
+The following special options are recognized:</p>
+<ul>
+<li>tag: the tag name of the container element. Defaults to "div".</li>
+</ul>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">\yii\helpers\Html::renderTagAttributes()</a> for details on how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$hintOptions-detail">$hintOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'hint-block'</span><span style="color: #007700">]</span></div>
+
+
+    <div class="detail-header h3" id="$icon-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$icon-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $icon        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The options for the optional prefix icon.</p>
+<p>To specify an icon you can use the following parameters</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name of the icon'</span>,                    <span class="hljs-comment">// required</span>
+    <span class="hljs-string">'options'</span> =&gt; <span class="hljs-string">'the HTML attributes for the img'</span>,  <span class="hljs-comment">// optional</span>
+]
+</code></pre>
+
+        <p>See also <a href="macgyer-yii2materializecss-widgets-icon.html">Icon</a>.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$icon-detail">$icon</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$inputOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$inputOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $inputOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The default options for the input tags. The parameter passed to individual input methods
+(e.g. <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#textInput()-detail">textInput()</a>) will be merged with this property when rendering the input tag.</p>
+<p>If you set a custom <code>id</code> for the input element, you may need to adjust the <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail">$selectors</a> accordingly.</p>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">\yii\helpers\Html::renderTagAttributes()</a> for details on how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$inputOptions-detail">$inputOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$labelOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$labelOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $labelOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The default options for the label tags. The parameter passed to <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#label()-detail">label()</a> will be
+merged with this property when rendering the label tag.</p>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">\yii\helpers\Html::renderTagAttributes()</a> for details on how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$labelOptions-detail">$labelOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$options-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$options-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $options        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The HTML attributes (name-value pairs) for the field container tag.
+The values will be HTML-encoded using <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail">Html::encode()</a>.
+If a value is null, the corresponding attribute will not be rendered.
+The following special options are recognized:</p>
+<ul>
+<li>tag: the tag name of the container element. Defaults to "div".</li>
+</ul>
+<p>If you set a custom <code>id</code> for the container element, you may need to adjust the <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail">$selectors</a> accordingly.</p>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">\yii\helpers\Html::renderTagAttributes()</a> for details on how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$options-detail">$options</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'input-field'</span><span style="color: #007700">]</span></div>
+
+
+    <div class="detail-header h3" id="$template-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#$template-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $template        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The template that is used to arrange the label, the input field, the error message and the hint text.
+The following tokens will be replaced when <a href="macgyer-yii2materializecss-widgets-form-activefield.html#render()-detail">render()</a> is called: <code>{label}</code>, <code>{input}</code>, <code>{error}</code> and <code>{hint}</code>.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$template-detail">$template</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"{icon}\n{input}\n{label}\n{hint}\n{error}"</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="colorInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#colorInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        colorInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a color input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#colorInput()-detail">colorInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="dateInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#dateInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        dateInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a date input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#dateInput()-detail">dateInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="datetimeInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#datetimeInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        datetimeInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a datetime input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#datetimeInput()-detail">datetimeInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="datetimeLocalInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#datetimeLocalInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        datetimeLocalInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a datetime local input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#datetimeLocalInput()-detail">datetimeLocalInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="emailInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#emailInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        emailInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders an email input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#emailInput()-detail">emailInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="icon()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#icon()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        icon()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders an icon.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#icon()-detail">icon</a></strong> ( )</td></tr>
+                                                            <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="init()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#init()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        init()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Initializes the widget.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#init()-detail">init</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="monthInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#monthInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        monthInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a month input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#monthInput()-detail">monthInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="numberInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#numberInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        numberInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a number input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#numberInput()-detail">numberInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="rangeInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#rangeInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        rangeInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a range input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#rangeInput()-detail">rangeInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="render()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#render()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        render()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders the whole field.</strong></p>
+
+        <p>This method will generate the label, error tag, input tag and hint tag (if any), and
+assemble them into HTML according to <a href="macgyer-yii2materializecss-widgets-form-activefield.html#$template-detail">$template</a>.</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#render()-detail">render</a></strong> ( <span style="color: #0000BB">$content&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$content</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a>|<a href="http://www.php.net/language.types.callable">callable</a></td>
+                  <td class="param-desc-col"><p>The content within the field container.
+If null (not set), the default methods will be called to generate the label, error tag and input tag,
+and use them as the content.
+If a callable, it will be called to generate the content. The signature of the callable should be:</p>
+<pre><code class="hljs php language-php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$field</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$html</span>;
+}
+</code></pre>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The rendering result</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="searchInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#searchInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        searchInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a search input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#searchInput()-detail">searchInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="telInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#telInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        telInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a phone input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#telInput()-detail">telInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="textarea()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#textarea()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        textarea()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a textarea.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#textarea()-detail">textarea</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="timeInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#timeInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        timeInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a time input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#timeInput()-detail">timeInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="urlInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#urlInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        urlInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders an URL input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#urlInput()-detail">urlInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="weekInput()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-form-activefield.html#weekInput()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        weekInput()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a week input.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="macgyer-yii2materializecss-widgets-form-activefield.html">macgyer\yii2materializecss\widgets\form\ActiveField</a></span> <strong><a href="macgyer-yii2materializecss-widgets-form-activefield.html#weekInput()-detail">weekInput</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                                </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+    <div class="wrap">
+                <p class="pull-right"><small>Page generated on Mon, 06 Jun 2016 20:22:03 +0000</small></p>
+        Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>    </div>
+</footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

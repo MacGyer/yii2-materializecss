@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>macgyer/yii2-materializecss</title>
+
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/yii2-materializecss.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="brown lighten-5">
+
+<header>
+    <div class="navbar-fixed navigation">
+        <nav class="blue-grey darken-4">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo">yii2-materializecss</a>
+                    <a href="#" data-activates="mobile-nav" class="right button-collapse"><span class="fa fa-bars"></span></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#about">About</a></li>
+                        <li><a class="dropdownTrigger" href="#!" data-activates="dd-installation">Installation<span class="fa fa-caret-down"></span></a></li>
+                        <li><a href="#widgets">Widgets</a></li>
+                        <li><a class="dropdownTrigger" href="#!" data-activates="dd-kb">Further reading<span class="fa fa-caret-down"></span></a></li>
+                    </ul>
+
+                    <ul id="dd-installation" class="dropdown-content">
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#getting-started">Getting started</a></li>
+                    </ul>
+
+                    <ul id="dd-kb" class="dropdown-content">
+                        <li><a href="#gii">Gii support</a></li>
+                        <li><a href="#issues">Known issues</a></li>
+                        <li><a href="#sample-layout">Sample layout</a></li>
+                        <li><a href="#changelog">Change log</a></li>
+                        <li><a href="./api">API docs</a></li>
+                    </ul>
+
+                    <ul class="side-nav" id="mobile-nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#getting-started">Getting started</a></li>
+                        <li><a href="#widgets">Widgets</a></li>
+                        <li><a href="#gii">Gii support</a></li>
+                        <li><a href="#issues">Known issues</a></li>
+                        <li><a href="#sample-layout">Sample layout</a></li>
+                        <li><a href="#changelog">Change log</a></li>
+                        <li><a href="./api">API docs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <section id="about" data-materialize-scrollspy="true">
+            <h1>About this repo</h1>
+            <div class="row">
+                <div class="col l4 m12 s12">
+                    <h2>What is Yii2?</h2>
+
+                    <p class="flow-text">
+                        This is best explained by the folks at Yii themselves:
+                    </p>
+
+                    <blockquote class="flow-text">
+                        Yii is a free, open-source Web application development framework written in PHP5 that promotes
+                        clean, DRY design and encourages rapid development. It works to streamline your application
+                        development and helps to ensure an extremely efficient, extensible, and maintainable end
+                        product.
+                    </blockquote>
+
+                    <p class="flow-text">
+                        To learn more, head over to <a target="_blank" href="http://yiiframework.com">the official Yii
+                        website</a>
+                    </p>
+
+                </div>
+                <div class="col l4 m12 s12">
+                    <h2>What is Materialize?</h2>
+
+                    <p class="flow-text">
+                        Materialize is a bunch of CSS components based on Google's Material Design.
+                    </p>
+
+                    <blockquote class="flow-text">
+                        Created and designed by Google, Material Design is a design language that combines the classic
+                        principles of successful design along with innovation and technology. Google's goal is to
+                        develop a
+                        system of design that allows for a unified user experience across all their products on any
+                        platform.
+                    </blockquote>
+
+                    <p class="flow-text">
+                        For a full overview of all Materialize features visit the
+                        <a target="_blank" href="http://materializecss.com/">project website</a>.
+                    </p>
+
+                </div>
+                <div class="col l4 m12 s12">
+                    <h2>Wiring up</h2>
+
+                    <p class="flow-text">
+                        As a de facto standard Yii2 is shipped with a Bootstrap extension allowing for out of the box
+                        styled views in your application.
+                        <br><br>
+                        This repo provides an alternative to Bootstrap by implementing Materialize into Yii2.
+                        <br><br>
+                        Bootstrap is a really fine piece of CSS (especially with version 4 on the horizon). The
+                        intention
+                        of this repo is to show you another CSS framework and maybe to encourage you to use it your next
+                        Yii2 application.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" data-materialize-scrollspy="true">
+            <h1>Get it for your project</h1>
+
+            <h2>Releases</h2>
+            <div class="row">
+                <div class="col l4 s12 icon icon-box">
+                    <a href="https://github.com/MacGyer/yii2-materializecss/releases/latest" target="_blank" class="z-depth-1"><span class="fa fa-tag"></span>Latest release</a>
+                </div>
+
+                <div class="col l4 s12 icon icon-box">
+                    <a href="https://github.com/MacGyer/yii2-materializecss/releases/" target="_blank" class="z-depth-1"><span class="fa fa-tags"></span>All releases</a>
+                </div>
+
+                <div class="col l4 s12 icon icon-box">
+                    <a href="https://github.com/MacGyer/yii2-materializecss" target="_blank" class="z-depth-1"><span class="fa fa-github"></span>View on Github</a>
+                </div>
+            </div>
+
+            <h2>Download</h2>
+            <div class="row">
+                <div class="col l6 s12 icon icon-box">
+                    <a href="https://github.com/MacGyer/yii2-materializecss/zipball/master" target="_blank" class="z-depth-1"><span class="fa fa-download"></span>Download zip</a>
+                </div>
+
+                <div class="col l6 s12 icon icon-box">
+                    <a href="https://github.com/MacGyer/yii2-materializecss/tarball/master" target="_blank" class="z-depth-1"><span class="fa fa-download"></span>Download tar</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started" data-materialize-scrollspy="true">
+            <h1>Getting started</h1>
+
+            <h2>Get Composer</h2>
+            <p class="flow-text">
+                The preferred way of installation is through Composer. If you don't have Composer you can get it here:
+                <a target="_blank" href="https://getcomposer.org/">https://getcomposer.org/</a>
+                <br><br>
+                You also should install the Composer Asset Plugin to handle NPM and Bower assets:
+            </p>
+
+            <div class="prism z-depth-1">
+                <pre>
+                    <code class="language-bash" id="composer-fxp">
+                        $ composer global require "fxp/composer-asset-plugin:~1.1"
+                    </code>
+                </pre>
+            </div>
+            <div class="clipboard">
+                <button type="button" class="btn btn-flat" data-clipboard-target="#composer-fxp"><span class="fa fa-clipboard"></span>Copy to clipboard</button>
+            </div>
+
+            <h2>Configure your app dependencies</h2>
+            <p class="flow-text">
+                To install the package add the following to the require section of your composer.json:
+            </p>
+
+            <div class="prism z-depth-1">
+                <pre>
+                    <code class="language-json" id="composer-require">
+                        "require": {
+                            "macgyer/yii2-materializecss": "*"
+                        },
+                    </code>
+                </pre>
+            </div>
+            <div class="clipboard">
+                <button type="button" class="btn btn-flat" data-clipboard-target="#composer-require"><span class="fa fa-clipboard"></span>Copy to clipboard</button>
+            </div>
+
+            <h2>Load Materialize</h2>
+            <p class="flow-text">
+                To load the Materialize CSS files integrate the <span class="">MaterializeAsset.php</span> into your
+                app.
+                One way to achieve this
+                is to register the asset in the main layout:
+            </p>
+
+            <div class="prism z-depth-1">
+                <pre>
+                    <code class="language-php" id="asset-register">
+                        // @app/views/layouts/main.php
+
+                        \macgyer\yii2materializecss\assets\MaterializeAsset::register($this);
+
+                        // further code
+                    </code>
+                </pre>
+            </div>
+            <div class="clipboard">
+                <button type="button" class="btn btn-flat" data-clipboard-target="#asset-register"><span class="fa fa-clipboard"></span>Copy to clipboard</button>
+            </div>
+
+            <p class="flow-text">
+                Another way is to define a dependency in your app wide <span class="">AppAsset.php</span>
+            </p>
+
+            <div class="prism z-depth-1">
+                <pre>
+                    <code class="language-php" id="asset-dependency">
+                        // @app/assets/AppAsset.php
+
+                        public $depends = [
+                            'macgyer\yii2materializecss\assets\MaterializeAsset',
+
+                            // more dependencies
+                        ];
+                    </code>
+                </pre>
+            </div>
+            <div class="clipboard">
+                <button type="button" class="btn btn-flat" data-clipboard-target="#asset-dependency"><span class="fa fa-clipboard"></span>Copy to clipboard</button>
+            </div>
+        </section>
+
+        <section id="widgets" data-materialize-scrollspy="true">
+            <h1>Widgets</h1>
+
+            <h2>Currently available</h2>
+
+            <div class="row">
+                <div class="col l6 m6 s12">
+                    <ul class="collection">
+                        <li class="collection-item">ActiveField</li>
+                        <li class="collection-item">ActiveForm</li>
+                        <li class="collection-item">Alert</li>
+                        <li class="collection-item">Breadcrumbs<span class="badge updated">1.0.5</span></li>
+                        <li class="collection-item">Button</li>
+                        <li class="collection-item">Chip</li>
+                        <li class="collection-item">DatePicker</li>
+                        <li class="collection-item">DetailView</li>
+                        <li class="collection-item">Dropdown</li>
+                    </ul>
+                </div>
+                <div class="col l6 m6 s12">
+                    <ul class="collection">
+                        <li class="collection-item">Fixed Action Button</li>
+                        <li class="collection-item">GridView with ActionColumn</li>
+                        <li class="collection-item">Icon</li>
+                        <li class="collection-item">Modal</li>
+                        <li class="collection-item">Nav</li>
+                        <li class="collection-item">NavBar</li>
+                        <li class="collection-item">Progress</li>
+                        <li class="collection-item">Spinner</li>
+                        <li class="collection-item">SwitchButton</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Planned for development</h2>
+
+            <ul class="collection">
+                <li class="collection-item">Collapsible</li>
+                <li class="collection-item"><span class="badge planned">1.0.7</span>Collection</li>
+                <li class="collection-item"><span class="badge planned">1.0.7</span>Toast</li>
+            </ul>
+        </section>
+
+        <section id="gii" data-materialize-scrollspy="true">
+            <h1>Gii Support</h1>
+
+            <p class="flow-text">
+                If you are creating your CRUD controller and view files using Gii you can get materialized view files by
+                integrating the adapted Gii templates.
+            </p>
+
+            <div class="prism z-depth-1">
+                <pre>
+                    <code class="language-php" id="gii-support">
+                        // @app/config/main-local.php
+
+                        $config['modules']['gii'] = [
+                            'class' => 'yii\gii\Module',
+                            'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '192.168.178.20'],
+                            'generators' => [
+                                'crud' => [
+                                    'class' => 'yii\gii\generators\crud\Generator',
+                                    'templates' => [ // setting materializecss templates
+                                        'materializecss' => '@vendor/macgyer/yii2-materializecss/src/gii-templates/generators/crud/materializecss',
+                                    ]
+                                ]
+                            ],
+                        ];
+                    </code>
+                </pre>
+            </div>
+            <div class="clipboard">
+                <button type="button" class="btn btn-flat" data-clipboard-target="#gii-support"><span class="fa fa-clipboard"></span>Copy to clipboard</button>
+            </div>
+
+            <p class="flow-text">
+                You can copy those templates to any location you wish for further customization. Make sure you adapt the
+                path accordingly in your config.
+            </p>
+        </section>
+
+        <section id="issues" data-materialize-scrollspy="true">
+            <h1>Known issues</h1>
+
+            <p class="flow-text">
+                Yay, everything seems to be fine...
+            </p>
+        </section>
+
+        <section id="sample-layout" data-materialize-scrollspy="true">
+            <h1>Sample layout</h1>
+
+            <p class="flow-text">
+                As of version 1.0.6 there is a sample layout file included in the package. You can use this
+                file to get inspiration for your own layout or replace the respective views/layouts/main.php
+                with the file provided.
+                <br><br>
+                You can find the sample layout file in src/layout/main.php.
+            </p>
+        </section>
+
+        <section id="changelog" data-materialize-scrollspy="true">
+            <h1>Change log</h1>
+
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>1.0.6 - 2016-05-16</h5></li>
+                <li class="collection-item">added sample layout</li>
+                <li class="collection-item">fixed line separators</li>
+                <li class="collection-item">removed Datepicker issue from section "Known issues"</li>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>1.0.5 - 2016-04-24</h5></li>
+                <li class="collection-item">updated README with fixed Datepicker issue</li>
+                <li class="collection-item">refactored Breadcrumbs</li>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>1.0.3 - 2016-03-10</h5></li>
+                <li class="collection-item">fixed multiple usage of MaterializeWidgetTrait producing bugs</li>
+                <li class="collection-item">updated PHPDoc in NavBar</li>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>1.0.2 - 2016-03-09</h5></li>
+                <li class="collection-item">added Spinner</li>
+                <li class="collection-item">added Progress</li>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>1.0.1 - 2016-03-09</h5></li>
+                <li class="collection-item">updated README</li>
+                <li class="collection-item">added Packagist support</li>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>1.0.0 - 2016-03-09</h5></li>
+                <li class="collection-item">Initial release</li>
+            </ul>
+        </section>
+    </div>
+</main>
+
+<footer class="page-footer footer">
+    <div class="container center">
+        <p>
+            This repo is maintained by <a target="_blank" href="https://github.com/MacGyer">MacGyer</a><br>
+            <br>
+            All rights reserved.<br>
+            Issued under <a href="https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE" target="_blank" title="License">BSD-3-Clause</a>
+        </p>
+    </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/materialize.min.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/clipboard.min.js"></script>
+<script src="assets/js/yii2-materializecss.min.js"></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-36746811-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

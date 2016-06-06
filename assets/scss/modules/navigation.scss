@@ -1,0 +1,44 @@
+.navigation {
+
+    ul {
+
+        a {
+
+            &:hover,
+            &:focus {
+                background-color: $pinkDarken1;
+            }
+
+            .fa {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+.side-nav {
+
+    li:hover,
+    li.active {
+        background: transparent;
+
+        a {
+            color: #fff;
+        }
+    }
+}
+
+.dropdown-content {
+
+    &.active {
+
+        a {
+            color: $blueGreyDarken4;
+
+            &:hover,
+            &:focus {
+                color: #fff;
+            }
+        }
+    }
+}

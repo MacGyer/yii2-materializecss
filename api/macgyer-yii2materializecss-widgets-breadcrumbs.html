@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/936b3706/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/1df9fa34/solarized_light.css" rel="stylesheet">
+<link href="./assets/ee6d4738/style.css" rel="stylesheet">
+<script src="./assets/ba5c5eb/jquery.js"></script>
+<script src="./assets/936b3706/js/bootstrap.js"></script>
+<script src="./assets/3a66db3c/jssearch.js"></script>    <title>Breadcrumbs, macgyer\yii2materializecss\widgets\Breadcrumbs - yii2-materializecss API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w110" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w110-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">yii2-materializecss API Documentation</a></div><div id="w110-collapse" class="collapse navbar-collapse"><ul id="w111" class="navbar-nav nav"><li><a href="../">Back to README</a></li>
+<li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-104" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\assets <b class="caret"></b></a><div id="navigation-104" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializeasset.html">MaterializeAsset</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializefontasset.html">MaterializeFontAsset</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-assets-materializepluginasset.html">MaterializePluginAsset</a></div>
+<a class="list-group-item" href="#navigation-105" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\lib <b class="caret"></b></a><div id="navigation-105" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-lib-baseinputwidget.html">BaseInputWidget</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-basewidget.html">BaseWidget</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-html.html">Html</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-lib-materializewidgettrait.html">MaterializeWidgetTrait</a></div>
+<a class="list-group-item active" href="#navigation-106" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets <b class="caret"></b></a><div id="navigation-106" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-alert.html">Alert</a>
+<a class="list-group-item active" href="./macgyer-yii2materializecss-widgets-breadcrumbs.html">Breadcrumbs</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-button.html">Button</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-chip.html">Chip</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-dropdown.html">Dropdown</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-fixedactionbutton.html">FixedActionButton</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-icon.html">Icon</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-modal.html">Modal</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-nav.html">Nav</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-navbar.html">NavBar</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-progress.html">Progress</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-spinner.html">Spinner</a></div>
+<a class="list-group-item" href="#navigation-107" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\data <b class="caret"></b></a><div id="navigation-107" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-data-detailview.html">DetailView</a></div>
+<a class="list-group-item" href="#navigation-108" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\form <b class="caret"></b></a><div id="navigation-108" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-activefield.html">ActiveField</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-activeform.html">ActiveForm</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-datepicker.html">DatePicker</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-form-switchbutton.html">SwitchButton</a></div>
+<a class="list-group-item" href="#navigation-109" data-toggle="collapse" data-parent="#navigation">macgyer\yii2materializecss\widgets\grid <b class="caret"></b></a><div id="navigation-109" class="submenu panel-collapse collapse"><a class="list-group-item" href="./macgyer-yii2materializecss-widgets-grid-actioncolumn.html">ActionColumn</a>
+<a class="list-group-item" href="./macgyer-yii2materializecss-widgets-grid-gridview.html">GridView</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class macgyer\yii2materializecss\widgets\Breadcrumbs</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a> &raquo;
+yii\widgets\Breadcrumbs</td></tr>
+                                        </table>
+
+<div class="class-description">
+    <p><strong>Breadcrumbs displays a list of links indicating the position of the current page in the whole site hierarchy.</strong></p>
+    <p>For example, breadcrumbs like "Home / Sample Post / Edit" means the user is viewing an edit page
+for the "Sample Post". He can click on "Sample Post" to view that page, or he can click on "Home"
+to return to the homepage.</p>
+<p>To use Breadcrumbs, you need to configure its <code>$links</code> property (inherited from
+<a href="http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html">yii\widgets\Breadcrumbs</a>) , which specifies the links to be
+displayed.</p>
+<p>For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// $this is the view object currently being used</span>
+<span class="hljs-keyword">echo</span> Breadcrumbs::widget([
+    <span class="hljs-string">'itemTemplate'</span> =&gt; <span class="hljs-string">"&lt;i&gt;{link}&lt;/i&gt;\n"</span>, <span class="hljs-comment">// template for all links</span>
+    <span class="hljs-string">'links'</span> =&gt; [
+        [
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Post Category'</span>,
+            <span class="hljs-string">'url'</span> =&gt; [<span class="hljs-string">'post-category/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">10</span>],
+            <span class="hljs-string">'template'</span> =&gt; <span class="hljs-string">"&lt;b&gt;{link}&lt;/b&gt;\n"</span>, <span class="hljs-comment">// template for this link only</span>
+        ],
+        [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'Sample Post'</span>, <span class="hljs-string">'url'</span> =&gt; [<span class="hljs-string">'post/edit'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>]],
+        <span class="hljs-string">'Edit'</span>,
+    ],
+]);
+</code></pre>
+<p>Because breadcrumbs usually appear in nearly every page of a website, you may consider placing it in a layout view.
+You can use a view parameter (e.g. <code>$this-&gt;params['breadcrumbs']</code>) to configure the links in different
+views. In the layout view, you assign this view parameter to the <code>$links</code> property like the following:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// $this is the view object currently being used</span>
+<span class="hljs-keyword">echo</span> Breadcrumbs::widget([
+    <span class="hljs-string">'links'</span> =&gt; <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$this</span>-&gt;params[<span class="hljs-string">'breadcrumbs'</span>]) ? <span class="hljs-variable">$this</span>-&gt;params[<span class="hljs-string">'breadcrumbs'</span>] : [],
+]);
+</code></pre>
+
+    <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html">yii\widgets\Breadcrumbs</a>.</p></div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$activeItemTemplate">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$activeItemTemplate-detail">$activeItemTemplate</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The template used to render each active item in the breadcrumbs.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+            <tr id="$containerOptions">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$containerOptions-detail">$containerOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The HTML options for the surrounding "nav" tag.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+            <tr id="$innerContainerOptions">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$innerContainerOptions-detail">$innerContainerOptions</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The HTML options for the inner container tag.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+            <tr id="$itemTemplate">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$itemTemplate-detail">$itemTemplate</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The template used to render each inactive item in the breadcrumbs.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+            <tr id="$options">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$options-detail">$options</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The HTML options for the wrapper tag.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+            <tr id="$tag">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$tag-detail">$tag</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The name of the wrapper tag for the breadcrumbs list.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="init()">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#init()-detail">init()</a></td>
+        <td>Initializes the widget.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+                    <tr id="run()">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#run()-detail">run()</a></td>
+        <td>Renders the widget.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+            <tr id="prepareLinks()">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#prepareLinks()-detail">prepareLinks()</a></td>
+        <td>Generates all breadcrumb links and sets active states.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+            <tr id="renderItem()">
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#renderItem()-detail">renderItem()</a></td>
+        <td>Renders a single breadcrumb item.</td>
+        <td><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html">macgyer\yii2materializecss\widgets\Breadcrumbs</a></td>
+    </tr>
+        </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$activeItemTemplate-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$activeItemTemplate-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $activeItemTemplate        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The template used to render each active item in the breadcrumbs. The token <code>{link}</code>
+will be replaced with the actual HTML link for each active item.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$activeItemTemplate-detail">$activeItemTemplate</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"&lt;span&nbsp;class=\"breadcrumb&nbsp;active\"&gt;{link}&lt;/span&gt;\n"</span></div>
+
+
+    <div class="detail-header h3" id="$containerOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$containerOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $containerOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The HTML options for the surrounding "nav" tag.</p>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">yii\helpers\BaseHtml::renderTagAttributes()</a> for details on
+how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$containerOptions-detail">$containerOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$innerContainerOptions-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$innerContainerOptions-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $innerContainerOptions        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The HTML options for the inner container tag.</p>
+<p>Set this to 'false' if you do not want the inner container to be rendered.
+The following special options are recognized:</p>
+<ul>
+<li>tag: string, defaults to "div", the name of the inner container tag.</li>
+</ul>
+
+        <p>See also:</p><ul><li><a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">yii\helpers\BaseHtml::renderTagAttributes()</a> for details on
+how attributes are being rendered.</li><li><a href="https://github.com/MacGyer/yii2-materializecss/pull/5">https://github.com/MacGyer/yii2-materializecss/pull/5</a></li></ul>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$innerContainerOptions-detail">$innerContainerOptions</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$itemTemplate-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$itemTemplate-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $itemTemplate        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The template used to render each inactive item in the breadcrumbs. The token <code>{link}</code>
+will be replaced with the actual HTML link for each inactive item.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$itemTemplate-detail">$itemTemplate</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"{link}\n"</span></div>
+
+
+    <div class="detail-header h3" id="$options-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$options-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $options        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The HTML options for the wrapper tag.</p>
+
+        <p>See also <a href="http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail">yii\helpers\BaseHtml::renderTagAttributes()</a> for details on
+how attributes are being rendered.</p>    </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$options-detail">$options</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+
+    <div class="detail-header h3" id="$tag-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$tag-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $tag        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The name of the wrapper tag for the breadcrumbs list.
+defaults to "div"</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#$tag-detail">$tag</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'div'</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="init()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#init()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        init()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Initializes the widget.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#init()-detail">init</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="prepareLinks()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#prepareLinks()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        prepareLinks()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Generates all breadcrumb links and sets active states.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#prepareLinks()-detail">prepareLinks</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>All processed items</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col">\yii\base\InvalidConfigException</td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="renderItem()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#renderItem()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        renderItem()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders a single breadcrumb item.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#renderItem()-detail">renderItem</a></strong> ( <span style="color: #0000BB">$link</span>, <span style="color: #0000BB">$template</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$link</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The link to be rendered. It must contain the "label" element. The "url" element is optional.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$template</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The template to be used to rendered the link. The token "{link}" will be replaced by the link.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The rendering result</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col">\yii\base\InvalidConfigException</td>
+                  <td class="param-desc-col"><p>if <code>$link</code> does not have "label" element.</p>
+</td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="run()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="macgyer-yii2materializecss-widgets-breadcrumbs.html#run()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        run()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Renders the widget.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="macgyer-yii2materializecss-widgets-breadcrumbs.html#run()-detail">run</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The result of widget execution to be outputted.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+    <div class="wrap">
+                <p class="pull-right"><small>Page generated on Mon, 06 Jun 2016 20:22:03 +0000</small></p>
+        Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>    </div>
+</footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

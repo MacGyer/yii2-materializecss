@@ -1,0 +1,52 @@
+* {
+    font-family: Roboto, sans-serif;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: $blueGreyDarken4;
+
+    + h2 {
+        margin-top: 1rem;
+    }
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: $blueGreyDarken4;
+    margin-top: 2.9rem;
+}
+
+h3 {
+
+}
+
+p {
+
+    a {
+        color: $brown;
+
+        &:hover,
+        &:focus {
+            color: $pinkDarken1;
+        }
+    }
+    
+    &.outdated {
+        text-decoration: line-through;
+    }
+}
+
+a {
+    transition: all 250ms;
+}
+
+blockquote {
+    font-style: italic;
+    line-height: 2.5rem;
+    border-left-color: $brownLighten3;
+}
+
+section {
+    margin-bottom: 3.8rem;
+}

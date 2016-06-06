@@ -1,0 +1,25 @@
+.clipboard {
+    text-align: right;
+    margin-top: -0.45rem;
+    overflow: hidden;
+
+    button {
+        text-transform: none;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 0.85rem;
+        height: inherit;
+        line-height: 1;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            box-shadow: none;
+            color: $pinkDarken1;
+        }
+
+        .fa {
+            margin-right: 0.5rem;
+        }
+    }
+}
