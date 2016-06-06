@@ -15,9 +15,35 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Nav
+ * Nav renders a navigation items list.
+ *
+ * ```php
+ * echo Nav::widget([
+ *     'items' => [
+ *         [
+ *             'label' => 'Home',
+ *             'url' => ['site/index'],
+ *             'linkOptions' => [...],
+ *         ],
+ *         [
+ *             'label' => 'Dropdown',
+ *             'items' => [
+ *                  ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+ *                  ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
+ *             ],
+ *         ],
+ *         [
+ *             'label' => 'Login',
+ *             'url' => ['site/login'],
+ *             'visible' => Yii::$app->user->isGuest
+ *         ],
+ *     ],
+ * ]);
+ * ```
+ *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
+ * @see http://materializecss.com/navbar.html
  */
 class Nav extends BaseWidget
 {
@@ -78,6 +104,8 @@ class Nav extends BaseWidget
      * which is displayed next to the button text to indicate the drop down functionality.
      * Defaults to `null` which means `<i class="material-icons right">arrow_drop_down</i>` will be used.
      * To disable the caret, set this property to be an empty string.
+     *
+     * @see http://materializecss.com/navbar.html#navbar-dropdown
      */
     public $dropDownCaret;
 
@@ -185,6 +213,8 @@ class Nav extends BaseWidget
      * @return string the rendering result.
      * @throws \Exception
      * @since 2.0.1
+     *
+     * @see http://materializecss.com/navbar.html#navbar-dropdown
      */
     protected function renderDropdown($items, $parentItem, $targetId)
     {
