@@ -33,6 +33,7 @@ class MaterializePluginAsset extends AssetBundle
      * @var array list of bundle class names that this bundle depends on.
      */
     public $depends = [
-        'yii\web\JqueryAsset'
+        'yii\web\JqueryAsset',
+        'macgyer\yii2materializecss\assets\PickadateAsset',
     ];
 }
