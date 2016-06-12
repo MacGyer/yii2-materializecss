@@ -3,6 +3,7 @@
     "minimum-stability": "stable",
     "description": "Materialize CSS implementation for Yii2",
     "keywords": ["materialize", "yii2", "widgets", "material design"],
+    "homepage": "http://macgyer.github.io/yii2-materializecss",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "authors": [

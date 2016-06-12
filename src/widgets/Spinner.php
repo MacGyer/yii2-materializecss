@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -6,27 +11,39 @@ use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * Class Spinner
- * @package macgyer\yii2materializecss\widgets
+ * Spinner renders a circular loading animation.
+ *
+ * When displaying a spinner you can choose to let the colors change with every rotation.
+ *
+ * @see Progress|Progress
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @since 1.0.2
+ * @package widgets
  */
 class Spinner extends BaseWidget
 {
     /**
-     * @var array the HTML attributes for the widget container tag
+     * @var array the HTML attributes for the widget container tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $options = [];
 
     /**
-     * @var array the HTML attributes for the spinner
+     * @var array the HTML attributes for the spinner.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * If [[flashColors]] is set to "true" these options will be applied to all spinner simultaneously.
+     *
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $spinnerOptions = [];
 
     /**
-     * @var bool whether to show alternating colors in spinner
+     * @var boolean whether to show alternating colors in spinner.
+     *
+     * If this is set to "true" the spinner will continously alternate its colors between blue, red, yellow and green.
      *
      * @see http://materializecss.com/preloader.html
      */
@@ -43,7 +60,7 @@ class Spinner extends BaseWidget
     ];
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      */
     public function init()
     {
@@ -56,6 +73,7 @@ class Spinner extends BaseWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @uses [[renderSpinner()]]
      */
     public function run()
     {
@@ -83,9 +101,10 @@ class Spinner extends BaseWidget
     }
 
     /**
+     * Renders a single spinner.
      * @return string
      */
-    private function renderSpinner()
+    protected function renderSpinner()
     {
         $html = [
             '<div class="circle-clipper left">',

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets\form;
 
@@ -16,22 +21,25 @@ use yii\helpers\ArrayHelper;
 
 
 /**
- * Class ActiveField
- * @package macgyer\yii2materializecss\widgets\form
+ * ActiveField represents a form input field within an [yii\widgets\ActiveForm](http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html).
+ * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage form
  */
 class ActiveField extends \yii\widgets\ActiveField
 {
     /**
      * @var array the HTML attributes (name-value pairs) for the field container tag.
-     * The values will be HTML-encoded using [[Html::encode()]].
+     * The values will be HTML-encoded using [Html::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
      * If a value is null, the corresponding attribute will not be rendered.
      * The following special options are recognized:
      *
      * - tag: the tag name of the container element. Defaults to "div".
      *
-     * If you set a custom `id` for the container element, you may need to adjust the [[$selectors]] accordingly.
+     * If you set a custom `id` for the container element, you may need to adjust the [$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $options = ['class' => 'input-field'];
 
@@ -43,48 +51,48 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * @var array the default options for the input tags. The parameter passed to individual input methods
-     * (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
+     * (e.g. [textInput()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#textInput()-detail)) will be merged with this property when rendering the input tag.
      *
-     * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
+     * If you set a custom `id` for the input element, you may need to adjust the [$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $inputOptions = [];
 
     /**
-     * @var array the default options for the error tags. The parameter passed to [[error()]] will be
+     * @var array the default options for the error tags. The parameter passed to [yii\widgets\ActiveField::error()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#error()-detail) will be
      * merged with this property when rendering the error tag.
      * The following special options are recognized:
      *
      * - tag: the tag name of the container element. Defaults to "div".
      * - encode: whether to encode the error output. Defaults to true.
      *
-     * If you set a custom `id` for the error element, you may need to adjust the [[$selectors]] accordingly.
+     * If you set a custom `id` for the error element, you may need to adjust the [yii\widgets\ActiveField::$selectors](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#$selectors-detail) accordingly.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $errorOptions = ['class' => 'help-block'];
 
     /**
-     * @var array the default options for the label tags. The parameter passed to [[label()]] will be
+     * @var array the default options for the label tags. The parameter passed to [label()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#label()-detail) will be
      * merged with this property when rendering the label tag.
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $labelOptions = [];
 
     /**
-     * @var array the default options for the hint tags. The parameter passed to [[hint()]] will be
+     * @var array the default options for the hint tags. The parameter passed to [yii\widgets\ActiveField::hint()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#hint()-detail) will be
      * merged with this property when rendering the hint tag.
      * The following special options are recognized:
      *
      * - tag: the tag name of the container element. Defaults to "div".
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $hintOptions = ['class' => 'hint-block'];
 
     /**
-     * @var array the options for the optional prefix icon
+     * @var array the options for the optional prefix icon.
      *
      * To specify an icon you can use the following parameters
      *
@@ -94,11 +102,12 @@ class ActiveField extends \yii\widgets\ActiveField
      *     'options' => 'the HTML attributes for the img',  // optional
      * ]
      * ```
+     * @see Icon|Icon
      */
     public $icon;
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      */
     public function init()
     {
@@ -151,6 +160,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders an icon.
      * @return ActiveField
      * @throws \Exception
      */
@@ -171,6 +181,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a color input.
      * @param array $options
      * @return ActiveField
      */
@@ -181,6 +192,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders a date input.
      * @param array $options
      * @return ActiveField
      */
@@ -191,6 +203,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders a datetime input.
      * @param array $options
      * @return ActiveField
      */
@@ -201,6 +214,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders a datetime local input.
      * @param array $options
      * @return ActiveField
      */
@@ -211,6 +225,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
     
     /**
+     * Renders an email input.
      * @param array $options
      * @return ActiveField
      */
@@ -223,6 +238,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a month input.
      * @param array $options
      * @return ActiveField
      */
@@ -233,6 +249,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a number input.
      * @param array $options
      * @return ActiveField
      */
@@ -243,6 +260,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a range input.
      * @param array $options
      * @return ActiveField
      */
@@ -253,6 +271,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a search input.
      * @param array $options
      * @return ActiveField
      */
@@ -263,6 +282,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a phone input.
      * @param array $options
      * @return ActiveField
      */
@@ -273,6 +293,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a time input.
      * @param array $options
      * @return ActiveField
      */
@@ -283,6 +304,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders an URL input.
      * @param array $options
      * @return ActiveField
      */
@@ -293,6 +315,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a week input.
      * @param array $options
      * @return ActiveField
      */
@@ -303,6 +326,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a textarea.
      * @param array $options
      * @return ActiveField
      */

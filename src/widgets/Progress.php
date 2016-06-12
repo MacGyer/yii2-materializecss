@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -6,27 +11,56 @@ use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * Class Progress
- * @package macgyer\yii2materializecss\widgets
+ * Progress renders a linear progress bar.
+ *
+ * Use this widget to give the user feedback about the loading of content or if you have actions that require multiple
+ * steps to complete.
+ *
+ * There are two types of progress bars available:
+ * - inderterminated with an animated recurring bar
+ * - determinated with a defined length
+ *
+ * For an indeterminated progress bar simply add the following
+ *
+ * ```php
+ * <?= Progress::widget() ?>
+ * ```
+ *
+ * To render an determinated progress bar with an initial value set [[value]] to the desired value and
+ * change [[type]] to "determinate"
+ *
+ * ```php
+ * <?= Progress::widget([
+ *      'type' => 'determinate',
+ *      'value' => 10
+ * ]) ?>
+ * ```
+ *
+ * @see Spinner|Spinner
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @since 1.0.2
+ * @package widgets
  */
 class Progress extends BaseWidget
 {
     /**
      * @var array the HTML attributes for the widget container tag
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $options = [];
 
     /**
-     * @var array the HTML attributes for the progress tag
+     * @var array the HTML attributes for the progress tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $progressOptions = [];
 
     /**
-     * @var string the type of the progress bar
+     * @var string the type of the progress bar.
      *
      * The following options are supported:
      *
@@ -38,19 +72,21 @@ class Progress extends BaseWidget
     public $type = 'indeterminate';
 
     /**
-     * @var int the (initial) value for 'determinate' progress bars
+     * @var integer the (initial) value for 'determinate' progress bars.
      *
      * The supported range is [0 ... 100].
      * This value will be applied as inline CSS style to show the progress:
      *
+     * ```
      * <div class="determinate" style="width: 70%"></div>
+     * ```
      *
      * @see http://materializecss.com/preloader.html
      */
     public $value = 0;
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      */
     public function init()
     {

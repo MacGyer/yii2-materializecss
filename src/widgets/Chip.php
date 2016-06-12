@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -8,10 +13,14 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Chip
- * @package macgyer\yii2materializecss\widgets
+ * Chip renders small units of information.
+ *
+ * An Usual use case is the displaying of tags or contact information.
+ *
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  *
  * @see http://materializecss.com/chips.html
+ * @package widgets
  */
 class Chip extends BaseWidget
 {
@@ -20,55 +29,60 @@ class Chip extends BaseWidget
      *
      * - tag: string, defaults to "div", the name of the container tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $options;
 
     /**
-     * @var string the content of the chip besides the optional image and/or icon
+     * @var string the content of the chip besides the optional image and/or [[Icon|Icon]].
      */
     public $content;
 
     /**
-     * @var bool whether to encode the content
+     * @var boolean whether to encode the content.
+     *
+     * If this property is set to "false" the content will be rendered without the encoding of HTML special characters.
      */
     public $encodeContent = true;
 
     /**
-     * @var array the HTML attributes for the img tag
+     * @var array the HTML attributes for the img tag.
      *
-     * Specifiy at least the "src" key representing the source of the image
+     * Specifiy at least the `src` key representing the source of the image.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
+     * for details on how attributes are being rendered.
      */
     public $imageOptions;
 
     /**
-     * @var array the options for the optional icon
+     * @var array the options for the optional [[Icon|Icon]].
      *
-     * if there is an icon present in the chip element, materializecss will treat it as a close (i. e. remove) trigger.
+     * If there is an icon present in the chip element, Materialize will 
+     * treat it as a close (i. e. remove) trigger.
      *
-     * To specify an icon you can use the following parameters
-     *
+     * To specify an [[Icon|Icon]] you can use the following parameters:
+     * 
      * ```php
      * [
      *     'name' => 'name of the icon',                    // optional, defaults to 'close'
      *     'position' => 'position of the icon',            // optional, 'left' or 'right', defaults to 'left'
-     *     'options' => 'the HTML attributes for the img',  // optional
+     *     'options' => 'the HTML attributes for the icon', // optional
      * ]
      * ```
      *
-     * @see macgyer\yii2materializecss\widgetsIcon::run()
+     * @see Icon|Icon
      */
     public $icon;
 
     /**
-     * @var bool whether to render the icon inside the chip
+     * @var boolean whether to render the [[Icon|Icon]] inside the chip.
      */
     public $renderIcon = false;
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      *
      * @throws InvalidConfigException if the src property ot the image is not defined
      */
@@ -90,6 +104,7 @@ class Chip extends BaseWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @uses [[Icon]]
      */
     public function run()
     {

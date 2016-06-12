@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -8,28 +13,70 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class Breadcrumbs
- * @package macgyer\yii2materializecss\widgets
+ * Breadcrumbs displays a list of links indicating the position of the current page in the whole site hierarchy.
+ *
+ * For example, breadcrumbs like "Home / Sample Post / Edit" means the user is viewing an edit page
+ * for the "Sample Post". He can click on "Sample Post" to view that page, or he can click on "Home"
+ * to return to the homepage.
+ *
+ * To use Breadcrumbs, you need to configure its `$links` property (inherited from 
+ * [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)) , which specifies the links to be 
+ * displayed. 
+ * 
+ * For example,
+ *
+ * ```php
+ * // $this is the view object currently being used
+ * echo Breadcrumbs::widget([
+ *     'itemTemplate' => "<i>{link}</i>\n", // template for all links
+ *     'links' => [
+ *         [
+ *             'label' => 'Post Category',
+ *             'url' => ['post-category/view', 'id' => 10],
+ *             'template' => "<b>{link}</b>\n", // template for this link only
+ *         ],
+ *         ['label' => 'Sample Post', 'url' => ['post/edit', 'id' => 1]],
+ *         'Edit',
+ *     ],
+ * ]);
+ * ```
+ *
+ * Because breadcrumbs usually appear in nearly every page of a website, you may consider placing it in a layout view.
+ * You can use a view parameter (e.g. `$this->params['breadcrumbs']`) to configure the links in different
+ * views. In the layout view, you assign this view parameter to the `$links` property like the following:
+ *
+ * ```php
+ * // $this is the view object currently being used
+ * echo Breadcrumbs::widget([
+ *     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+ * ]);
+ * ```
+ *
+ * @see [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class Breadcrumbs extends \yii\widgets\Breadcrumbs
 {
     /**
-     * @var string the wrapper for the breadcrumbs list
+     * @var string the name of the wrapper tag for the breadcrumbs list.
      * defaults to "div"
      */
     public $tag = 'div';
 
     /**
-     * @var array the HTML options for the surrounding "nav" tag
+     * @var array the HTML options for the surrounding "nav" tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
+     * how attributes are being rendered.
      */
     public $containerOptions = [];
 
     /**
-     * @var array the HTML options for the wrapper tag
+     * @var array the HTML options for the wrapper tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
+     * how attributes are being rendered.
      */
     public $options = [];
 
@@ -41,7 +88,8 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
      *
      * - tag: string, defaults to "div", the name of the inner container tag.
      *
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
+     * how attributes are being rendered.
      * @see https://github.com/MacGyer/yii2-materializecss/pull/5
      */
     public $innerContainerOptions = [];
@@ -59,7 +107,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     public $activeItemTemplate = "<span class=\"breadcrumb active\">{link}</span>\n";
 
     /**
-     * Initialize the widget.
+     * Initializes the widget.
      */
     public function init()
     {
@@ -78,6 +126,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
 
     /**
      * Renders the widget.
+     * @return string the result of widget execution to be outputted.
      */
     public function run()
     {
@@ -136,10 +185,12 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     }
 
     /**
-     * @return array
+     * Generates all breadcrumb links and sets active states.
+     * @return array all processed items
+     * @uses [[renderItem]]
      * @throws InvalidConfigException
      */
-    private function prepareLinks()
+    protected function prepareLinks()
     {
         $links = [];
         if ($this->homeLink === null) {

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets;
 
@@ -9,26 +14,31 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Dropdown renders a Bootstrap dropdown menu component.
+ * Dropdown renders a Materialize dropdown menu component.
  *
  * For example,
  *
  * ```php
  * <div class="dropdown">
- *     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Label <b class="caret"></b></a>
+ *     <a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
  *     <?php
  *         echo Dropdown::widget([
  *             'items' => [
  *                 ['label' => 'DropdownA', 'url' => '/'],
  *                 ['label' => 'DropdownB', 'url' => '#'],
  *             ],
+ *             'toggleTarget' => 'dropdown1'
  *         ]);
  *     ?>
  * </div>
  * ```
- * @see http://getbootstrap.com/javascript/#dropdowns
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
+ *
+ * Please make sure that you provide the trigger with a `data-activates` attribute and specify the value of this attribute
+ * in the [[toggleTarget]] property of the widget.
+ *
+ * @see http://materializecss.com/navbar.html#navbar-dropdown
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
  */
 class Dropdown extends BaseWidget
 {
@@ -37,7 +47,7 @@ class Dropdown extends BaseWidget
      * or an array representing a single menu with the following structure:
      *
      * - label: string, required, the label of the item link
-     * - url: string|array, optional, the url of the item link. This will be processed by [[Url::to()]].
+     * - url: string|array, optional, the url of the item link. This will be processed by [yii\helpers\Url::to()](http://www.yiiframework.com/doc-2.0/yii-helpers-baseurl.html#to()-detail).
      *   If not set, the item will be treated as a menu header when the item has no sub-menu.
      * - visible: boolean, optional, whether this menu item is visible. Defaults to true.
      * - linkOptions: array, optional, the HTML attributes of the item link.
@@ -47,20 +57,29 @@ class Dropdown extends BaseWidget
      * - submenuOptions: array, optional, the HTML attributes for sub-menu container tag. If specified it will be
      *   merged with [[submenuOptions]].
      *
-     * To insert divider use `<li role="presentation" class="divider"></li>`.
+     * To insert a divider use `<li class="divider"></li>`.
      */
     public $items = [];
+
     /**
      * @var boolean whether the labels for header items should be HTML-encoded.
      */
     public $encodeLabels = true;
+
     /**
      * @var array|null the HTML attributes for sub-menu container tags.
      * If not set - [[options]] value will be used for it.
-     * @since 2.0.5
      */
     public $submenuOptions;
 
+    /**
+     * @var string the HTML id of the dropdown.
+     *
+     * This property specifies the target which shall be activated by the dropdown trigger.
+     *
+     * If you defined the following trigger `<a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown</a>`
+     * your [[toggleTarget]] has to be set to "dropdown1".
+     */
     public $toggleTarget;
 
     /**
@@ -69,9 +88,9 @@ class Dropdown extends BaseWidget
      */
     public function init()
     {
+        // TODO: combined rendering of trigger and dropdown 1.0.8
+
         if ($this->submenuOptions === null) {
-            // copying of [[options]] kept for BC
-            // @todo separate [[submenuOptions]] from [[options]] completely before 2.1 release
             $this->submenuOptions = $this->options;
             unset($this->submenuOptions['id']);
         }
@@ -82,21 +101,30 @@ class Dropdown extends BaseWidget
     }
 
     /**
-     * Renders the widget.
+     * Renders the widget and registers the plugin asset.
+     *
+     * @return string the result of widget execution to be outputted.
+     * @uses [[renderItems()]]
+     * @uses MaterializePluginAsset
+     * @see MaterializePluginAsset|MaterializePluginAsset
+     * @see \macgyer\yii2materializecss\lib\MaterializeWidgetTrait|MaterializeWidgetTrait
      */
     public function run()
     {
         MaterializePluginAsset::register($this->getView());
         $this->registerClientEvents();
+
         return $this->renderItems($this->items, $this->options);
     }
 
     /**
      * Renders menu items.
+     *
      * @param array $items the menu items to be rendered
      * @param array $options the container HTML attributes
      * @return string the rendering result.
      * @throws InvalidConfigException if the label option is not specified in one of the items.
+     * @used-by [[run()]]
      */
     protected function renderItems($items, $options = [])
     {
