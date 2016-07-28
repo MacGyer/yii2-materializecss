@@ -105,6 +105,10 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
+### 1.0.7 - 2016-07-27
+* full source documentation
+* fixed Materialize version to 0.97.6 to monitor 0.97.7 release before integration
+
 ### 1.0.6 - 2016-05-16
 * added sample layout
 * fixed line separators
