@@ -51,7 +51,8 @@ class Alert extends BaseWidget
         'danger'  => 'danger',
         'success' => 'success',
         'info'    => 'info',
-        'warning' => 'warning'
+        'warning' => 'warning',
+        'default' => 'default',
     ];
 
     /**
