@@ -5,10 +5,17 @@ This package integrates the Materialize CSS framework into [Yii2](http://www.yii
 
 See [official documentation](http://macgyer.github.io/yii2-materializecss/) for detailed information.
 
+**New**: Have a look at the [official demo page](http://yii2-materializecss.pluspunkt-coding.de) to see the repo in action.
+
 ## Installation
 
 The preferred way of installation is through Composer.
 If you don't have Composer you can get it here: https://getcomposer.org/
+
+You also should install the Composer Asset Plugin to handle NPM and Bower assets:
+```
+$ composer global require "fxp/composer-asset-plugin:~1.2"
+```
 
 To install the package add the following to the ```require``` section of your composer.json:
 ```
