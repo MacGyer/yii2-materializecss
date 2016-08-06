@@ -81,7 +81,7 @@ class Button extends BaseWidget
 
         $content = $this->renderIcon() . $label;
 
-        return Html::tag($this->tagName, $content, $this->options);
+        return $this->tagName === 'button' ? Html::button($content, $this->options) : Html::tag($this->tagName, $content, $this->options);
     }
 
     /**
