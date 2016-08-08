@@ -113,7 +113,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
-### 1.0.8 - tba
+### 1.0.8 - 2016-08-08
 * [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): fixed tag rendering
 * [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SwitchButton.php): fixed uncheck property
 * [Alert](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Alert.php): added ```default``` context class
