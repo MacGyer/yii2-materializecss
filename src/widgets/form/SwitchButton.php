@@ -127,7 +127,7 @@ class SwitchButton extends BaseInputWidget
     public $inputOptions = [];
 
     /**
-     * @var bool the control for setting the "checked" attribute in the input tag.
+     * @var boolean the control for setting the "checked" attribute in the input tag.
      */
     public $checked = false;
 

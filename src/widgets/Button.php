@@ -89,12 +89,12 @@ class Button extends BaseWidget
     public $type = self::TYPE_RAISED;
 
     /**
-     * @var bool whether the button shall be of larger size.
+     * @var boolean whether the button shall be of larger size.
      */
     public $large = false;
 
     /**
-     * @var bool whether the button shall be disabled.
+     * @var boolean whether the button shall be disabled.
      */
     public $disabled = false;
 
