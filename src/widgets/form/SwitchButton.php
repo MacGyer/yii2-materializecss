@@ -9,6 +9,7 @@ namespace macgyer\yii2materializecss\widgets\form;
 
 use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
+use macgyer\yii2materializecss\widgets\Icon;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
 
@@ -64,14 +65,58 @@ class SwitchButton extends BaseInputWidget
     public $options;
 
     /**
-     * @var string the text displaying the unchecked status.
+     * @var string the text displaying the unchecked status. This can be used in conjunction with the [[offIcon]].
      */
     public $offText = 'Off';
 
     /**
-     * @var string the text displaying the checked status.
+     * @var boolean whether the off text should be HTML-encoded.
+     */
+    public $encodeOffText = true;
+
+    /**
+     * @var array the options for the optional off icon.
+     *
+     * To specify an icon you can use the following parameters:
+     *
+     * ```php
+     * [
+     *     'name' => 'name of the icon',                    // required
+     *     'position' => 'position of the icon',            // optional, 'left' or 'right', defaults to 'left'
+     *     'options' => 'the HTML attributes for the img',  // optional
+     * ]
+     * ```
+     *
+     * @see Icon|Icon
+     */
+    public $offIcon = [];
+
+    /**
+     * @var string the text displaying the checked status. This can be used in conjunction with the [[onIcon]].
      */
     public $onText = 'On';
+
+    /**
+     * @var boolean whether the on text should be HTML-encoded.
+     */
+    public $encodeOnText = true;
+
+    /**
+     * @var array the options for the optional on icon.
+     *
+     * To specify an icon you can use the following parameters:
+     *
+     * ```php
+     * [
+     *     'name' => 'name of the icon',                    // required
+     *     'position' => 'position of the icon',            // optional, 'left' or 'right', defaults to 'left'
+     *     'options' => 'the HTML attributes for the img',  // optional
+     * ]
+     * ```
+     *
+     * @see Icon|Icon
+     */
+    public $onIcon = [];
 
     /**
      * @var array the HTML attributes for the underlying input tag.
@@ -82,7 +127,7 @@ class SwitchButton extends BaseInputWidget
     public $inputOptions = [];
 
     /**
-     * @var bool the control for setting the "checked" attribute in the input tag.
+     * @var boolean the control for setting the "checked" attribute in the input tag.
      */
     public $checked = false;
 
@@ -107,7 +152,7 @@ class SwitchButton extends BaseInputWidget
             $this->inputOptions['name'] = $this->name;
         }
 
-        $this->inputOptions['uncheck'] = isset($this->uncheck) ? $this->uncheck : '0';
+        $this->inputOptions['uncheck'] = isset($this->uncheck) ? $this->uncheck : is_null($this->uncheck) ? null : '0';
         $this->inputOptions['value'] = isset($this->value) ? $this->value : '1';
     }
 
@@ -146,11 +191,61 @@ class SwitchButton extends BaseInputWidget
 
         return implode("\n", [
             Html::beginTag('label'),
-            Html::encode($this->offText),
+            $this->renderLabel('off'),
             Html::checkbox($name, $this->checked, $this->inputOptions),
             Html::tag('span', '', ['class' => 'lever']),
-            Html::encode($this->onText),
+            $this->renderLabel('on'),
             Html::endTag('label'),
+        ]);
+    }
+
+    /**
+     * Renders the HTML markup for the on/off label.
+     *
+     * This method also renders the corresponding icons, if set.
+     *
+     * @param string $state the state to used. Use "off" or "on".
+     * @return string the rendered label.
+     * @uses [[Icon|Icon]]
+     */
+    protected function renderLabel($state)
+    {
+        $icon = $this->renderIcon($state);
+        $encodeProperty = "encode" . ucfirst($state) . "Text";
+        $textProperty = "{$state}Text";
+
+        $label = $this->$encodeProperty ? Html::encode($this->$textProperty) : $this->$textProperty;
+        $label .= $icon;
+
+        $html = [];
+        $html[] = Html::beginTag('span', ['class' => "{$state}Label"]);
+        $html[] = $label;
+        $html[] = Html::endTag('span');
+
+        return implode("\n", $html);
+    }
+
+    /**
+     * Renders an icon.
+     *
+     * @param string $state the name of the icon property.
+     * @return string the rendered icon
+     *
+     * @uses http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#getValue()-detail
+     * @see Icon::run
+     */
+    protected function renderIcon($state)
+    {
+        $iconProperty = "{$state}Icon";
+
+        if (!$this->$iconProperty) {
+            return '';
+        }
+
+        return Icon::widget([
+            'name' => ArrayHelper::getValue($this->$iconProperty, 'name', null),
+            'position' => ArrayHelper::getValue($this->$iconProperty, 'position', null),
+            'options' => ArrayHelper::getValue($this->$iconProperty, 'options', [])
         ]);
     }
 }

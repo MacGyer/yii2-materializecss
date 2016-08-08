@@ -13,7 +13,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Button renders a HTML button.
+ * Button renders an HTML button.
  *
  * There are three main button types described in Materialize.
  * - the raised button is a standard button that signifies actions and seek to give depth to a mostly flat page
@@ -29,12 +29,27 @@ use yii\helpers\ArrayHelper;
 class Button extends BaseWidget
 {
     /**
+     * Sets the [[type]] of the button to "raised". This is the default.
+     */
+    const TYPE_RAISED = 'raised';
+
+    /**
+     * Sets the [[type]] of the button to "floating".
+     */
+    const TYPE_FLOATING = 'floating';
+
+    /**
+     * Sets the [[type]] of the button to "flat".
+     */
+    const TYPE_FLAT = 'flat';
+
+    /**
      * @var string the tag used to render the button.
      */
     public $tagName = 'button';
 
     /**
-     * @var string the label on the button.
+     * @var string the label on the button. If you do not want a label text to be rendered, set this options to "false".
      */
     public $label = 'Button';
 
@@ -61,6 +76,29 @@ class Button extends BaseWidget
     public $icon = [];
 
     /**
+     * @var string the type of button to be rendered.
+     *
+     * The following options are supported:
+     * - raised
+     * - floating
+     * - flat
+     *
+     * This property defaults to "raised". To set the type, use the corresponding `TYPE_*` constant of this class.
+     * If no type from this range is given, the button will be of the "raised" type.
+     */
+    public $type = self::TYPE_RAISED;
+
+    /**
+     * @var boolean whether the button shall be of larger size.
+     */
+    public $large = false;
+
+    /**
+     * @var boolean whether the button shall be disabled.
+     */
+    public $disabled = false;
+
+    /**
      * Initializes the widget.
      */
     public function init()
@@ -68,6 +106,21 @@ class Button extends BaseWidget
         parent::init();
         $this->clientOptions = false;
         Html::addCssClass($this->options, ['widget' => 'btn']);
+
+        switch ($this->type) {
+            case self::TYPE_FLOATING:
+            case self::TYPE_FLAT:
+                Html::addCssClass($this->options, ['btn_type' => "btn-$this->type"]);
+                break;
+        }
+
+        if ($this->large) {
+            Html::addCssClass($this->options, ['btn_size' => 'btn-large']);
+        }
+
+        if ($this->disabled) {
+            Html::addCssClass($this->options, ['btn_disabled' => 'disabled']);
+        }
     }
 
     /**
@@ -77,11 +130,15 @@ class Button extends BaseWidget
      */
     public function run()
     {
-        $label = $this->encodeLabel ? Html::encode($this->label) : $this->label;
+        if ($this->label !== false) {
+            $label = $this->encodeLabel ? Html::encode($this->label) : $this->label;
+        } else {
+            $label = '';
+        }
 
         $content = $this->renderIcon() . $label;
 
-        return Html::tag($this->tagName, $content, $this->options);
+        return $this->tagName === 'button' ? Html::button($content, $this->options) : Html::tag($this->tagName, $content, $this->options);
     }
 
     /**
