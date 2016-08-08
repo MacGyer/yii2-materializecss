@@ -13,7 +13,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Button renders a HTML button.
+ * Button renders an HTML button.
  *
  * There are three main button types described in Materialize.
  * - the raised button is a standard button that signifies actions and seek to give depth to a mostly flat page

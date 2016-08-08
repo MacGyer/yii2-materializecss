@@ -68,6 +68,7 @@ The following widgets are currently available:
 * NavBar
 * Progress
 * Spinner
+* SubmitButton
 * SwitchButton
 
 These widgets are planned for development:
@@ -112,6 +113,18 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
+### 1.0.8 - tba
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): fixed tag rendering
+* [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SwitchButton.php): fixed uncheck property
+* [Alert](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Alert.php): added ```default``` context class
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): added property ```type```
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): added property ```large```
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): added property ```disabled```
+* [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Spinner.php): added property ```size```
+* [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Spinner.php): added property ```color```
+* [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SwitchButton.php): added support for Icon/HTML labels
+* added [SubmitButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SubmitButton.php)
+
 ### 1.0.7 - 2016-07-27
 * full source documentation
 * fixed Materialize version to 0.97.6 to monitor 0.97.7 release before integration
@@ -123,15 +136,15 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ### 1.0.5 - 2016-04-24
 * updated README with fixed Datepicker issue
-* refactored Breadcrumbs
+* refactored [Breadcrumbs](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Breadcrumbs.php)
 
 ### 1.0.3 - 2016-03-10
-* fixed multiple usage of MaterializeWidgetTrait producing bugs
-* updated PHPDoc in NavBar
+* fixed multiple usage of [MaterializeWidgetTrait](https://github.com/MacGyer/yii2-materializecss/blob/master/src/lib/MaterializeWidgetTrait.php) producing bugs
+* updated PHPDoc in [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php)
 
 ### 1.0.2 - 2016-03-09
-* added Spinner
-* added Progress
+* added [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Spinner.php)
+* added [Progress](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Progress.php)
 
 ### 1.0.1 - 2016-03-09
 * updated README
