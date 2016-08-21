@@ -13,12 +13,13 @@
             "role": "Developer"
         }
     ],
-    "version": "1.0.8",
+    "version": "1.0.9",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0",
 
-        "bower-asset/materialize": "0.97.6"
+        "bower-asset/materialize": "0.97.6",
+        "bower-asset/materialize-clockpicker": "0.1.0"
     },
     "autoload": {
         "psr-4": {

@@ -70,6 +70,7 @@ The following widgets are currently available:
 * Spinner
 * SubmitButton
 * SwitchButton
+* TimePicker
 
 These widgets are planned for development:
 
@@ -112,6 +113,9 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 1.0.9 - 2016-08-21
+* added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/TimePicker.php)
 
 ### 1.0.8 - 2016-08-08
 * [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): fixed tag rendering
