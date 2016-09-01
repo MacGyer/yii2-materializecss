@@ -56,8 +56,8 @@ class NavBar extends BaseWidget
     public $brandLabel = false;
 
     /**
-     * @var boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
-     * @see http://materializecss.com/navbar.html
+     * @var boolean whether the navbar content should be included in an inner div container which by default
+     * adds left and right padding. Set this to false for a 100% width navbar.
      */
     public $fixed = false;
 
@@ -82,8 +82,8 @@ class NavBar extends BaseWidget
     public $screenReaderToggleText = 'Toggle navigation';
 
     /**
-     * @var boolean whether the navbar content should be included in an inner div container which by default
-     * adds left and right padding. Set this to false for a 100% width navbar.
+     * @var array the HTML attributes of the fixed container.
+     * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
     public $fixedContainerOptions = [];
 
