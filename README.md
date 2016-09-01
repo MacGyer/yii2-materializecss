@@ -114,7 +114,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
-### 1.0.9 - 2016-08-21
+### 1.0.9 - 2016-09-01
 * added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/TimePicker.php)
 
 ### 1.0.8 - 2016-08-08
