@@ -19,7 +19,6 @@
         "yiisoft/yii2": "~2.0",
 
         "bower-asset/materialize": "0.97.6",
-        "bower-asset/materialize-clockpicker": "0.1.0"
     },
     "autoload": {
         "psr-4": {

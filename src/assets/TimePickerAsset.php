@@ -19,20 +19,20 @@ class TimePickerAsset extends AssetBundle
     /**
      * @var string the directory that contains the source asset files for this asset bundle.
      */
-    public $sourcePath = '@bower/materialize-clockpicker/dist';
+    public $sourcePath = '@vendor/macgyer/yii2-materializecss/src/assets/dist/materialize-clockpicker';
 
     /**
      * @var array list of CSS files that this bundle contains.
      */
     public $css = [
-        'css/materialize.clockpicker.css'
+        'materialize.clockpicker.css'
     ];
 
     /**
      * @var array list of JS files that this bundle contains.
      */
     public $js = [
-        'js/materialize.clockpicker.js'
+        'materialize.clockpicker.js'
     ];
 
     /**
