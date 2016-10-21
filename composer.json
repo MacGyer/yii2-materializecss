@@ -13,7 +13,7 @@
             "role": "Developer"
         }
     ],
-    "version": "1.0.10",
+    "version": "1.0.9",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0",
