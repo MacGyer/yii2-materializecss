@@ -109,6 +109,31 @@ class Nav extends BaseWidget
      */
     public $dropDownCaret;
 
+    /**
+     * @var array the options for the underlying JS sideNav() plugin.
+     * The following options are supported:
+     * - menuWidth: 300, // Default is 240
+     * - edge: 'right', // Choose the horizontal origin
+     * - closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+     * - draggable: true // Choose whether you can drag to open on touch screens
+     *
+     * @see http://materializecss.com/side-nav.html#options
+     */
+    public $sideNavClientOptions = [];
+
+    /**
+     * @var array the configuration options for the toggle button.
+     * The toggle button is rendered by the [[Button]] widget. See the docs for all available options.
+     *
+     * @see Button|Button
+     */
+    public $sideNavToggleButtonOptions = [];
+
+    /**
+     * @var boolean whether to render a side navigation.
+     * Set this option to `false` if you do not want the side navigation to be rendered automatically.
+     */
+    public $renderSideNav = true;
 
     /**
      * Initializes the widget.
@@ -133,13 +158,19 @@ class Nav extends BaseWidget
     public function run()
     {
         MaterializeAsset::register($this->getView());
-        return $this->renderItems();
+        $html[] = $this->renderItems();
+
+        if ($this->renderSideNav === true) {
+            $html[] = $this->renderSideNav();
+        }
+
+        return implode("\n", $html);
     }
 
     /**
      * Renders widget items.
      */
-    public function renderItems()
+    protected function renderItems()
     {
         $items = [];
         foreach ($this->items as $i => $item) {
@@ -158,7 +189,7 @@ class Nav extends BaseWidget
      * @return string the rendering result.
      * @throws InvalidConfigException
      */
-    public function renderItem($item)
+    protected function renderItem($item)
     {
         if (is_string($item)) {
             return $item;
@@ -229,6 +260,19 @@ class Nav extends BaseWidget
     }
 
     /**
+     * Renders the side navigation and corresponding toggle button.
+     * @return string the rendered side navigation markup.
+     */
+    protected function renderSideNav()
+    {
+        return SideNav::widget([
+            'items' => $this->items,
+            'toggleButtonOptions' => $this->sideNavToggleButtonOptions,
+            'clientOptions' => $this->sideNavClientOptions,
+        ]);
+    }
+
+    /**
      * Check to see if a child item is active optionally activating the parent.
      * @param array $items @see items
      * @param boolean $active should the parent be active too
@@ -277,10 +321,8 @@ class Nav extends BaseWidget
                     }
                 }
             }
-
             return true;
         }
-
         return false;
     }
 }

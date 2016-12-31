@@ -11,7 +11,6 @@ use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 use Yii;
-use yii\helpers\ArrayHelper;
 
 /**
  * NavBar renders a navbar HTML component.
@@ -99,7 +98,6 @@ class NavBar extends BaseWidget
      */
     public $wrapperOptions = [];
 
-
     /**
      * Initializes the widget.
      */
@@ -131,7 +129,6 @@ class NavBar extends BaseWidget
         if (!isset($this->containerOptions['id'])) {
             $this->containerOptions['id'] = "{$this->id}-collapse";
         }
-        $html[] = $this->renderToggleButton();
         $html[] = Html::beginTag('div', $this->containerOptions);
 
         echo implode("\n", $html);
@@ -156,38 +153,5 @@ class NavBar extends BaseWidget
         MaterializePluginAsset::register($this->getView());
 
         return implode("\n", $html);
-    }
-
-    /**
-     * Renders collapsible toggle button.
-     * @return string the rendered toggle button.
-     */
-    protected function renderToggleButton()
-    {
-        $toggleTarget = 'sidenav_' . md5(uniqid());
-
-        $this->registerToggleButtonScript($toggleTarget);
-
-        return Html::a('<i class="material-icons">menu</i>', '#', [
-            'data-activates' => $toggleTarget,
-            'class' => 'button-collapse'
-        ]);
-    }
-
-    /**
-     * Registers the JS for the toggle button.
-     * @param string $targetId the ID of the toggled navigation.
-     */
-    protected function registerToggleButtonScript($targetId)
-    {
-        $view = $this->getView();
-        MaterializePluginAsset::register($view);
-
-        $selector = '#' . $this->options['id'] . ' .button-collapse';
-
-        $js = "var sideNav = jQuery('#{$this->containerOptions['id']} > ul').clone();";
-        $js .= "sideNav.removeClass().addClass('side-nav').attr('id', '{$targetId}').appendTo('body');";
-        $js .= "jQuery('{$selector}').sideNav();";
-        $view->registerJs($js);
     }
 }
