@@ -9,7 +9,6 @@ namespace macgyer\yii2materializecss\widgets;
 
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
-use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**

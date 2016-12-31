@@ -67,6 +67,7 @@ The following widgets are currently available:
 * Nav
 * NavBar
 * Progress
+* SideNav
 * Spinner
 * SubmitButton
 * SwitchButton
@@ -77,6 +78,7 @@ These widgets are planned for development:
 * Collapsible
 * Collection
 * Toast
+* Card
 
 ## Gii support
 
@@ -103,7 +105,11 @@ You can copy those templates to any location you wish for further customization.
 
 ## Known issues
 
-Yay, everything seems to be fine ...
+As of Materializecss version 0.97.8 there seem to be issues with the sideNav() JS plugin. Therefore the Bower dependency is
+fixed to version 0.97.7.
+
+See https://github.com/Dogfalo/materialize/issues/4046 or https://github.com/Dogfalo/materialize/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20sidenav
+for a more general overview.
 
 ## Sample layout
 
@@ -113,6 +119,12 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 1.0.10 - 2017-01-01
+* added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php)
+* [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php): added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php) support
+* [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php): moved mobile toggle button to [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php)
+ 
 
 ### 1.0.9 - 2016-09-01
 * added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/TimePicker.php)
