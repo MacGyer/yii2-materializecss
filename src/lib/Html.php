@@ -25,16 +25,17 @@ class Html extends BaseHtml
      * This method will generate the "name" and "value" tag attributes automatically for the model attribute
      * unless they are explicitly specified in `$options`.
      * @param Model $model the model object
-     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * @param string $attribute the attribute name or expression. See [\yii\helpers\BaseHtml::getAttributeName()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#getAttributeName()-detail) for the format
      * about attribute expression.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
-     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     * See [\yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      * The following special options are recognized:
      *
      * - maxlength: integer|boolean, when `maxlength` is set true and the model attribute is validated
      *   by a string validator, the `maxlength` and `length` option both will take the value of
-     *   [[\yii\validators\StringValidator::max]]. The `length` option is required by the Materialize JS plugin characterCounter().
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
+     *   The `length` option is required by the Materialize JS plugin `characterCounter()`.
      *
      * @return string the generated input tag
      */
@@ -49,16 +50,17 @@ class Html extends BaseHtml
      * This method will generate the "name" and "value" tag attributes automatically for the model attribute
      * unless they are explicitly specified in `$options`.
      * @param Model $model the model object
-     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * @param string $attribute the attribute name or expression. See [\yii\helpers\BaseHtml::getAttributeName()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#getAttributeName()-detail) for the format
      * about attribute expression.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
-     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     * See [\yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      * The following special options are recognized:
      *
      * - maxlength: integer|boolean, when `maxlength` is set true and the model attribute is validated
      *   by a string validator, the `maxlength` and `length` option both will take the value of
-     *   [[\yii\validators\StringValidator::max]]. The `length` option is required by the Materialize JS plugin characterCounter().
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
+     *   The `length` option is required by the Materialize JS plugin `characterCounter()`.
      *
      * @return string the generated input tag
      */
@@ -72,16 +74,17 @@ class Html extends BaseHtml
      * Generates a textarea tag for the given model attribute.
      * The model attribute value will be used as the content in the textarea.
      * @param Model $model the model object
-     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * @param string $attribute the attribute name or expression. See [\yii\helpers\BaseHtml::getAttributeName()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#getAttributeName()-detail) for the format
      * about attribute expression.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
-     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     * See [\yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      * The following special options are recognized:
      *
      * - maxlength: integer|boolean, when `maxlength` is set true and the model attribute is validated
      *   by a string validator, the `maxlength` and `length` option both will take the value of
-     *   [[\yii\validators\StringValidator::max]]. The `length` option is required by the Materialize JS plugin characterCounter().
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail)
+     *   The `length` option is required by the Materialize JS plugin `characterCounter()`.
      *
      * @return string the generated textarea tag
      */
@@ -103,7 +106,7 @@ class Html extends BaseHtml
 
     /**
      * If `maxlength` option is set true and the model attribute is validated by a string validator,
-     * the `maxlength` option will take the value of [[\yii\validators\StringValidator::max]]. Additionally the
+     * the `maxlength` option will take the value of [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail). Additionally the
      * `length` property is populated with the same value, to enable the Materialize character counter.
      * @param Model $model the model object
      * @param string $attribute the attribute name or expression.
