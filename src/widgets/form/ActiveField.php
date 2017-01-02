@@ -7,16 +7,16 @@
 
 namespace macgyer\yii2materializecss\widgets\form;
 
+use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\Html;
 use macgyer\yii2materializecss\widgets\Icon;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 
-// TODO: switch input --> own widget
 // TODO: range with noUiSlider --> own widget
 // TODO: checkbox / checkbox list
 // TODO: radio / radio list
 // TODO: select ?
-// TODO: Datepicker --> own widget
 // TODO: file input
 
 
@@ -126,6 +126,52 @@ class ActiveField extends \yii\widgets\ActiveField
         if ($this->form->enableClientScript === true && $this->form->enableClientValidation === true) {
             Html::addCssClass($this->inputOptions, ['inputValidation' => 'validate']);
         }
+
+        if ($this->showCharacterCounter === true) {
+            $this->inputOptions['showCharacterCounter'] = true;
+        }
+    }
+
+    /**
+     * Initializes the Materialize autocomplete feature.
+     *
+     * @param array $options the tag options as name-value-pairs.
+     * To use the Materialize autocomplete feature, set the option key `autocomplete` to an array.
+     * The array keys are the strings to be matched and the values are optional image URLs. If an image URL is provided,
+     * a thumbnail is shown next to the string in the autocomplete suggestion list:
+     * ```php
+     * [
+     *      'George' => 'http://lorempixel.com/40/40/people',
+     *      'Fiona' => null     // no thumbnail
+     * ]
+     * ```
+     *
+     * To use the HTML5 autocomplete feature, set this option to `on`. To explicitely disable the HTML5 autocomplete, set
+     * this option to `off`. Either `on` or `off` disables the Materialize autocomplete feature.
+     *
+     * @see http://materializecss.com/forms.html#autocomplete
+     */
+    private function initAutoComplete(&$options = [])
+    {
+        $autocomplete = ArrayHelper::getValue($options, 'autocomplete', []);
+
+        // not Materialize autocomplete structure
+        if (!is_array($autocomplete) || empty($autocomplete)) {
+            return;
+        }
+
+        ArrayHelper::remove($options, 'autocomplete');
+
+        $view = $this->form->getView();
+        Html::addCssClass($options, ['autocomplete' => 'has-autocomplete']);
+
+        MaterializePluginAsset::register($view);
+        $autocompleteData['data'] = $autocomplete;
+
+        $pluginOptions = Json::htmlEncode($autocompleteData);
+        $js = "$('input.has-autocomplete').autocomplete($pluginOptions);";
+
+        $view->registerJs($js);
     }
 
     /**
@@ -200,6 +246,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function colorInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'color']);
+        $this->initAutoComplete($options);
+
         return parent::input('color', $options);
     }
 
@@ -211,6 +259,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function dateInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'date']);
+        $this->initAutoComplete($options);
+
         return parent::input('date', $options);
     }
 
@@ -222,6 +272,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function datetimeInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'datetime']);
+        $this->initAutoComplete($options);
+
         return parent::input('datetime', $options);
     }
 
@@ -233,6 +285,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function datetimeLocalInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'datetime-local']);
+        $this->initAutoComplete($options);
+
         return parent::input('datetime-local', $options);
     }
 
@@ -244,7 +298,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public function emailInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'email']);
-        $options = ArrayHelper::merge($this->inputOptions, $options);
+        $this->initAutoComplete($options);
 
         return parent::input('email', $options);
     }
@@ -257,6 +311,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function monthInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'month']);
+        $this->initAutoComplete($options);
+
         return parent::input('month', $options);
     }
 
@@ -268,13 +324,26 @@ class ActiveField extends \yii\widgets\ActiveField
     public function numberInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'number']);
+        $this->initAutoComplete($options);
+
         return parent::input('number', $options);
     }
 
     /**
      * Renders a password input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     *
+     * The following special options are recognized:
+     *
+     * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
+     *   by a string validator, the `maxlength` and `length` option both option will take the value of
+     *   [[\yii\validators\StringValidator::max]].
+     * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
+     *   the Materialize character counter JS plugin is initialized for this field.
+     *
+     * @return $this the field object itself.
+     * @see http://materializecss.com/forms.html#character-counter
      */
     public function passwordInput($options = [])
     {
@@ -304,27 +373,51 @@ class ActiveField extends \yii\widgets\ActiveField
     public function searchInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'search']);
+        $this->initAutoComplete($options);
+
         return parent::input('search', $options);
     }
 
     /**
      * Renders a phone input.
-     * @param array $options
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete]] for details.
      * @return ActiveField
      */
     public function telInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'tel']);
+        $this->initAutoComplete($options);
+
         return parent::input('tel', $options);
     }
 
     /**
      * Renders a text input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     *
+     * The following special options are recognized:
+     *
+     * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
+     *   by a string validator, the `maxlength` and `length` option both option will take the value of
+     *   [[\yii\validators\StringValidator::max]].
+     * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
+     *   the Materialize character counter JS plugin is initialized for this field.
+     * - autocomplete: string|array, see [[initAutoComplete]] for details
+     *
+     * @return $this the field object itself.
+     * @see http://materializecss.com/forms.html#character-counter
+     * @see http://materializecss.com/forms.html#autocomplete
+     * @see https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete
      */
     public function textInput($options = [])
     {
+        $this->initAutoComplete($options);
         $options = array_merge($this->inputOptions, $options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
@@ -334,13 +427,32 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a textarea.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     *
+     * The following special options are recognized:
+     *
+     * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
+     *   by a string validator, the `maxlength` and `length` option both option will take the value of
+     *   [[\yii\validators\StringValidator::max]].
+     * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
+     *   the Materialize character counter JS plugin is initialized for this field.
+     * - autocomplete: string|array, see [[initAutoComplete]] for details
+     *
+     * @return $this the field object itself.
+     * @see http://materializecss.com/forms.html#character-counter
+     * @see http://materializecss.com/forms.html#autocomplete
+     * @see https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete
      */
     public function textarea($options = [])
     {
+        $this->initAutoComplete($options);
         Html::addCssClass($options, ['textarea' => 'materialize-textarea']);
-        return parent::textarea($options);
+        $options = array_merge($this->inputOptions, $options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeTextarea($this->model, $this->attribute, $options);
+
+        return $this;
     }
 
     /**
@@ -351,6 +463,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function timeInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'time']);
+        $this->initAutoComplete($options);
+
         return parent::input('time', $options);
     }
 
@@ -362,6 +476,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function urlInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'url']);
+        $this->initAutoComplete($options);
+
         return parent::input('url', $options);
     }
 
@@ -373,6 +489,8 @@ class ActiveField extends \yii\widgets\ActiveField
     public function weekInput($options = [])
     {
         Html::addCssClass($options, ['input' => 'week']);
+        $this->initAutoComplete($options);
+
         return parent::input('week', $options);
     }
 }
