@@ -107,6 +107,18 @@ class ActiveField extends \yii\widgets\ActiveField
     public $icon;
 
     /**
+     * @var boolean whether to show a character counter.
+     * This is only effective when `maxlength` option is set true and the model attribute is validated
+     * by a string validator. The `maxlength` and `length` option then will both take the value of
+     * [[\yii\validators\StringValidator::max]].
+     *
+     * Note: the characterCounter() is currently available for input types `text` and `password`, and for `textarea`.
+     *
+     * @see http://materializecss.com/forms.html#character-counter
+     */
+    public $showCharacterCounter = false;
+
+    /**
      * Initializes the widget.
      */
     public function init()
@@ -190,7 +202,7 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($options, ['input' => 'color']);
         return parent::input('color', $options);
     }
-    
+
     /**
      * Renders a date input.
      * @param array $options
@@ -201,7 +213,7 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($options, ['input' => 'date']);
         return parent::input('date', $options);
     }
-    
+
     /**
      * Renders a datetime input.
      * @param array $options
@@ -212,7 +224,7 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($options, ['input' => 'datetime']);
         return parent::input('datetime', $options);
     }
-    
+
     /**
      * Renders a datetime local input.
      * @param array $options
@@ -223,7 +235,7 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($options, ['input' => 'datetime-local']);
         return parent::input('datetime-local', $options);
     }
-    
+
     /**
      * Renders an email input.
      * @param array $options
@@ -260,14 +272,28 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a password input.
+     * @param array $options
+     * @return ActiveField
+     */
+    public function passwordInput($options = [])
+    {
+        $options = array_merge($this->inputOptions, $options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activePasswordInput($this->model, $this->attribute, $options);
+
+        return $this;
+    }
+
+    /**
      * Renders a range input.
      * @param array $options
      * @return ActiveField
      */
     public function rangeInput($options = [])
     {
-        Html::addCssClass($options, ['input' => 'email']);
-        return parent::input('email', $options);
+        Html::addCssClass($options, ['input' => 'range']);
+        return parent::input('range', $options);
     }
 
     /**
@@ -290,6 +316,31 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         Html::addCssClass($options, ['input' => 'tel']);
         return parent::input('tel', $options);
+    }
+
+    /**
+     * Renders a text input.
+     * @param array $options
+     * @return ActiveField
+     */
+    public function textInput($options = [])
+    {
+        $options = array_merge($this->inputOptions, $options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
+
+        return $this;
+    }
+
+    /**
+     * Renders a textarea.
+     * @param array $options
+     * @return ActiveField
+     */
+    public function textarea($options = [])
+    {
+        Html::addCssClass($options, ['textarea' => 'materialize-textarea']);
+        return parent::textarea($options);
     }
 
     /**
@@ -323,16 +374,5 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         Html::addCssClass($options, ['input' => 'week']);
         return parent::input('week', $options);
-    }
-
-    /**
-     * Renders a textarea.
-     * @param array $options
-     * @return ActiveField
-     */
-    public function textarea($options = [])
-    {
-        Html::addCssClass($options, ['textarea' => 'materialize-textarea']);
-        return parent::textarea($options);
     }
 }
