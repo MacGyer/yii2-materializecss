@@ -131,8 +131,8 @@ You can find the sample layout file in ```src/layout/main.php```.
 * [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php): moved mobile toggle button to [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php)
 * [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added Materialize autocomplete support
 * [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added Materialize character count support
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): checkbox and radio are not enclosed by label as default
  
-
 ### 1.0.9 - 2016-09-01
 * added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/TimePicker.php)
 

@@ -14,8 +14,8 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
 // TODO: range with noUiSlider --> own widget
-// TODO: checkbox / checkbox list
-// TODO: radio / radio list
+// TODO: checkbox list
+// TODO: radio list
 // TODO: select ?
 // TODO: file input
 
@@ -239,6 +239,30 @@ class ActiveField extends \yii\widgets\ActiveField
         ]);
 
         return $this;
+    }
+
+    /**
+     * Renders a checkbox.
+     * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
+     * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
+     * Materialize standard to not wrap the checkboxes in labels.
+     * @return $this
+     */
+    public function checkbox($options = [], $enclosedByLabel = false)
+    {
+        return parent::checkbox($options, $enclosedByLabel);
+    }
+
+    /**
+     * Renders a radio button.
+     * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
+     * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
+     * Materialize standard to not wrap the checkboxes in labels.
+     * @return $this
+     */
+    public function radio($options = [], $enclosedByLabel = false)
+    {
+        return parent::radio($options, $enclosedByLabel);
     }
 
     /**
