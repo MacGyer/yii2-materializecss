@@ -125,7 +125,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
-### 1.1.0 - 2017-01-03
+### 1.1.0 - 2017-01-05
 * added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php)
 * [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php): added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php) support
 * [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php): moved mobile toggle button to [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php)
