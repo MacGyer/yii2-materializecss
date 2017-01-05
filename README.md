@@ -1,3 +1,7 @@
+[![license](https://img.shields.io/github/license/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
+[![Github Release](https://img.shields.io/github/release/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
+[![Packagist](https://img.shields.io/packagist/dt/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
+
 # Materialize for Yii2
 
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
@@ -75,10 +79,11 @@ The following widgets are currently available:
 
 These widgets are planned for development:
 
+* Card
 * Collapsible
 * Collection
+* RangeInput
 * Toast
-* Card
 
 ## Gii support
 
@@ -120,12 +125,14 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
-### 1.0.10 - 2017-01-01
+### 1.1.0 - 2017-01-03
 * added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php)
 * [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php): added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php) support
 * [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php): moved mobile toggle button to [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php)
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added Materialize autocomplete support
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added Materialize character count support
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): checkbox and radio are not enclosed by label as default
  
-
 ### 1.0.9 - 2016-09-01
 * added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/TimePicker.php)
 

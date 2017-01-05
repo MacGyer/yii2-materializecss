@@ -14,8 +14,8 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
 // TODO: range with noUiSlider --> own widget
-// TODO: checkbox / checkbox list
-// TODO: radio / radio list
+// TODO: checkbox list
+// TODO: radio list
 // TODO: select ?
 // TODO: file input
 
@@ -110,9 +110,9 @@ class ActiveField extends \yii\widgets\ActiveField
      * @var boolean whether to show a character counter.
      * This is only effective when `maxlength` option is set true and the model attribute is validated
      * by a string validator. The `maxlength` and `length` option then will both take the value of
-     * [[\yii\validators\StringValidator::max]].
+     * [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
      *
-     * Note: the characterCounter() is currently available for input types `text` and `password`, and for `textarea`.
+     * Note: the `characterCounter()` is currently available for input types `text` and `password`, and for `textarea`.
      *
      * @see http://materializecss.com/forms.html#character-counter
      */
@@ -139,11 +139,14 @@ class ActiveField extends \yii\widgets\ActiveField
      * To use the Materialize autocomplete feature, set the option key `autocomplete` to an array.
      * The array keys are the strings to be matched and the values are optional image URLs. If an image URL is provided,
      * a thumbnail is shown next to the string in the autocomplete suggestion list:
+     *
      * ```php
-     * [
-     *      'George' => 'http://lorempixel.com/40/40/people',
-     *      'Fiona' => null     // no thumbnail
-     * ]
+     * ...
+     * 'autocomplete' => [
+     *     'George' => 'http://lorempixel.com/40/40/people',
+     *     'Fiona' => null     // no thumbnail
+     * ],
+     * ...
      * ```
      *
      * To use the HTML5 autocomplete feature, set this option to `on`. To explicitely disable the HTML5 autocomplete, set
@@ -151,7 +154,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * @see http://materializecss.com/forms.html#autocomplete
      */
-    private function initAutoComplete(&$options = [])
+    protected function initAutoComplete(&$options = [])
     {
         $autocomplete = ArrayHelper::getValue($options, 'autocomplete', []);
 
@@ -219,7 +222,7 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders an icon.
-     * @return ActiveField
+     * @return ActiveField the field itself.
      * @throws \Exception
      */
     public function icon()
@@ -239,9 +242,38 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a checkbox.
+     * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
+     * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
+     * Materialize standard to not wrap the checkboxes in labels.
+     * @return $this
+     */
+    public function checkbox($options = [], $enclosedByLabel = false)
+    {
+        return parent::checkbox($options, $enclosedByLabel);
+    }
+
+    /**
+     * Renders a radio button.
+     * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
+     * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
+     * Materialize standard to not wrap the checkboxes in labels.
+     * @return $this
+     */
+    public function radio($options = [], $enclosedByLabel = false)
+    {
+        return parent::radio($options, $enclosedByLabel);
+    }
+
+    /**
      * Renders a color input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function colorInput($options = [])
     {
@@ -253,8 +285,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a date input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function dateInput($options = [])
     {
@@ -266,8 +303,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a datetime input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function datetimeInput($options = [])
     {
@@ -279,8 +321,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a datetime local input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function datetimeLocalInput($options = [])
     {
@@ -292,8 +339,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders an email input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function emailInput($options = [])
     {
@@ -305,8 +357,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a month input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function monthInput($options = [])
     {
@@ -318,8 +375,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a number input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function numberInput($options = [])
     {
@@ -332,13 +394,13 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * Renders a password input.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
      *
      * The following special options are recognized:
      *
      * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
      *   by a string validator, the `maxlength` and `length` option both option will take the value of
-     *   [[\yii\validators\StringValidator::max]].
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
      * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
      *   the Materialize character counter JS plugin is initialized for this field.
      *
@@ -356,8 +418,10 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a range input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * @return ActiveField the field itself.
      */
     public function rangeInput($options = [])
     {
@@ -367,8 +431,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a search input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function searchInput($options = [])
     {
@@ -381,12 +450,12 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * Renders a phone input.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
      *
      * The following special options are recognized:
      *
-     * - autocomplete: string|array, see [[initAutoComplete]] for details.
-     * @return ActiveField
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function telInput($options = [])
     {
@@ -399,16 +468,16 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * Renders a text input.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
      *
      * The following special options are recognized:
      *
      * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
      *   by a string validator, the `maxlength` and `length` option both option will take the value of
-     *   [[\yii\validators\StringValidator::max]].
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
      * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
      *   the Materialize character counter JS plugin is initialized for this field.
-     * - autocomplete: string|array, see [[initAutoComplete]] for details
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details
      *
      * @return $this the field object itself.
      * @see http://materializecss.com/forms.html#character-counter
@@ -428,16 +497,16 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * Renders a textarea.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
      *
      * The following special options are recognized:
      *
      * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
      *   by a string validator, the `maxlength` and `length` option both option will take the value of
-     *   [[\yii\validators\StringValidator::max]].
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
      * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
      *   the Materialize character counter JS plugin is initialized for this field.
-     * - autocomplete: string|array, see [[initAutoComplete]] for details
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details
      *
      * @return $this the field object itself.
      * @see http://materializecss.com/forms.html#character-counter
@@ -457,8 +526,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a time input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function timeInput($options = [])
     {
@@ -470,8 +544,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders an URL input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function urlInput($options = [])
     {
@@ -483,8 +562,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * Renders a week input.
-     * @param array $options
-     * @return ActiveField
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details.
+     * @return ActiveField the field itself.
      */
     public function weekInput($options = [])
     {
