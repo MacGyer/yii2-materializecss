@@ -250,6 +250,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function checkbox($options = [], $enclosedByLabel = false)
     {
+        Html::addCssClass($this->options, ['class' => 'checkbox']);
         return parent::checkbox($options, $enclosedByLabel);
     }
 
@@ -262,6 +263,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function radio($options = [], $enclosedByLabel = false)
     {
+        Html::addCssClass($this->options, ['class' => 'radio']);
         return parent::radio($options, $enclosedByLabel);
     }
 
