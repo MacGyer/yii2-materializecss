@@ -120,7 +120,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
         }
 
         if ($this->innerContainerOptions !== false && !isset($this->innerContainerOptions['class'])) {
-            Html::addCssClass($this->innerContainerOptions, ['innerContainer' => 'col s12']);
+            Html::addCssClass($this->innerContainerOptions, ['innerContainer' => 'col s12 container']);
         }
     }
 
