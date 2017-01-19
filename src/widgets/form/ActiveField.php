@@ -255,6 +255,24 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * @inheritdoc
+     * @param array $items
+     * @param array $options
+     * @return $this
+     */
+    public function dropDownList($items, $options = [])
+    {
+        $view = $this->form->view;
+        MaterializePluginAsset::register($view);
+        $id = $this->getInputId();
+
+        $js = "$('#$id').material_select()";
+        $view->registerJs($js);
+
+        return parent::dropDownList($items, $options);
+    }
+
+    /**
      * Renders a radio button.
      * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
      * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
@@ -579,4 +597,21 @@ class ActiveField extends \yii\widgets\ActiveField
 
         return parent::input('week', $options);
     }
+
+    /**
+     * Builds a radio list
+     */
+//    public function radioList($items, $options = [])
+//    {
+//        $defaultOptions = [
+//            'item' => function($index, $label, $name, $checked, $value) {
+//                return Html::radio($name,$checked,['value'=>$value,'id'=>$name.$index]) . Html::label($label,$name.$index);
+//                return $return;
+//            },
+//            'class'=>'input-list-wrapper'
+//        ];
+//        $options = array_merge($defaultOptions, $options);
+//
+//        return parent::radioList($items,$options);
+//    }
 }
