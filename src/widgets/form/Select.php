@@ -18,8 +18,9 @@ class Select extends BaseInputWidget
     /**
      * @var array the items for the select to display.
      *
-     * The array keys are the <option> values whereas the array values are either the <option> labels or can be used to define
-     * options for the resulting <option> tag.
+     * The array keys are the `<option>` values whereas the array values are either the `<option>` labels or can be used to define
+     * options for the resulting `<option>` tag.
+     *
      * ```php
      *  $items = [
      *      // here we have a simple key-value pair
@@ -54,7 +55,7 @@ class Select extends BaseInputWidget
      *  ];
      * ```
      *
-     * The above example will result in the following HTML <select>:
+     * The above example will result in the following HTML:
      *
      * ```
      *  <select>

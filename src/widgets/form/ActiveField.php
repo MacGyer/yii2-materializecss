@@ -255,10 +255,14 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
-     * @param array $items
-     * @param array $options
-     * @return $this
+     * Renders a drop-down list.
+     *
+     * @param array $items the option data items
+     * @param array $options the tag options in terms of name-value pairs.
+     *
+     * @return $this the field object itself.
+     *
+     * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#dropDownList()-detail
      */
     public function dropDownList($items, $options = [])
     {
