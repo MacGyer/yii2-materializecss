@@ -18,7 +18,55 @@ class Select extends BaseInputWidget
     /**
      * @var array the items for the select to display.
      *
+     * The array keys are the <option> values whereas the array values are either the <option> labels or can be used to define
+     * options for the resulting <option> tag.
+     * ```php
+     *  $items = [
+     *      // here we have a simple key-value pair
+     *      1 => 'Option 1',
      *
+     *      // Here further options for the <option> tag are provided. Every key-value pair in 'options' will be rendered
+     *      // as a tag attribute in the resulting <option> tag.
+     *      2 => [
+     *          'label' => 'Option 2',
+     *
+     *          // The 'data-icon' and 'class' attributes are Materialize specific. Refer to http://materializecss.com/forms.html#select
+     *          // for information about adding icons to select options.
+     *          'options' => [
+     *              'data-icon' => 'http://lorempixel.com/40/40/people/1',
+     *              'class' => 'circle right'
+     *          ],
+     *      ],
+     *
+     *      // If you provide an array as value and do not have an 'option' key present, the value will be treated as nested
+     *      // values. Every rule explained above apply to the sub-array. Every array value will be rendered as an <option>
+     *      // tag and all resulting <options> will be encapsulated in an <optgroup> tag.
+     *      3 => [
+     *          31 => [
+     *              'label' => 'Option 3.1',
+     *              'options' => [
+     *                  'data-icon' => 'http://lorempixel.com/40/40/people/3',
+     *                  'class' => 'circle right'
+     *              ],
+     *          ],
+     *          32 => 'Option 3.2'
+     *      ],
+     *  ];
+     * ```
+     *
+     * The above example will result in the following HTML <select>:
+     *
+     * ```
+     *  <select>
+     *      <option class="circle right" value="1" data-icon="http://lorempixel.com/40/40/people/1">Option 1</option>
+     *      <option value="2" label="Option 2">Option 2</option>
+     *
+     *      <optgroup label="3">
+     *          <option class="circle right" value="31" data-icon="http://lorempixel.com/40/40/people/3">Option 3.1</option>
+     *          <option value="32" label="Option 3.2">Option 3.2</option>
+     *      </optgroup>
+     *  </select>
+     * ```
      */
     public $items = [];
 
