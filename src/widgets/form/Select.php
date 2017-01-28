@@ -67,6 +67,9 @@ class Select extends BaseInputWidget
      *      </optgroup>
      *  </select>
      * ```
+     *
+     * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#activeDropDownList()-detail
+     * @see http://materializecss.com/forms.html#select
      */
     public $items = [];
 
