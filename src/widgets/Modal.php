@@ -14,9 +14,9 @@ use yii\helpers\ArrayHelper;
 /**
  * Modal renders a modal window that can be toggled by clicking on a button.
  *
- * The following example will show the content enclosed between the 
- * [\yii\base\Widget::begin()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#begin()-detail) and 
- * [\yii\base\Widget::end()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#end()-detail) calls within the 
+ * The following example will show the content enclosed between the
+ * [\yii\base\Widget::begin()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#begin()-detail) and
+ * [\yii\base\Widget::end()](http://www.yiiframework.com/doc-2.0/yii-base-widget.html#end()-detail) calls within the
  * modal window:
  *
  * ```php
