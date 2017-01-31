@@ -203,8 +203,7 @@ class Modal extends BaseWidget
 
         echo $html;
 
-        // TODO: as of Materialize 0.97.8 the method is called modal() instead of leanModal()
-        $this->registerPlugin('leanModal', '.modal-trigger');
+        $this->registerPlugin('modal', '.modal-trigger');
     }
 
     /**
