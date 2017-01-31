@@ -203,7 +203,7 @@ class Modal extends BaseWidget
 
         echo $html;
 
-        $this->registerPlugin('modal', '.modal-trigger');
+        $this->registerPlugin('modal');
     }
 
     /**
