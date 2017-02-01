@@ -1,6 +1,6 @@
 <?php
 
-namespace common\widgets\form;
+namespace macgyer\yii2materializecss\widgets\form;
 
 use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
