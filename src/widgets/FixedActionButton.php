@@ -60,7 +60,7 @@ class FixedActionButton extends BaseWidget
      * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
      * for details on how attributes are being rendered.
      */
-    public $options = ['class' => 'fixed-action-btn'];
+    public $options = [];
 
     /**
      * @var array the HTML attributes for the container around the button items.
@@ -79,6 +79,12 @@ class FixedActionButton extends BaseWidget
      * @var boolean whether to display a horizontal FAB.
      */
     public $horizontal = false;
+
+    /**
+     * @var boolean whether to expand FAB as toolbar.
+     * @since 1.2.0
+     */
+    public $toolbar = false;
 
     /**
      * @var string the tag used to render the button.
@@ -128,6 +134,7 @@ class FixedActionButton extends BaseWidget
     {
         parent::init();
 
+        Html::addCssClass($this->options, ['widget' => 'fixed-action-btn']);
         Html::addCssClass($this->buttonOptions, ['widget' => 'btn-floating']);
 
         if ($this->clickToToggle) {
@@ -136,6 +143,10 @@ class FixedActionButton extends BaseWidget
 
         if ($this->horizontal) {
             Html::addCssClass($this->options, ['containerLayout' => 'horizontal']);
+        }
+
+        if ($this->toolbar) {
+            Html::addCssClass($this->options, ['toolbar' => 'toolbar']);
         }
     }
 

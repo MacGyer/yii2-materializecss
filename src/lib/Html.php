@@ -126,7 +126,7 @@ class Html extends BaseHtml
                     $options['maxlength'] = $validator->max;
 
                     if ($showCharacterCounter === true) {
-                        $options['length'] = $validator->max;
+                        $options['data-length'] = $validator->max;
                     }
                     break;
                 }

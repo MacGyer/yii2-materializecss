@@ -250,7 +250,30 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function checkbox($options = [], $enclosedByLabel = false)
     {
+        Html::addCssClass($this->options, ['class' => 'checkbox']);
         return parent::checkbox($options, $enclosedByLabel);
+    }
+
+    /**
+     * Renders a drop-down list.
+     *
+     * @param array $items the option data items
+     * @param array $options the tag options in terms of name-value pairs.
+     *
+     * @return $this the field object itself.
+     *
+     * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#dropDownList()-detail
+     */
+    public function dropDownList($items, $options = [])
+    {
+        $view = $this->form->view;
+        MaterializePluginAsset::register($view);
+        $id = $this->getInputId();
+
+        $js = "$('#$id').material_select()";
+        $view->registerJs($js);
+
+        return parent::dropDownList($items, $options);
     }
 
     /**
@@ -262,6 +285,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function radio($options = [], $enclosedByLabel = false)
     {
+        Html::addCssClass($this->options, ['class' => 'radio']);
         return parent::radio($options, $enclosedByLabel);
     }
 
@@ -577,4 +601,21 @@ class ActiveField extends \yii\widgets\ActiveField
 
         return parent::input('week', $options);
     }
+
+    /**
+     * Builds a radio list
+     */
+//    public function radioList($items, $options = [])
+//    {
+//        $defaultOptions = [
+//            'item' => function($index, $label, $name, $checked, $value) {
+//                return Html::radio($name,$checked,['value'=>$value,'id'=>$name.$index]) . Html::label($label,$name.$index);
+//                return $return;
+//            },
+//            'class'=>'input-list-wrapper'
+//        ];
+//        $options = array_merge($defaultOptions, $options);
+//
+//        return parent::radioList($items,$options);
+//    }
 }
