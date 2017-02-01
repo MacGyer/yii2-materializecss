@@ -12,6 +12,7 @@ use yii\helpers\ArrayHelper;
  *
  * @package common\widgets
  * @subpackage form
+ * @since 1.2.0
  */
 class Select extends BaseInputWidget
 {
