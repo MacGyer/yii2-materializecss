@@ -11,6 +11,8 @@ See [official documentation](http://macgyer.github.io/yii2-materializecss/) for 
 
 **New**: Have a look at the [official demo page](http://yii2-materializecss.pluspunkt-coding.de) to see the repo in action.
 
+Current Materialize version implemented: 0.98.0
+
 ## Installation
 
 The preferred way of installation is through Composer.
@@ -71,6 +73,7 @@ The following widgets are currently available:
 * Nav
 * NavBar
 * Progress
+* Select
 * SideNav
 * Spinner
 * SubmitButton
@@ -110,11 +113,18 @@ You can copy those templates to any location you wish for further customization.
 
 ## Known issues
 
-As of Materializecss version 0.97.8 there seem to be issues with the sideNav() JS plugin. Therefore the Bower dependency is
-fixed to version 0.97.7.
+Despite the styling issues in Materialize v0.97.8. the dependency has been updated to v0.98.0. 
+See [Issue #4046](https://github.com/Dogfalo/materialize/issues/4046) for details. 
 
-See https://github.com/Dogfalo/materialize/issues/4046 or https://github.com/Dogfalo/materialize/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20sidenav
-for a more general overview.
+Unfortunately the issue still exists in the latest release, but can be fixed temporarily with the following CSS styles:
+
+```
+#sidenav-overlay {
+    z-index: 996;
+}
+```
+
+Hopefully one of the upcoming releases of Materialize will fix the issue.
 
 ## Sample layout
 
@@ -124,6 +134,14 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 1.2.0 - 2017-02-01
+* updated Materialize to v0.98.0
+* added [Select](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/Select.php)
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added dropDownList()
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): changed characterCounter() to work with Materialize v0.98.0
+* [Modal](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Modal.php): fixed modal plugin call
+* [FixedActionButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/FixedActionButton.php): added toolbar support
 
 ### 1.1.0 - 2017-01-05
 * added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php)
