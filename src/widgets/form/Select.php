@@ -90,6 +90,8 @@ class Select extends BaseInputWidget
      * @var boolean whether the select shall allow multiple selections.
      *
      * Please note: this options takes precedence over the 'multiple' key in [[$options]]
+     * 
+     * @since 1.2.1
      */
     public $multiple = false;
 
@@ -108,7 +110,7 @@ class Select extends BaseInputWidget
         if (!isset($this->options['options'])) {
             $this->options['options'] = [];
         }
-        
+
         $this->options['multiple'] = $this->multiple;
 
         $this->parseItems();
