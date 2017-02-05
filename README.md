@@ -136,7 +136,6 @@ You can find the sample layout file in ```src/layout/main.php```.
 ## Change log
 
 ### 1.2.1 - 2017-02-05
-* updated Materialize to v0.98.0
 * [Select](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/Select.php): added multiple property
 * Composer dependency for Yii restricted to ~2.0.0
 * Composer dependency for PHP set to >= 5.6.0
