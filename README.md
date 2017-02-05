@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
+[![license](https://img.shields.io/badge/LICENCE-BSD--3--Clause-blue.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 [![Github Release](https://img.shields.io/github/release/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 [![Packagist](https://img.shields.io/packagist/dt/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 
