@@ -87,6 +87,15 @@ class Select extends BaseInputWidget
     public $options = [];
 
     /**
+     * @var boolean whether the select shall allow multiple selections.
+     *
+     * Please note: this options takes precedence over the 'multiple' key in [[$options]]
+     * 
+     * @since 1.2.1
+     */
+    public $multiple = false;
+
+    /**
      * @var string the default placeholder string.
      */
     protected $defaultPlaceholder = 'Please choose';
@@ -101,6 +110,8 @@ class Select extends BaseInputWidget
         if (!isset($this->options['options'])) {
             $this->options['options'] = [];
         }
+
+        $this->options['multiple'] = $this->multiple;
 
         $this->parseItems();
         $this->insertPlaceholder();
