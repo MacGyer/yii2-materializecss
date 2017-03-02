@@ -8,6 +8,7 @@
 namespace macgyer\yii2materializecss\widgets\grid;
 
 use macgyer\yii2materializecss\widgets\data\LinkPager;
+use yii\helpers\ArrayHelper;
 
 /**
  * The GridView widget is used to display data in a grid.
@@ -61,7 +62,7 @@ class GridView extends \yii\grid\GridView
     {
         parent::init();
 
-        if (is_array($this->pager) && !array_key_exists('class', $this->pager)) {
+        if (is_array($this->pager) && !ArrayHelper::keyExists('class', $this->pager)) {
             $this->pager = [
                 'class' => LinkPager::className(),
             ];
