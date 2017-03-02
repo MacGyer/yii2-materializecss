@@ -5,7 +5,7 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets\data;
+namespace macgyer\yii2materializecss\widgets\grid;
 
 /**
  * LinkPager displays a list of hyperlinks that lead to different pages of target.

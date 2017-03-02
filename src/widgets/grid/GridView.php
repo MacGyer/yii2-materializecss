@@ -7,7 +7,6 @@
 
 namespace macgyer\yii2materializecss\widgets\grid;
 
-use macgyer\yii2materializecss\widgets\data\LinkPager;
 use yii\helpers\ArrayHelper;
 
 /**
