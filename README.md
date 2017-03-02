@@ -69,6 +69,7 @@ The following widgets are currently available:
 * Fixed Action Button
 * GridView with ActionColumn
 * Icon
+* LinkPager
 * Modal
 * Nav
 * NavBar
@@ -134,6 +135,10 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 1.3.0 - 2017-03-02
+* added [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php): set [LinkPager]() as default pager class
+* [GridView](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/GridView.php): set [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php) as default pager class
 
 ### 1.2.1 - 2017-02-05
 * [Select](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/Select.php): added multiple property
