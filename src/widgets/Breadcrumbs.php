@@ -116,7 +116,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
         }
 
         if (!isset($this->options['class'])) {
-            Html::addCssClass($this->options, ['wrapper' => 'nav-wrapper']);
+            Html::addCssClass($this->options, ['wrapper' => 'nav-wrapper container']);
         }
 
         if ($this->innerContainerOptions !== false && !isset($this->innerContainerOptions['class'])) {
