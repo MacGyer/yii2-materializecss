@@ -118,7 +118,7 @@ class NavBar extends BaseWidget
 
         $html[] = Html::beginTag('nav', $this->options);
 
-        Html::addCssClass($this->wrapperOptions, 'nav-wrapper');
+        Html::addCssClass($this->wrapperOptions, 'nav-wrapper container');
         $html[] = Html::beginTag('div', $this->wrapperOptions);
 
         if ($this->brandLabel !== false) {
