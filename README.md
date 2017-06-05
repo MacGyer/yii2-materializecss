@@ -74,6 +74,7 @@ The following widgets are currently available:
 * Nav
 * NavBar
 * Progress
+* RangeInput
 * Select
 * SideNav
 * Spinner
@@ -86,7 +87,6 @@ These widgets are planned for development:
 * Card
 * Collapsible
 * Collection
-* RangeInput
 * Toast
 
 ## Gii support
@@ -136,8 +136,12 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
+### 1.4.0 - 2017-06-05
+* added [RangeInput](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/RangeInput.php)
+* added some missing PHPDoc annotations
+
 ### 1.3.0 - 2017-03-02
-* added [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php): set [LinkPager]() as default pager class
+* added [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php)
 * [GridView](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/GridView.php): set [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php) as default pager class
 
 ### 1.2.1 - 2017-02-05
