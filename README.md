@@ -11,7 +11,7 @@ See [official documentation](http://macgyer.github.io/yii2-materializecss/) for 
 
 **New**: Have a look at the [official demo page](http://yii2-materializecss.pluspunkt-coding.de) to see the repo in action.
 
-Current Materialize version implemented: 0.98.0
+Current Materialize version implemented: 0.98.2
 
 ## Installation
 
@@ -138,6 +138,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ### 1.4.0 - 2017-06-05
 * added [RangeInput](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/RangeInput.php)
+* updated Materialize to v0.98.2
 * added some missing PHPDoc annotations
 
 ### 1.3.0 - 2017-03-02
