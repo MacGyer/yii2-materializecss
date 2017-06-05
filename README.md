@@ -114,7 +114,7 @@ You can copy those templates to any location you wish for further customization.
 
 ## Known issues
 
-Despite the styling issues in Materialize v0.97.8. the dependency has been updated to v0.98.0. 
+Despite the styling issues in Materialize v0.97.8. the dependency has been updated to v0.98.2. 
 See [Issue #4046](https://github.com/Dogfalo/materialize/issues/4046) for details. 
 
 Unfortunately the issue still exists in the latest release, but can be fixed temporarily with the following CSS styles:
