@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/MacGyer/yii2-materializecss
+ * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
+ * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
+ */
 
 namespace macgyer\yii2materializecss\widgets\form;
 
@@ -10,7 +15,7 @@ use yii\helpers\ArrayHelper;
  * Select renders a `<select>` option list and utilizes Materialize `material_select()` to display a highly user-friendly
  * drop down.
  *
- * @package common\widgets
+ * @package widgets
  * @subpackage form
  * @since 1.2.0
  */
@@ -90,7 +95,7 @@ class Select extends BaseInputWidget
      * @var boolean whether the select shall allow multiple selections.
      *
      * Please note: this options takes precedence over the 'multiple' key in [[$options]]
-     * 
+     *
      * @since 1.2.1
      */
     public $multiple = false;
