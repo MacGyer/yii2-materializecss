@@ -41,7 +41,7 @@ class RangeInput extends BaseInputWidget
      * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
      * for details on how attributes are being rendered.
      */
-    public $ptions = [];
+    public $options = [];
 
     /**
      * @var array the HTML attributes for the slider element. The following special options are recognized:
