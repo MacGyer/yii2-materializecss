@@ -20,7 +20,7 @@ use yii\helpers\ArrayHelper;
  *
  * ```php
  * 'slideOptions' => [
- *      'class' => 'slide-item' // this class will be used for all slide elements (`<li>`)
+ *      'class' => 'slide-item' // this class will be used for all slide elements (<li>)
  * ],
  * 'slides' => [
  *      [
@@ -29,10 +29,10 @@ use yii\helpers\ArrayHelper;
  *      [
  *          'image' => ['src' => '/source/of/image'],
  *          'caption' => [
- *              'content' => '<p>Caption content</p>,
+ *              'content' => '<p>Caption content</p>',
  *              'align' => Slider::CAPTION_ALIGN_RIGHT
  *          ],
- *          'options' => ['class' => 'slide-item-override'] // overrides [[slideOptions]]
+ *          'options' => ['class' => 'slide-item-override'] // overrides $slideOptions
  *      ]
  * ]
  * ```
