@@ -15,7 +15,10 @@ use yii\helpers\ArrayHelper;
 /**
  * MaterialBox creates a lightweight lightbox variant to present images.
  *
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
+ * @subpackage media
+ *
  * @see http://materializecss.com/media.html#materialbox
  */
 class MaterialBox extends BaseWidget
