@@ -115,7 +115,7 @@ class Slider extends BaseWidget
         }
 
         $this->clientOptions['indicators'] = $this->showIndicators;
-        $this->registerPlugin('slider', "#{$this->id} > .slider");
+        $this->registerPlugin('slider', '.slider');
     }
 
     /**
@@ -135,7 +135,7 @@ class Slider extends BaseWidget
     }
 
     /**
-     * Parses all slides and generates the slide list.
+     * Parses all [[slides]] and generates the slide list.
      * @return string the list markup
      */
     protected function renderSlides()
