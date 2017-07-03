@@ -134,7 +134,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
-### 1.5.0 - 2017-06-05
+### 1.5.0 - 2017-07-03
 * added [Carousel](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Carousel.php)
 * added [MaterialBox](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/MaterialBox.php)
 * added [Parallax](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Parallax.php)
