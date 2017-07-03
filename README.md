@@ -139,6 +139,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 * added [MaterialBox](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/MaterialBox.php)
 * added [Parallax](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Parallax.php)
 * added [Slider](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Slider.php)
+* improved sample layout
 
 ### 1.4.0 - 2017-06-05
 * added [RangeInput](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/RangeInput.php)
