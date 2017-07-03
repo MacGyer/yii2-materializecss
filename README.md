@@ -62,6 +62,7 @@ The following widgets are currently available:
 * Alert
 * Breadcrumbs
 * Button
+* Carousel
 * Chip
 * DatePicker
 * DetailView
@@ -70,24 +71,20 @@ The following widgets are currently available:
 * GridView with ActionColumn
 * Icon
 * LinkPager
+* MaterialBox
 * Modal
 * Nav
 * NavBar
+* Parallax
 * Progress
 * RangeInput
 * Select
 * SideNav
+* Slider
 * Spinner
 * SubmitButton
 * SwitchButton
 * TimePicker
-
-These widgets are planned for development:
-
-* Card
-* Collapsible
-* Collection
-* Toast
 
 ## Gii support
 
@@ -127,6 +124,7 @@ Unfortunately the issue still exists in the latest release, but can be fixed tem
 
 Hopefully one of the upcoming releases of Materialize will fix the issue.
 
+
 ## Sample layout
 
 As of version 1.0.6 there is a sample layout file included in the package. You can use this file to get inspiration for
@@ -135,6 +133,13 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 1.5.0 - 2017-06-05
+* added [Carousel](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Carousel.php)
+* added [MaterialBox](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/MaterialBox.php)
+* added [Parallax](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Parallax.php)
+* added [Slider](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Slider.php)
+* improved sample layout
 
 ### 1.4.0 - 2017-06-05
 * added [RangeInput](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/RangeInput.php)
