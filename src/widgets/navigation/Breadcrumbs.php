@@ -5,7 +5,7 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets;
+namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\lib\Html;
 use Yii;
@@ -19,10 +19,10 @@ use yii\helpers\ArrayHelper;
  * for the "Sample Post". He can click on "Sample Post" to view that page, or he can click on "Home"
  * to return to the homepage.
  *
- * To use Breadcrumbs, you need to configure its `$links` property (inherited from 
- * [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)) , which specifies the links to be 
- * displayed. 
- * 
+ * To use Breadcrumbs, you need to configure its `$links` property (inherited from
+ * [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)) , which specifies the links to be
+ * displayed.
+ *
  * For example,
  *
  * ```php
@@ -55,6 +55,7 @@ use yii\helpers\ArrayHelper;
  * @see [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
+ * @subpackage navigation
  */
 class Breadcrumbs extends \yii\widgets\Breadcrumbs
 {

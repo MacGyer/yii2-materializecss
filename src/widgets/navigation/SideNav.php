@@ -5,9 +5,11 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets;
+namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\lib\Html;
+use macgyer\yii2materializecss\widgets\Button;
+use macgyer\yii2materializecss\widgets\navigation\Nav;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
@@ -17,8 +19,9 @@ use yii\helpers\ArrayHelper;
  * See [[Nav::$items]] for details on item structure.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @package macgyer\yii2materializecss\widgets
  * @see http://materializecss.com/side-nav.html
+ * @package widgets
+ * @subpackage navigation
  */
 class SideNav extends Nav
 {

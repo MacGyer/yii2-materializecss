@@ -5,7 +5,7 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets;
+namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
@@ -21,8 +21,8 @@ use Yii;
  * or [\yii\widgets\Menu](http://www.yiiframework.com/doc-2.0/yii-widgets-menu.html) to build up such content. For example,
  *
  * ```php
- * use macgyer\yii2materializecss\widgets\NavBar;
- * use macgyer\yii2materializecss\widgets\Nav;
+ * use macgyer\yii2materializecss\widgets\navigation\NavBar;
+ * use macgyer\yii2materializecss\widgets\navigation\Nav;
  *
  * NavBar::begin(['brandLabel' => 'NavBar Test']);
  * echo Nav::widget([
@@ -34,8 +34,9 @@ use Yii;
  * NavBar::end();
  * ```
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @package widgets
  * @see http://materializecss.com/navbar.html
+ * @package widgets
+ * @subpackage navigation
  */
 class NavBar extends BaseWidget
 {

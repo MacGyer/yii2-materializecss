@@ -5,11 +5,13 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets;
+namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\assets\MaterializeAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
+use macgyer\yii2materializecss\widgets\navigation\Dropdown;
+use macgyer\yii2materializecss\widgets\navigation\SideNav;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -42,8 +44,9 @@ use yii\helpers\ArrayHelper;
  * ```
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @package widgets
  * @see http://materializecss.com/navbar.html
+ * @package widgets
+ * @subpackage navigation
  */
 class Nav extends BaseWidget
 {
