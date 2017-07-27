@@ -140,56 +140,56 @@ You can find the sample layout file in ```src/layout/main.php```.
 ## Change log
 
 ### 1.5.0 - 2017-07-03
-* added [Carousel](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Carousel.php)
-* added [MaterialBox](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/MaterialBox.php)
-* added [Parallax](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Parallax.php)
-* added [Slider](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/media/Slider.php)
+* added [Carousel](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/media/Carousel.php)
+* added [MaterialBox](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/media/MaterialBox.php)
+* added [Parallax](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/media/Parallax.php)
+* added [Slider](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/media/Slider.php)
 * improved sample layout
 
 ### 1.4.0 - 2017-06-05
-* added [RangeInput](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/RangeInput.php)
+* added [RangeInput](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/RangeInput.php)
 * updated Materialize to v0.98.2
 * added some missing PHPDoc annotations
 
 ### 1.3.0 - 2017-03-02
-* added [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php)
-* [GridView](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/GridView.php): set [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/grid/LinkPager.php) as default pager class
+* added [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/grid/LinkPager.php)
+* [GridView](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/grid/GridView.php): set [LinkPager](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/grid/LinkPager.php) as default pager class
 
 ### 1.2.1 - 2017-02-05
-* [Select](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/Select.php): added multiple property
+* [Select](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/Select.php): added multiple property
 * Composer dependency for Yii restricted to ~2.0.0
 * Composer dependency for PHP set to >= 5.6.0
 
 ### 1.2.0 - 2017-02-01
 * updated Materialize to v0.98.0
-* added [Select](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/Select.php)
-* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added dropDownList()
-* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): changed characterCounter() to work with Materialize v0.98.0
-* [Modal](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Modal.php): fixed modal plugin call
-* [FixedActionButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/FixedActionButton.php): added toolbar support
+* added [Select](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/Select.php)
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/ActiveField.php): added dropDownList()
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/ActiveField.php): changed characterCounter() to work with Materialize v0.98.0
+* [Modal](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Modal.php): fixed modal plugin call
+* [FixedActionButton](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/FixedActionButton.php): added toolbar support
 
 ### 1.1.0 - 2017-01-05
-* added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php)
-* [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php): added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php) support
-* [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php): moved mobile toggle button to [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Nav.php)
-* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added Materialize autocomplete support
-* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): added Materialize character count support
-* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/ActiveField.php): checkbox and radio are not enclosed by label as default
+* added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Button.php)
+* [Nav](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Nav.php): added [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Button.php) support
+* [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/NavBar.php): moved mobile toggle button to [Nav](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Nav.php)
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/ActiveField.php): added Materialize autocomplete support
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/ActiveField.php): added Materialize character count support
+* [ActiveField](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/ActiveField.php): checkbox and radio are not enclosed by label as default
  
 ### 1.0.9 - 2016-09-01
-* added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/TimePicker.php)
+* added [TimePicker](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/TimePicker.php)
 
 ### 1.0.8 - 2016-08-08
-* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): fixed tag rendering
-* [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SwitchButton.php): fixed uncheck property
-* [Alert](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Alert.php): added ```default``` context class
-* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): added property ```type```
-* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): added property ```large```
-* [Button](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Button.php): added property ```disabled```
-* [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Spinner.php): added property ```size```
-* [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Spinner.php): added property ```color```
-* [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SwitchButton.php): added support for Icon/HTML labels
-* added [SubmitButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/form/SubmitButton.php)
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Button.php): fixed tag rendering
+* [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/SwitchButton.php): fixed uncheck property
+* [Alert](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Alert.php): added ```default``` context class
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Button.php): added property ```type```
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Button.php): added property ```large```
+* [Button](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Button.php): added property ```disabled```
+* [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Spinner.php): added property ```size```
+* [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Spinner.php): added property ```color```
+* [SwitchButton](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/SwitchButton.php): added support for Icon/HTML labels
+* added [SubmitButton](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/form/SubmitButton.php)
 
 ### 1.0.7 - 2016-07-27
 * full source documentation
@@ -202,15 +202,15 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ### 1.0.5 - 2016-04-24
 * updated README with fixed Datepicker issue
-* refactored [Breadcrumbs](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Breadcrumbs.php)
+* refactored [Breadcrumbs](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Breadcrumbs.php)
 
 ### 1.0.3 - 2016-03-10
-* fixed multiple usage of [MaterializeWidgetTrait](https://github.com/MacGyer/yii2-materializecss/blob/master/src/lib/MaterializeWidgetTrait.php) producing bugs
-* updated PHPDoc in [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/NavBar.php)
+* fixed multiple usage of [MaterializeWidgetTrait](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/lib/MaterializeWidgetTrait.php) producing bugs
+* updated PHPDoc in [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/NavBar.php)
 
 ### 1.0.2 - 2016-03-09
-* added [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Spinner.php)
-* added [Progress](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Progress.php)
+* added [Spinner](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Spinner.php)
+* added [Progress](https://github.com/MacGyer/yii2-materializecss/blob/1.x/src/widgets/Progress.php)
 
 ### 1.0.1 - 2016-03-09
 * updated README
