@@ -7,17 +7,12 @@
 
 namespace macgyer\yii2materializecss\widgets\form;
 
-use macgyer\yii2materializecss\assets\TimePickerAsset;
 use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
  * TimePicker renders a time picker input element.
  *
- * This widget implements Ching Yaw Hao's clock picker solution for Materialize.
- *
- * @see https://github.com/chingyawhao/materialize-clockpicker
- * @author Ching Yaw Hao
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
@@ -25,20 +20,31 @@ use macgyer\yii2materializecss\lib\Html;
 class TimePicker extends BaseInputWidget
 {
     /**
-     * @var array the options for the underlying datepicker JS plugin.
-     * Please refer to the corresponding [documentation on Github](https://github.com/chingyawhao/materialize-clockpicker#options).
-     *
-     * @see https://github.com/chingyawhao/materialize-clockpicker#options
+     * @var boolean whether time format is 12 or 24 hour.
      */
-    public $clientOptions = [];
+    public $isTwelveHourFormat = false;
 
     /**
-     * @var array the event handlers for the underlying date picker JS plugin.
-     * Please refer to the corresponding [documentation on Github](https://github.com/chingyawhao/materialize-clockpicker#options).
-     *
-     * @see https://github.com/chingyawhao/materialize-clockpicker#options
+     * @var string the label for the "select time" button.
      */
-    public $clientEvents = [];
+    public $okLabel = 'OK';
+
+    /**
+     * @var string the label for the "clear time" button.
+     */
+    public $clearLabel = 'Clear';
+
+    /**
+     * @var string the label for the "cancel time selection" button.
+     */
+    public $cancelLabel = 'Cancel';
+
+    /**
+     * @var string the default time displayed when picker is opened.
+     *
+     * Examples: `'now'`, `'1:55PM'`, `'18:30'`
+     */
+    public $defaultValue = 'now';
 
     /**
      * Initializes the widget.
@@ -48,8 +54,22 @@ class TimePicker extends BaseInputWidget
         parent::init();
 
         if (!isset($this->clientOptions['donetext'])) {
-            $this->clientOptions['donetext'] = 'Select';
+            $this->clientOptions['donetext'] = $this->okLabel;
         }
+
+        if (!isset($this->clientOptions['cleartext'])) {
+            $this->clientOptions['cleartext'] = $this->clearLabel;
+        }
+
+        if (!isset($this->clientOptions['canceltext'])) {
+            $this->clientOptions['canceltext'] = $this->cancelLabel;
+        }
+
+        if (isset($this->defaultValue)) {
+            $this->clientOptions['default'] = $this->defaultValue;
+        }
+
+        $this->clientOptions['twelvehour'] = $this->isTwelveHourFormat;
     }
 
     /**
@@ -58,27 +78,16 @@ class TimePicker extends BaseInputWidget
      */
     public function run()
     {
-        $this->registerAssets();
+        Html::addCssClass($this->options, 'timepicker');
 
-        Html::addCssClass($this->options, 'clockpicker');
+        $this->registerPlugin('pickatime');
 
         if ($this->hasModel()) {
             $this->options['data-value'] = isset($this->value) ? $this->value : Html::getAttributeValue($this->model, $this->attribute);
-            return Html::activeInput('time', $this->model, $this->attribute, $this->options);
+            return Html::activeInput('text', $this->model, $this->attribute, $this->options);
         } else {
             $this->options['data-value'] = $this->value;
-            return Html::input('time', $this->name, $this->value, $this->options);
+            return Html::input('text', $this->name, $this->value, $this->options);
         }
-    }
-
-    /**
-     * Registers the asset bundle and initializes plugin call.
-     */
-    private function registerAssets()
-    {
-        $view = $this->getView();
-        TimePickerAsset::register($view);
-
-        $this->registerPlugin('pickatime');
     }
 }
