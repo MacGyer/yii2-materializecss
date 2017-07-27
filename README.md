@@ -2,7 +2,12 @@
 [![Github Release](https://img.shields.io/github/release/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 [![Packagist](https://img.shields.io/packagist/dt/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 
-# Materialize for Yii2
+# Materialize for Yii2 (legacy version 1.x)
+
+**You are currently viewing the README of the legacy branch 1.x**. This branch will only receive bug fixes, but no new
+features.
+
+[Go to current version](https://github.com/MacGyer/yii2-materializecss/tree/master)
 
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
 [Materialize](http://materializecss.com/) is a modern responsive front-end framework based on Material Design.
