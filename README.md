@@ -4,10 +4,13 @@
 
 # Materialize for Yii2 (legacy version 1.x)
 
+----
 **You are currently viewing the README of the legacy branch 1.x**. This branch will only receive bug fixes, but no new
 features.
 
 [Go to current version](https://github.com/MacGyer/yii2-materializecss/tree/master)
+
+----
 
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
 [Materialize](http://materializecss.com/) is a modern responsive front-end framework based on Material Design.
