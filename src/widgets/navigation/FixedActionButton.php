@@ -5,10 +5,11 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets;
+namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
+use macgyer\yii2materializecss\widgets\Button;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
@@ -34,6 +35,7 @@ use yii\helpers\ArrayHelper;
  * @see http://materializecss.com/buttons.html#floating
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
+ * @subpackage navigation
  */
 class FixedActionButton extends BaseWidget
 {
@@ -105,7 +107,7 @@ class FixedActionButton extends BaseWidget
 
     /**
      * @var array the options for the optional icon.
-     * The icon will be rendered by [[Icon|Icon]].
+     * The icon will be rendered by [[\macgyer\yii2materializecss\widgets\Icon|Icon]].
      *
      * To specify an icon you can use the following parameters:
      *

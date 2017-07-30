@@ -5,7 +5,7 @@
  * @license https://github.com/MacGyer/yii2-materializecss/blob/master/LICENSE
  */
 
-namespace macgyer\yii2materializecss\widgets;
+namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\assets\MaterializeAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
@@ -42,8 +42,9 @@ use yii\helpers\ArrayHelper;
  * ```
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @package widgets
  * @see http://materializecss.com/navbar.html
+ * @package widgets
+ * @subpackage navigation
  */
 class Nav extends BaseWidget
 {
@@ -114,7 +115,7 @@ class Nav extends BaseWidget
      * The following options are supported:
      * - menuWidth: 300, // Default is 240
      * - edge: 'right', // Choose the horizontal origin
-     * - closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+     * - closeOnClick: true, // Closes side-nav on `<a>` clicks, useful for Angular/Meteor
      * - draggable: true // Choose whether you can drag to open on touch screens
      *
      * @see http://materializecss.com/side-nav.html#options
@@ -123,9 +124,9 @@ class Nav extends BaseWidget
 
     /**
      * @var array the configuration options for the toggle button.
-     * The toggle button is rendered by the [[Button]] widget. See the docs for all available options.
+     * The toggle button is rendered by the [[\macgyer\yii2materializecss\widgets\Button|Button]] widget. See the docs for all available options.
      *
-     * @see Button|Button
+     * @see \macgyer\yii2materializecss\widgets\Button|Button
      */
     public $sideNavToggleButtonOptions = [];
 

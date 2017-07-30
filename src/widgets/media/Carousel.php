@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Carousel is a robust and versatile component that can be an image slider or an item carousel with arbitrary HTML content.
  *
- * Simply provide the [[slides]] as an array of items.
+ * Simply provide the [[items]] as an array of items.
  * For each item you must define the `image` key with the image's `src`. Additionally you can define and align a caption
  * for every slide individually. Caption content can be HTML and will <strong>not</strong> be encoded.
  *
