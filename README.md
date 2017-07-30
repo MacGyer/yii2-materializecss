@@ -5,8 +5,11 @@
 # Materialize for Yii2
 
 ----
+
 This is the current, actively developed 2.x branch which introduces some breaking changes compared to version 1.x.
+
 [Go to 1.x version](https://github.com/MacGyer/yii2-materializecss/tree/1.x)
+
 ----
 
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
@@ -142,8 +145,8 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ### 2.0.0 - 2017-07-30
 * **Please note: this release contains breaking changes**
-* moved [Breadcrumbs](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/Breadcrumbs.php), [Dropdown](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/Dropdown.php), [FixedActionButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/FixedActionButton.php), [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/Nav.php), [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/NavBar.php) and [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/SideNav.php) to dedicated namespace
-* dropped chingyawhao/materialize-clockpicker in favor of Materialize native time picker implementation
+* moved [Breadcrumbs](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/Breadcrumbs.php), [Dropdown](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/Dropdown.php), [FixedActionButton](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/FixedActionButton.php), [Nav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/Nav.php), [NavBar](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/NavBar.php) and [SideNav](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/navigation/SideNav.php) to dedicated namespace (**breaking**)
+* dropped chingyawhao/materialize-clockpicker in favor of Materialize native time picker implementation (**breaking**)
 * added [Collapsible](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Collapsible.php)
 * updated Materialize to v0.100.1
 
