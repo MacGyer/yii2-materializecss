@@ -10,8 +10,6 @@ namespace macgyer\yii2materializecss\widgets\navigation;
 use macgyer\yii2materializecss\assets\MaterializeAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
-use macgyer\yii2materializecss\widgets\navigation\Dropdown;
-use macgyer\yii2materializecss\widgets\navigation\SideNav;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -126,9 +124,9 @@ class Nav extends BaseWidget
 
     /**
      * @var array the configuration options for the toggle button.
-     * The toggle button is rendered by the [[Button]] widget. See the docs for all available options.
+     * The toggle button is rendered by the [[\macgyer\yii2materializecss\widgets\Button|Button]] widget. See the docs for all available options.
      *
-     * @see Button|Button
+     * @see \macgyer\yii2materializecss\widgets\Button|Button
      */
     public $sideNavToggleButtonOptions = [];
 

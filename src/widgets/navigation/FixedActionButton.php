@@ -107,7 +107,7 @@ class FixedActionButton extends BaseWidget
 
     /**
      * @var array the options for the optional icon.
-     * The icon will be rendered by [[Icon|Icon]].
+     * The icon will be rendered by [[\macgyer\yii2materializecss\widgets\Icon|Icon]].
      *
      * To specify an icon you can use the following parameters:
      *

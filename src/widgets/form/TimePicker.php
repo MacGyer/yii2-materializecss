@@ -16,6 +16,7 @@ use macgyer\yii2materializecss\lib\Html;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
+ * @see http://materializecss.com/forms.html#time-picker
  */
 class TimePicker extends BaseInputWidget
 {
@@ -47,7 +48,7 @@ class TimePicker extends BaseInputWidget
     public $defaultValue = 'now';
 
     /**
-     * Initializes the widget.
+     * Initialize the widget.
      */
     public function init()
     {
@@ -73,8 +74,8 @@ class TimePicker extends BaseInputWidget
     }
 
     /**
-     * Executes the widget.
-     * @return string the result of widget execution to be outputted.
+     * Execute the widget.
+     * @return string the result of widget execution to be outputted
      */
     public function run()
     {

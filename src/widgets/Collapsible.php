@@ -15,10 +15,12 @@ use yii\helpers\ArrayHelper;
  * Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.
  *
  * Simply provide the [[items]] as an array.
+ *
  * For each item you can define the `header` and `body` key for header and body configuration.
  * Both `header` and `body` support the following special options:
  * - `tag`: the tag for the container tag, defaults to `div`.
  * - `content`: the content for the respective section. This can be arbitrary HTML.
+ *
  * All other options are rendered as HTML attributes.
  *
  * ```php
@@ -29,7 +31,7 @@ use yii\helpers\ArrayHelper;
  *              'content' => '<i class="material-icons">filter_drama</i>First'
  *          ],
  *          'body' => [
- *              'content' => '<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>',
+ *              'content' => '<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>',
  *          ],
  *      ],
  *      [
@@ -38,7 +40,7 @@ use yii\helpers\ArrayHelper;
  *              'class' => 'customHeader',
  *          ],
  *          'body' => [
- *              'content' => '<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>',
+ *              'content' => '<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>',
  *              'tag' => 'p',
  *              'data-body-category' => 'example',
  *          ],
@@ -48,7 +50,7 @@ use yii\helpers\ArrayHelper;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  *
- * @see http://materializecss.com/carousel.html
+ * @see http://materializecss.com/collapsible.html
  */
 class Collapsible extends BaseWidget
 {
