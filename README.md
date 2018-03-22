@@ -2,7 +2,7 @@
 [![Github Release](https://img.shields.io/github/release/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 [![Packagist](https://img.shields.io/packagist/dt/macgyer/yii2-materializecss.svg)](https://packagist.org/packages/macgyer/yii2-materializecss)
 
-# Materialize for Yii2
+# Materialize for Yii2 (legacy version 2.x)
 
 ----
 
