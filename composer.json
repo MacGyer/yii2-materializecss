@@ -1,6 +1,6 @@
 {
     "name": "macgyer/yii2-materializecss",
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "description": "Materialize CSS implementation for Yii2",
     "keywords": ["materialize", "yii2", "widgets", "material design"],
     "homepage": "http://macgyer.github.io/yii2-materializecss",
@@ -18,7 +18,7 @@
         "php": ">=7.0.0",
         "yiisoft/yii2": "~2.0.14",
 
-        "bower-asset/materialize": "dev-v1-dev#708e235cf6b54a7404967521426bc7d7a4c0c8ee"
+        "bower-asset/materialize": "1.0.*@beta"
     },
     "autoload": {
         "psr-4": {
