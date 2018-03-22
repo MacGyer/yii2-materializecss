@@ -18,7 +18,7 @@
         "php": ">=7.0.0",
         "yiisoft/yii2": "~2.0.14",
 
-        "bower-asset/materialize": "1.0.0-beta"
+        "bower-asset/materialize": "dev-v1-dev#708e235cf6b54a7404967521426bc7d7a4c0c8ee"
     },
     "autoload": {
         "psr-4": {
