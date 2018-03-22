@@ -6,9 +6,11 @@
 
 ----
 
-This is the current, actively developed 2.x branch which introduces some breaking changes compared to version 1.x.
+This is the current, actively developed 3.x branch which will implement Materialize version 1.0 and thus breaking backwards compatibility.
+**Please note: This branch is work in progress right now. No release has been published. Do not use in production versions until further notice.**
 
 [Go to 1.x version](https://github.com/MacGyer/yii2-materializecss/tree/1.x)
+[Go to 2.x version](https://github.com/MacGyer/yii2-materializecss/tree/2.x)
 
 ----
 
@@ -17,9 +19,9 @@ This package integrates the Materialize CSS framework into [Yii2](http://www.yii
 
 See [official documentation](http://macgyer.github.io/yii2-materializecss/) for detailed information.
 
-**New**: Have a look at the [official demo page](http://yii2-materializecss.pluspunkt-coding.de) to see the repo in action.
+**New**: Have a look at the [official demo page](https://yii2-materializecss.pluspunkt-coding.de) to see the repo in action.
 
-Current Materialize version implemented: 0.100.1
+Current Materialize version implemented: 1.0.0-beta
 
 ## Installation
 
@@ -28,13 +30,13 @@ If you don't have Composer you can get it here: https://getcomposer.org/
 
 You also should install the Composer Asset Plugin to handle NPM and Bower assets:
 ```
-$ composer global require "fxp/composer-asset-plugin:~1.2"
+$ composer global require "fxp/composer-asset-plugin:~1.4"
 ```
 
 To install the package add the following to the ```require``` section of your composer.json:
 ```
 "require": {
-    "macgyer/yii2-materializecss": "*"
+    "macgyer/yii2-materializecss": "~3.0.0"
 },
 ```
 
