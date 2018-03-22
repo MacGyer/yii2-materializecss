@@ -6,11 +6,12 @@
 
 ----
 
-This is the current, actively developed 2.x branch which introduces some breaking changes compared to version 1.x.
+You are currently viewing the README of the legacy branch 2.x. This branch will only receive bug fixes, but no new features.
 
-[Go to 1.x version](https://github.com/MacGyer/yii2-materializecss/tree/1.x)
+[Go to current version](https://github.com/MacGyer/yii2-materializecss)
 
 ----
+
 
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
 [Materialize](http://materializecss.com/) is a modern responsive front-end framework based on Material Design.
