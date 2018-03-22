@@ -10,6 +10,7 @@ namespace macgyer\yii2materializecss\lib;
 use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use Yii;
 use yii\helpers\Json;
+use yii\web\View;
 
 /**
  * MaterializeWidgetTrait provides the basics for all Materialize widgets features.
@@ -72,6 +73,7 @@ trait MaterializeWidgetTrait
      */
     protected function registerPlugin($name, $selector = null)
     {
+        /** @var View $view */
         $view = $this->getView();
 
         MaterializePluginAsset::register($view);
@@ -83,9 +85,10 @@ trait MaterializeWidgetTrait
         }
 
         if ($this->clientOptions !== false) {
-            $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
-            $js = "jQuery('$selector').$name($options);";
-            $view->registerJs($js);
+            $options = empty($this->clientOptions) ? '{}' : Json::htmlEncode($this->clientOptions);
+
+            $js = "M.$name.init(document.querySelectorAll('$selector'), $options);";
+            $view->registerJs($js, View::POS_END);
         }
 
         $this->registerClientEvents();
@@ -97,12 +100,14 @@ trait MaterializeWidgetTrait
     protected function registerClientEvents()
     {
         if (!empty($this->clientEvents)) {
+            /** @var View $view */
+            $view = $this->getView();
             $id = $this->options['id'];
-            $js = [];
+            $js[] = "var elem_$id = document.getElementById('$id');";
             foreach ($this->clientEvents as $event => $handler) {
-                $js[] = "jQuery('#$id').on('$event', $handler);";
+                $js[] = "elem_$id.addEventListener('$event', $handler);";
             }
-            $this->getView()->registerJs(implode("\n", $js));
+            $view->registerJs(implode("\n", $js), View::POS_END);
         }
     }
 }
