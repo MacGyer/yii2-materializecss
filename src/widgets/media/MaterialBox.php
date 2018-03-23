@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage media
  *
- * @see http://materializecss.com/media.html#materialbox
+ * @see http://next.materializecss.com/media.html#materialbox
  */
 class MaterialBox extends BaseWidget
 {
@@ -77,7 +77,7 @@ class MaterialBox extends BaseWidget
      */
     public function run()
     {
-        $this->registerPlugin('materialbox', '.materialboxed');
+        $this->registerPlugin('Materialbox', '.materialboxed');
 
         $tag = ArrayHelper::remove($this->options, 'tag', 'div');
         $html[] = Html::beginTag($tag, $this->options);

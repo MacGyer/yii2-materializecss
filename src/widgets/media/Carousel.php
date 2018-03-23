@@ -79,6 +79,31 @@ class Carousel extends BaseWidget
     public $items = [];
 
     /**
+     * @var int transition duration in milliseconds.
+     */
+    public $duration = 200;
+
+    /**
+     * @var int if 0, all items are the same size.
+     */
+    public $perspectiveZoom = -100;
+
+    /**
+     * @var int sets the spacing of the center item.
+     */
+    public $centerSpacing = 0;
+
+    /**
+     * @var int sets the padding between non center items.
+     */
+    public $padding = 0;
+
+    /**
+     * @var int sets the number of items visible.
+     */
+    public $visibleItems = 5;
+
+    /**
      * @var boolean whether the carousel has full width.
      */
     public $fullWidth = false;
@@ -109,8 +134,13 @@ class Carousel extends BaseWidget
 
         $this->clientOptions['noWrap'] = $this->noWrap;
         $this->clientOptions['indicators'] = $this->showIndicators;
+        $this->clientOptions['duration'] = $this->duration;
+        $this->clientOptions['dist'] = $this->perspectiveZoom;
+        $this->clientOptions['shift'] = $this->centerSpacing;
+        $this->clientOptions['padding'] = $this->padding;
+        $this->clientOptions['numVisible'] = $this->visibleItems;
 
-        $this->registerPlugin('carousel', '.carousel');
+        $this->registerPlugin('Carousel', '.carousel');
     }
 
     /**
