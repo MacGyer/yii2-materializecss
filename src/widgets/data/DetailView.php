@@ -9,7 +9,7 @@ namespace macgyer\yii2materializecss\widgets\data;
 
 /**
  * DetailView displays the detail of a single data model.
- * 
+ *
  * This data model is represented by `$model` (inherited from [yii\widgets\DetailView](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html)).
  *
  * DetailView is best used for displaying a model in a regular format (e.g. each model attribute
@@ -35,7 +35,7 @@ namespace macgyer\yii2materializecss\widgets\data;
  *     ],
  * ]);
  * ```
- * 
+ *
  * @see [yii\widgets\DetailView](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html)
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
@@ -46,7 +46,7 @@ class DetailView extends \yii\widgets\DetailView
     /**
      * @var array the HTML attributes for the container tag of this widget. The "tag" option specifies
      * what container tag should be used. It defaults to "table" if not set.
-     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on 
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
      * how attributes are being rendered.
      */
     public $options = ['class' => 'table striped bordered detail-view'];

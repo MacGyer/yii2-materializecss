@@ -63,7 +63,7 @@ class GridView extends \yii\grid\GridView
 
         if (is_array($this->pager) && !ArrayHelper::keyExists('class', $this->pager)) {
             $this->pager = [
-                'class' => LinkPager::className(),
+                'class' => LinkPager::class,
             ];
         }
     }

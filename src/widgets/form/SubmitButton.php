@@ -14,7 +14,7 @@ use macgyer\yii2materializecss\widgets\Button;
  *
  * For details on how buttons are being created, see [[Button]].
  *
- * @see http://materializecss.com/buttons.html#submit
+ * @see http://next.materializecss.com/buttons.html#submit
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
