@@ -13,10 +13,8 @@ use macgyer\yii2materializecss\widgets\Icon;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
-// TODO: range with noUiSlider --> own widget
 // TODO: checkbox list
 // TODO: radio list
-// TODO: select ?
 // TODO: file input
 
 
@@ -193,6 +191,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * ```
      *
      * @return string the rendering result
+     * @throws \Exception
      */
     public function render($content = null)
     {
@@ -248,10 +247,22 @@ class ActiveField extends \yii\widgets\ActiveField
      * Materialize standard to not wrap the checkboxes in labels.
      * @return $this
      */
-    public function checkbox($options = [], $enclosedByLabel = false)
+    public function checkbox($options = [], $enclosedByLabel = true)
     {
         Html::addCssClass($this->options, ['class' => 'checkbox']);
-        return parent::checkbox($options, $enclosedByLabel);
+        Html::removeCssClass($this->options, 'input-field');
+
+        $this->parts['{input}'] = Html::activeCheckbox($this->model, $this->attribute, $options);
+        $this->parts['{label}'] = '';
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+
+        return $this;
     }
 
     /**
@@ -270,7 +281,7 @@ class ActiveField extends \yii\widgets\ActiveField
         MaterializePluginAsset::register($view);
         $id = $this->getInputId();
 
-        $js = "$('#$id').material_select()";
+        $js = "M.FormSelect.init(document.querySelector('#$id'))";
         $view->registerJs($js);
 
         return parent::dropDownList($items, $options);
@@ -283,10 +294,22 @@ class ActiveField extends \yii\widgets\ActiveField
      * Materialize standard to not wrap the checkboxes in labels.
      * @return $this
      */
-    public function radio($options = [], $enclosedByLabel = false)
+    public function radio($options = [], $enclosedByLabel = true)
     {
         Html::addCssClass($this->options, ['class' => 'radio']);
-        return parent::radio($options, $enclosedByLabel);
+        Html::removeCssClass($this->options, 'input-field');
+
+        $this->parts['{input}'] = Html::activeRadio($this->model, $this->attribute, $options);
+        $this->parts['{label}'] = '';
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+
+        return $this;
     }
 
     /**

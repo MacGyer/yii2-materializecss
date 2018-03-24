@@ -133,4 +133,80 @@ class Html extends BaseHtml
             }
         }
     }
+
+    /**
+     * Generates a radio button tag together with a label for the given model attribute.
+     * This method will generate the "checked" tag attribute according to the model attribute value.
+     * @param Model $model the model object
+     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * about attribute expression.
+     * @param array $options the tag options in terms of name-value pairs.
+     * See [[booleanInput()]] for details about accepted attributes.
+     *
+     * @return string the generated radio button tag
+     */
+    public static function activeRadio($model, $attribute, $options = [])
+    {
+        return static::activeBooleanInput('radio', $model, $attribute, $options);
+    }
+
+    /**
+     * Generates a checkbox tag together with a label for the given model attribute.
+     * This method will generate the "checked" tag attribute according to the model attribute value.
+     * @param Model $model the model object
+     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * about attribute expression.
+     * @param array $options the tag options in terms of name-value pairs.
+     * See [[booleanInput()]] for details about accepted attributes.
+     *
+     * @return string the generated checkbox tag
+     */
+    public static function activeCheckbox($model, $attribute, $options = [])
+    {
+        return static::activeBooleanInput('checkbox', $model, $attribute, $options);
+    }
+
+    /**
+     * Generates a boolean input
+     * This method is mainly called by [[activeCheckbox()]] and [[activeRadio()]].
+     * @param string $type the input type. This can be either `radio` or `checkbox`.
+     * @param Model $model the model object
+     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * about attribute expression.
+     * @param array $options the tag options in terms of name-value pairs.
+     * See [[booleanInput()]] for details about accepted attributes.
+     * @return string the generated input element
+     * @since 2.0.9
+     */
+    protected static function activeBooleanInput($type, $model, $attribute, $options = [])
+    {
+        $name = isset($options['name']) ? $options['name'] : static::getInputName($model, $attribute);
+        $value = static::getAttributeValue($model, $attribute);
+
+        if (!array_key_exists('value', $options)) {
+            $options['value'] = '1';
+        }
+        if (!array_key_exists('uncheck', $options)) {
+            $options['uncheck'] = '0';
+        } elseif ($options['uncheck'] === false) {
+            unset($options['uncheck']);
+        }
+        if (!array_key_exists('label', $options)) {
+            $options['label'] = static::encode($model->getAttributeLabel(static::getAttributeName($attribute)));
+        } elseif ($options['label'] === false) {
+            unset($options['label']);
+        }
+
+        if (isset($options['label'])) {
+            $options['label'] = '<span>' . $options['label'] . '</span>';
+        }
+
+        $checked = "$value" === "{$options['value']}";
+
+        if (!array_key_exists('id', $options)) {
+            $options['id'] = static::getInputId($model, $attribute);
+        }
+
+        return static::$type($name, $checked, $options);
+    }
 }
