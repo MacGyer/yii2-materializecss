@@ -193,6 +193,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * ```
      *
      * @return string the rendering result
+     * @throws \Exception
      */
     public function render($content = null)
     {
@@ -248,10 +249,22 @@ class ActiveField extends \yii\widgets\ActiveField
      * Materialize standard to not wrap the checkboxes in labels.
      * @return $this
      */
-    public function checkbox($options = [], $enclosedByLabel = false)
+    public function checkbox($options = [], $enclosedByLabel = true)
     {
         Html::addCssClass($this->options, ['class' => 'checkbox']);
-        return parent::checkbox($options, $enclosedByLabel);
+        Html::removeCssClass($this->options, 'input-field');
+
+        $this->parts['{input}'] = Html::activeCheckbox($this->model, $this->attribute, $options);
+        $this->parts['{label}'] = '';
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+
+        return $this;
     }
 
     /**
@@ -283,10 +296,22 @@ class ActiveField extends \yii\widgets\ActiveField
      * Materialize standard to not wrap the checkboxes in labels.
      * @return $this
      */
-    public function radio($options = [], $enclosedByLabel = false)
+    public function radio($options = [], $enclosedByLabel = true)
     {
         Html::addCssClass($this->options, ['class' => 'radio']);
-        return parent::radio($options, $enclosedByLabel);
+        Html::removeCssClass($this->options, 'input-field');
+
+        $this->parts['{input}'] = Html::activeRadio($this->model, $this->attribute, $options);
+        $this->parts['{label}'] = '';
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+
+        return $this;
     }
 
     /**
