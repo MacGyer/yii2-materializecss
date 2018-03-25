@@ -28,7 +28,7 @@ use yii\web\JsExpression;
  * @package widgets
  * @subpackage form
  *
- * @see http://materializecss.com/forms.html#range
+ * @see http://next.materializecss.com/range.html
  * @see https://refreshless.com/nouislider/
  */
 class RangeInput extends BaseInputWidget
@@ -225,7 +225,7 @@ JS
     protected function renderHiddenInput()
     {
         if ($this->hasModel()) {
-            return Html::activeTextInput($this->model, $this->attribute, $this->inputOptions);
+            return Html::activeHiddenInput($this->model, $this->attribute, $this->inputOptions);
         } else {
             return Html::hiddenInput($this->name, $this->value, $this->inputOptions);
         }
