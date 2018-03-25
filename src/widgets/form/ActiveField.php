@@ -249,22 +249,12 @@ class ActiveField extends \yii\widgets\ActiveField
      * Materialize standard to not wrap the checkboxes in labels.
      * @return $this
      */
-    public function checkbox($options = [], $enclosedByLabel = true)
+    public function checkbox($options = [], $enclosedByLabel = false)
     {
         Html::addCssClass($this->options, ['class' => 'checkbox']);
         Html::removeCssClass($this->options, 'input-field');
 
-        $this->parts['{input}'] = Html::activeCheckbox($this->model, $this->attribute, $options);
-        $this->parts['{label}'] = '';
-
-        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
-            $this->addErrorClassIfNeeded($options);
-        }
-
-        $this->addAriaAttributes($options);
-        $this->adjustLabelFor($options);
-
-        return $this;
+        return parent::checkbox($options, $enclosedByLabel);
     }
 
     /**
@@ -296,22 +286,12 @@ class ActiveField extends \yii\widgets\ActiveField
      * Materialize standard to not wrap the checkboxes in labels.
      * @return $this
      */
-    public function radio($options = [], $enclosedByLabel = true)
+    public function radio($options = [], $enclosedByLabel = false)
     {
         Html::addCssClass($this->options, ['class' => 'radio']);
         Html::removeCssClass($this->options, 'input-field');
 
-        $this->parts['{input}'] = Html::activeRadio($this->model, $this->attribute, $options);
-        $this->parts['{label}'] = '';
-
-        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
-            $this->addErrorClassIfNeeded($options);
-        }
-
-        $this->addAriaAttributes($options);
-        $this->adjustLabelFor($options);
-
-        return $this;
+        return parent::radio($options, $enclosedByLabel);
     }
 
     /**
