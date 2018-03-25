@@ -46,7 +46,7 @@ class Select extends BaseInputWidget
      *      ],
      *
      *      // If you provide an array as value and do not have an 'option' key present, the value will be treated as nested
-     *      // values. Every rule explained above apply to the sub-array. Every array value will be rendered as an <option>
+     *      // values. Every rule explained above applies to the sub-array. Every array value will be rendered as an <option>
      *      // tag and all resulting <options> will be encapsulated in an <optgroup> tag.
      *      3 => [
      *          31 => [
@@ -76,7 +76,7 @@ class Select extends BaseInputWidget
      * ```
      *
      * @see http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#activeDropDownList()-detail
-     * @see http://materializecss.com/forms.html#select
+     * @see http://next.materializecss.com/select.html
      */
     public $items = [];
 
@@ -121,7 +121,7 @@ class Select extends BaseInputWidget
         $this->parseItems();
         $this->insertPlaceholder();
 
-        $this->registerPlugin('material_select');
+        $this->registerPlugin('FormSelect');
     }
 
     /**
