@@ -73,7 +73,6 @@ The following widgets are currently available:
 * Breadcrumbs
 * Button
 * Carousel
-* Chip
 * Collapsible
 * DatePicker
 * DetailView
@@ -93,6 +92,7 @@ The following widgets are currently available:
 * SideNav
 * Slider
 * Spinner
+* StaticChip
 * SubmitButton
 * SwitchButton
 * TimePicker
