@@ -189,6 +189,14 @@ JS
     {
         $html[] = Html::beginTag('div', ['class' => 'range-field']);
 
+        // workaround for: https://github.com/Dogfalo/materialize/issues/5761
+        if (!isset($this->inputOptions['min'])) {
+            $this->inputOptions['min'] = 0;
+        }
+        if (!isset($this->inputOptions['max'])) {
+            $this->inputOptions['max'] = 100;
+        }
+
         if ($this->hasModel()) {
             $html[] = Html::activeInput('range', $this->model, $this->attribute, $this->inputOptions);
         } else {
