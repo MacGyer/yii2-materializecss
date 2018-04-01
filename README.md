@@ -73,6 +73,7 @@ The following widgets are currently available:
 * Breadcrumbs
 * Button
 * Carousel
+* ChipInput
 * Collapsible
 * DatePicker
 * DetailView

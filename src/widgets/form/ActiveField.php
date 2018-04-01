@@ -150,7 +150,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * To use the HTML5 autocomplete feature, set this option to `on`. To explicitely disable the HTML5 autocomplete, set
      * this option to `off`. Either `on` or `off` disables the Materialize autocomplete feature.
      *
-     * @see http://materializecss.com/forms.html#autocomplete
+     * @see http://next.materializecss.com/autocomplete.html
      */
     protected function initAutoComplete(&$options = [])
     {
@@ -175,6 +175,13 @@ class ActiveField extends \yii\widgets\ActiveField
         $view->registerJs($js);
     }
 
+    /**
+     * Initializes the Materialize character counter feature.
+     *
+     * @param array $options the tag options as name-value-pairs.
+     *
+     * @see http://next.materializecss.com/text-inputs.html#character-counter
+     */
     protected function initCharacterCounter(&$options = [])
     {
         $showCharacterCounter = ArrayHelper::getValue($options, 'showCharacterCounter', false);
@@ -279,48 +286,26 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * Renders a drop-down list.
-     *
-     * @param array $items the option data items
-     * @param array $options the tag options in terms of name-value pairs.
-     *
+     * Renders a list of checkboxes.
+     * A checkbox list allows multiple selections. As a result, the corresponding submitted value is an array.
+     * The selection of the checkbox list is taken from the value of the model attribute.
+     * @param array $items the data item used to generate the checkboxes.
+     * The array values are the labels, while the array keys are the corresponding checkbox values.
+     * @param array $options options (name => config) for the checkbox list.
+     * For the list of available options please refer to the `$options` parameter of [[\macgyer\yii2materializecss\lib\Html::activeCheckboxList()]].
      * @return $this the field object itself.
-     *
-     * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#dropDownList()-detail
      */
-    public function dropDownList($items, $options = [])
+    public function checkboxList($items, $options = [])
     {
-        $view = $this->form->view;
-        MaterializePluginAsset::register($view);
-        $id = $this->getInputId();
-
-        $js = "M.FormSelect.init(document.querySelector('#$id'))";
-        $view->registerJs($js);
-
-        return parent::dropDownList($items, $options);
-    }
-
-    /**
-     * Renders a radio button.
-     * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
-     * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
-     * Materialize standard to not wrap the checkboxes in labels.
-     * @return $this
-     */
-    public function radio($options = [], $enclosedByLabel = true)
-    {
-        Html::addCssClass($this->options, ['class' => 'radio']);
-        Html::removeCssClass($this->options, 'input-field');
-
-        $this->parts['{input}'] = Html::activeRadio($this->model, $this->attribute, $options);
-        $this->parts['{label}'] = '';
-
+        $this->template = "{icon}\n{label}\n{input}\n{hint}\n{error}";
         if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
             $this->addErrorClassIfNeeded($options);
         }
 
+        Html::addCssClass($this->labelOptions, ['checkboxlist-label' => 'label-checkbox-list']);
+
         $this->addAriaAttributes($options);
-        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeCheckboxList($this->model, $this->attribute, $items, $options);
 
         return $this;
     }
@@ -395,6 +380,28 @@ class ActiveField extends \yii\widgets\ActiveField
         $this->initAutoComplete($options);
 
         return parent::input('datetime-local', $options);
+    }
+
+    /**
+     * Renders a drop-down list.
+     *
+     * @param array $items the option data items
+     * @param array $options the tag options in terms of name-value pairs.
+     *
+     * @return $this the field object itself.
+     *
+     * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#dropDownList()-detail
+     */
+    public function dropDownList($items, $options = [])
+    {
+        $view = $this->form->view;
+        MaterializePluginAsset::register($view);
+        $id = $this->getInputId();
+
+        $js = "M.FormSelect.init(document.querySelector('#$id'))";
+        $view->registerJs($js);
+
+        return parent::dropDownList($items, $options);
     }
 
     /**
@@ -478,6 +485,57 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * Renders a radio button.
+     * @param array $options the tag options in terms of name-value pairs. See parent class for more details.
+     * @param bool $enclosedByLabel whether to enclose the checkbox within the label. This defaults to `false` as it is
+     * Materialize standard to not wrap the checkboxes in labels.
+     * @return $this
+     */
+    public function radio($options = [], $enclosedByLabel = true)
+    {
+        Html::addCssClass($this->options, ['class' => 'radio']);
+        Html::removeCssClass($this->options, 'input-field');
+
+        $this->parts['{input}'] = Html::activeRadio($this->model, $this->attribute, $options);
+        $this->parts['{label}'] = '';
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+
+        return $this;
+    }
+
+    /**
+     * Renders a list of radio buttons.
+     * A radio button list is like a checkbox list, except that it only allows single selection.
+     * The selection of the radio buttons is taken from the value of the model attribute.
+     *
+     * @param array $items the data item used to generate the radio buttons. The array values are the labels, while the
+     * array keys are the corresponding radio values.
+     * @param array $options options (name => config) for the radio button list. For the list of available options please
+     * refer to the `$options` parameter of [[\macgyer\yii2materializecss\lib::activeRadioList()]].
+     * @return $this the field object itself.
+     */
+    public function radioList($items, $options = [])
+    {
+        $this->template = "{icon}\n{label}\n{input}\n{hint}\n{error}";
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        Html::addCssClass($this->labelOptions, ['radiolist-label' => 'label-radio-list']);
+
+        $this->addAriaAttributes($options);
+        $this->parts['{input}'] = Html::activeRadioList($this->model, $this->attribute, $items, $options);
+
+        return $this;
+    }
+
+    /**
      * Renders a range input.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
@@ -527,36 +585,6 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * Renders a text input.
-     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
-     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
-     *
-     * The following special options are recognized:
-     *
-     * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
-     *   by a string validator, the `maxlength` and `length` option both option will take the value of
-     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
-     * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
-     *   the Materialize character counter JS plugin is initialized for this field.
-     * - autocomplete: string|array, see [[initAutoComplete()]] for details
-     *
-     * @return $this the field object itself.
-     * @see http://materializecss.com/forms.html#character-counter
-     * @see http://materializecss.com/forms.html#autocomplete
-     * @see https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete
-     */
-    public function textInput($options = [])
-    {
-        $this->initAutoComplete($options);
-        $this->initCharacterCounter($options);
-        $options = array_merge($this->inputOptions, $options);
-        $this->adjustLabelFor($options);
-        $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
-
-        return $this;
-    }
-
-    /**
      * Renders a textarea.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
@@ -583,6 +611,36 @@ class ActiveField extends \yii\widgets\ActiveField
         $options = array_merge($this->inputOptions, $options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeTextarea($this->model, $this->attribute, $options);
+
+        return $this;
+    }
+
+    /**
+     * Renders a text input.
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [\yii\helpers\BaseHtml::encode()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#encode()-detail).
+     *
+     * The following special options are recognized:
+     *
+     * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
+     *   by a string validator, the `maxlength` and `length` option both option will take the value of
+     *   [\yii\validators\StringValidator::max](http://www.yiiframework.com/doc-2.0/yii-validators-stringvalidator.html#$max-detail).
+     * - `showCharacterCounter`: boolean, when this option is set `true` and the `maxlength` option is set accordingly
+     *   the Materialize character counter JS plugin is initialized for this field.
+     * - autocomplete: string|array, see [[initAutoComplete()]] for details
+     *
+     * @return $this the field object itself.
+     * @see http://materializecss.com/forms.html#character-counter
+     * @see http://materializecss.com/forms.html#autocomplete
+     * @see https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete
+     */
+    public function textInput($options = [])
+    {
+        $this->initAutoComplete($options);
+        $this->initCharacterCounter($options);
+        $options = array_merge($this->inputOptions, $options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
 
         return $this;
     }
@@ -640,21 +698,4 @@ class ActiveField extends \yii\widgets\ActiveField
 
         return parent::input('week', $options);
     }
-
-    /**
-     * Builds a radio list
-     */
-//    public function radioList($items, $options = [])
-//    {
-//        $defaultOptions = [
-//            'item' => function($index, $label, $name, $checked, $value) {
-//                return Html::radio($name,$checked,['value'=>$value,'id'=>$name.$index]) . Html::label($label,$name.$index);
-//                return $return;
-//            },
-//            'class'=>'input-list-wrapper'
-//        ];
-//        $options = array_merge($defaultOptions, $options);
-//
-//        return parent::radioList($items,$options);
-//    }
 }

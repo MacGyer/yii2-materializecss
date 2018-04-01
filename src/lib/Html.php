@@ -209,4 +209,305 @@ class Html extends BaseHtml
 
         return static::$type($name, $checked, $options);
     }
+
+    /**
+     * Generates a list of checkboxes.
+     * A checkbox list allows multiple selection, like [[listBox()]].
+     * As a result, the corresponding submitted value is an array.
+     * The selection of the checkbox list is taken from the value of the model attribute.
+     * @param Model $model the model object
+     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * about attribute expression.
+     * @param array $items the data item used to generate the checkboxes.
+     * The array keys are the checkbox values, and the array values are the corresponding labels.
+     * Note that the labels will NOT be HTML-encoded, while the values will.
+     * @param array $options options (name => config) for the checkbox list container tag.
+     * The following options are specially handled:
+     *
+     * - tag: string|false, the tag name of the container element. False to render checkbox without container.
+     *   See also [[tag()]].
+     * - unselect: string, the value that should be submitted when none of the checkboxes is selected.
+     *   You may set this option to be null to prevent default value submission.
+     *   If this option is not set, an empty string will be submitted.
+     * - encode: boolean, whether to HTML-encode the checkbox labels. Defaults to true.
+     *   This option is ignored if `item` option is set.
+     * - separator: string, the HTML code that separates items.
+     * - itemOptions: array, the options for generating the checkbox tag using [[checkbox()]].
+     * - item: callable, a callback that can be used to customize the generation of the HTML code
+     *   corresponding to a single item in $items. The signature of this callback must be:
+     *
+     *   ```php
+     *   function ($index, $label, $name, $checked, $value)
+     *   ```
+     *
+     *   where $index is the zero-based index of the checkbox in the whole list; $label
+     *   is the label for the checkbox; and $name, $value and $checked represent the name,
+     *   value and the checked status of the checkbox input.
+     *
+     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     *
+     * @return string the generated checkbox list
+     */
+    public static function activeCheckboxList($model, $attribute, $items, $options = [])
+    {
+        return static::activeListInput('checkboxList', $model, $attribute, $items, $options);
+    }
+
+    /**
+     * Generates a list of radio buttons.
+     * A radio button list is like a checkbox list, except that it only allows single selection.
+     * The selection of the radio buttons is taken from the value of the model attribute.
+     * @param Model $model the model object
+     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * about attribute expression.
+     * @param array $items the data item used to generate the radio buttons.
+     * The array keys are the radio values, and the array values are the corresponding labels.
+     * Note that the labels will NOT be HTML-encoded, while the values will.
+     * @param array $options options (name => config) for the radio button list container tag.
+     * The following options are specially handled:
+     *
+     * - tag: string|false, the tag name of the container element. False to render radio button without container.
+     *   See also [[tag()]].
+     * - unselect: string, the value that should be submitted when none of the radio buttons is selected.
+     *   You may set this option to be null to prevent default value submission.
+     *   If this option is not set, an empty string will be submitted.
+     * - encode: boolean, whether to HTML-encode the checkbox labels. Defaults to true.
+     *   This option is ignored if `item` option is set.
+     * - separator: string, the HTML code that separates items.
+     * - itemOptions: array, the options for generating the radio button tag using [[radio()]].
+     * - item: callable, a callback that can be used to customize the generation of the HTML code
+     *   corresponding to a single item in $items. The signature of this callback must be:
+     *
+     *   ```php
+     *   function ($index, $label, $name, $checked, $value)
+     *   ```
+     *
+     *   where $index is the zero-based index of the radio button in the whole list; $label
+     *   is the label for the radio button; and $name, $value and $checked represent the name,
+     *   value and the checked status of the radio button input.
+     *
+     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     *
+     * @return string the generated radio button list
+     */
+    public static function activeRadioList($model, $attribute, $items, $options = [])
+    {
+        return static::activeListInput('radioList', $model, $attribute, $items, $options);
+    }
+
+    /**
+     * Generates a list of input fields.
+     * This method is mainly called by [[activeRadioList()]] and [[activeCheckboxList()]].
+     * @param string $type the input type. This can be 'listBox', 'radioList', or 'checkBoxList'.
+     * @param Model $model the model object
+     * @param string $attribute the attribute name or expression. See [[getAttributeName()]] for the format
+     * about attribute expression.
+     * @param array $items the data item used to generate the input fields.
+     * The array keys are the input values, and the array values are the corresponding labels.
+     * Note that the labels will NOT be HTML-encoded, while the values will.
+     * @param array $options options (name => config) for the input list. The supported special options
+     * depend on the input type specified by `$type`.
+     * @return string the generated input list
+     */
+    protected static function activeListInput($type, $model, $attribute, $items, $options = [])
+    {
+        $name = isset($options['name']) ? $options['name'] : static::getInputName($model, $attribute);
+        $selection = isset($options['value']) ? $options['value'] : static::getAttributeValue($model, $attribute);
+        if (!array_key_exists('unselect', $options)) {
+            $options['unselect'] = '';
+        }
+        if (!array_key_exists('id', $options)) {
+            $options['id'] = static::getInputId($model, $attribute);
+        }
+
+        return static::$type($name, $selection, $items, $options);
+    }
+
+    /**
+     * Generates a list of checkboxes.
+     * A checkbox list allows multiple selection, like [[listBox()]].
+     * As a result, the corresponding submitted value is an array.
+     * @param string $name the name attribute of each checkbox.
+     * @param string|array|null $selection the selected value(s). String for single or array for multiple selection(s).
+     * @param array $items the data item used to generate the checkboxes.
+     * The array keys are the checkbox values, while the array values are the corresponding labels.
+     * @param array $options options (name => config) for the checkbox list container tag.
+     * The following options are specially handled:
+     *
+     * - tag: string|false, the tag name of the container element. False to render checkbox without container.
+     *   See also [[tag()]].
+     * - unselect: string, the value that should be submitted when none of the checkboxes is selected.
+     *   By setting this option, a hidden input will be generated.
+     * - encode: boolean, whether to HTML-encode the checkbox labels. Defaults to true.
+     *   This option is ignored if `item` option is set.
+     * - separator: string, the HTML code that separates items.
+     * - itemOptions: array, the options for generating the checkbox tag using [[checkbox()]].
+     * - item: callable, a callback that can be used to customize the generation of the HTML code
+     *   corresponding to a single item in $items. The signature of this callback must be:
+     *
+     *   ```php
+     *   function ($index, $label, $name, $checked, $value)
+     *   ```
+     *
+     *   where $index is the zero-based index of the checkbox in the whole list; $label
+     *   is the label for the checkbox; and $name, $value and $checked represent the name,
+     *   value and the checked status of the checkbox input, respectively.
+     *
+     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     *
+     * @return string the generated checkbox list
+     */
+    public static function checkboxList($name, $selection = null, $items = [], $options = [])
+    {
+        if (substr($name, -2) !== '[]') {
+            $name .= '[]';
+        }
+        if (ArrayHelper::isTraversable($selection)) {
+            $selection = array_map('strval', (array)$selection);
+        }
+
+        $formatter = ArrayHelper::remove($options, 'item');
+        $itemOptions = ArrayHelper::remove($options, 'itemOptions', []);
+        $encode = ArrayHelper::remove($options, 'encode', true);
+        $separator = ArrayHelper::remove($options, 'separator', "\n");
+        $tag = ArrayHelper::remove($options, 'tag', 'div');
+
+        $lines = [];
+        $index = 0;
+        foreach ($items as $value => $label) {
+            $checked = $selection !== null &&
+                (!ArrayHelper::isTraversable($selection) && !strcmp($value, $selection)
+                    || ArrayHelper::isTraversable($selection) && ArrayHelper::isIn((string)$value, $selection));
+            if ($formatter !== null) {
+                $lines[] = call_user_func($formatter, $index, $label, $name, $checked, $value);
+            } else {
+                $lines[] = Html::tag('div', static::checkbox($name, $checked, array_merge($itemOptions, [
+                    'value' => $value,
+                    'label' => $encode ? static::encode($label) : $label,
+                ])));
+            }
+            $index++;
+        }
+
+        if (isset($options['unselect'])) {
+            // add a hidden field so that if the list box has no option being selected, it still submits a value
+            $name2 = substr($name, -2) === '[]' ? substr($name, 0, -2) : $name;
+            $hidden = static::hiddenInput($name2, $options['unselect']);
+            unset($options['unselect']);
+        } else {
+            $hidden = '';
+        }
+
+        $visibleContent = implode($separator, $lines);
+
+        if ($tag === false) {
+            return $hidden . $visibleContent;
+        }
+
+        return $hidden . static::tag($tag, $visibleContent, $options);
+    }
+
+    /**
+     * Generates a list of radio buttons.
+     * A radio button list is like a checkbox list, except that it only allows single selection.
+     * @param string $name the name attribute of each radio button.
+     * @param string|array|null $selection the selected value(s). String for single or array for multiple selection(s).
+     * @param array $items the data item used to generate the radio buttons.
+     * The array keys are the radio button values, while the array values are the corresponding labels.
+     * @param array $options options (name => config) for the radio button list container tag.
+     * The following options are specially handled:
+     *
+     * - tag: string|false, the tag name of the container element. False to render radio buttons without container.
+     *   See also [[tag()]].
+     * - unselect: string, the value that should be submitted when none of the radio buttons is selected.
+     *   By setting this option, a hidden input will be generated.
+     * - encode: boolean, whether to HTML-encode the checkbox labels. Defaults to true.
+     *   This option is ignored if `item` option is set.
+     * - separator: string, the HTML code that separates items.
+     * - itemOptions: array, the options for generating the radio button tag using [[radio()]].
+     * - item: callable, a callback that can be used to customize the generation of the HTML code
+     *   corresponding to a single item in $items. The signature of this callback must be:
+     *
+     *   ```php
+     *   function ($index, $label, $name, $checked, $value)
+     *   ```
+     *
+     *   where $index is the zero-based index of the radio button in the whole list; $label
+     *   is the label for the radio button; and $name, $value and $checked represent the name,
+     *   value and the checked status of the radio button input, respectively.
+     *
+     * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+     *
+     * @return string the generated radio button list
+     */
+    public static function radioList($name, $selection = null, $items = [], $options = [])
+    {
+        if (ArrayHelper::isTraversable($selection)) {
+            $selection = array_map('strval', (array)$selection);
+        }
+
+        $formatter = ArrayHelper::remove($options, 'item');
+        $itemOptions = ArrayHelper::remove($options, 'itemOptions', []);
+        $encode = ArrayHelper::remove($options, 'encode', true);
+        $separator = ArrayHelper::remove($options, 'separator', "\n");
+        $tag = ArrayHelper::remove($options, 'tag', 'div');
+        // add a hidden field so that if the list box has no option being selected, it still submits a value
+        $hidden = isset($options['unselect']) ? static::hiddenInput($name, $options['unselect']) : '';
+        unset($options['unselect']);
+
+        $lines = [];
+        $index = 0;
+        foreach ($items as $value => $label) {
+            $checked = $selection !== null &&
+                (!ArrayHelper::isTraversable($selection) && !strcmp($value, $selection)
+                    || ArrayHelper::isTraversable($selection) && ArrayHelper::isIn((string)$value, $selection));
+            if ($formatter !== null) {
+                $lines[] = call_user_func($formatter, $index, $label, $name, $checked, $value);
+            } else {
+                $lines[] = Html::tag('div', static::radio($name, $checked, array_merge($itemOptions, [
+                    'value' => $value,
+                    'label' => $encode ? static::encode($label) : $label,
+                ])));
+            }
+            $index++;
+        }
+        $visibleContent = implode($separator, $lines);
+
+        if ($tag === false) {
+            return $hidden . $visibleContent;
+        }
+
+        return $hidden . static::tag($tag, $visibleContent, $options);
+    }
+
+    public static function radio($name, $checked = false, $options = [])
+    {
+        return static::booleanInput('radio', $name, $checked, $options);
+    }
+
+    protected static function booleanInput($type, $name, $checked = false, $options = [])
+    {
+        $options['checked'] = (bool) $checked;
+        $value = array_key_exists('value', $options) ? $options['value'] : '1';
+        if (isset($options['uncheck'])) {
+            // add a hidden field so that if the checkbox is not selected, it still submits a value
+            $hiddenOptions = [];
+            if (isset($options['form'])) {
+                $hiddenOptions['form'] = $options['form'];
+            }
+            $hidden = static::hiddenInput($name, $options['uncheck'], $hiddenOptions);
+            unset($options['uncheck']);
+        } else {
+            $hidden = '';
+        }
+        if (isset($options['label'])) {
+            $label = Html::tag('span', $options['label']);
+            $labelOptions = isset($options['labelOptions']) ? $options['labelOptions'] : [];
+            unset($options['label'], $options['labelOptions']);
+            $content = static::label(static::input($type, $name, $value, $options) . ' ' . $label, null, $labelOptions);
+            return $hidden . $content;
+        }
+
+        return $hidden . static::input($type, $name, $value, $options);
+    }
 }
