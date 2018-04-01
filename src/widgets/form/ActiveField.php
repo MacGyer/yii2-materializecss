@@ -170,10 +170,23 @@ class ActiveField extends \yii\widgets\ActiveField
         $autocompleteData['data'] = $autocomplete;
 
         $pluginOptions = Json::htmlEncode($autocompleteData);
-        $js = "$('input.has-autocomplete').autocomplete($pluginOptions);";
+        $js = "M.Autocomplete.init(document.querySelectorAll('.has-autocomplete', $pluginOptions))";
 
         $view->registerJs($js);
     }
+
+    protected function initCharacterCounter(&$options = [])
+    {
+        $showCharacterCounter = ArrayHelper::getValue($options, 'showCharacterCounter', false);
+
+        if ($showCharacterCounter) {
+            Html::addCssClass($this->inputOptions, ['character-counter' => 'has-character-counter']);
+            $js = "M.CharacterCounter.init(document.querySelectorAll('.has-character-counter'))";
+            $view = $this->form->getView();
+            $view->registerJs($js);
+        }
+    }
+
 
     /**
      * Renders the whole field.
@@ -457,6 +470,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public function passwordInput($options = [])
     {
         $options = array_merge($this->inputOptions, $options);
+        $this->initCharacterCounter($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activePasswordInput($this->model, $this->attribute, $options);
 
@@ -534,6 +548,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public function textInput($options = [])
     {
         $this->initAutoComplete($options);
+        $this->initCharacterCounter($options);
         $options = array_merge($this->inputOptions, $options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
@@ -563,6 +578,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public function textarea($options = [])
     {
         $this->initAutoComplete($options);
+        $this->initCharacterCounter($options);
         Html::addCssClass($options, ['textarea' => 'materialize-textarea']);
         $options = array_merge($this->inputOptions, $options);
         $this->adjustLabelFor($options);
