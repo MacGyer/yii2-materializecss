@@ -5,8 +5,16 @@ namespace macgyer\yii2materializecss\widgets\form;
 use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Json;
 
+/**
+ * ChipInput implements the Materialize Chips JS plugin functionality.
+ *
+ * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
+ * @package widgets
+ * @subpackage form
+ *
+ * @see http://next.materializecss.com/chips.html#basic
+ */
 class ChipInput extends BaseInputWidget
 {
     /**
@@ -34,11 +42,34 @@ class ChipInput extends BaseInputWidget
      */
     public $inputOptions = [];
 
+    /**
+     * @var array the items (Chips).
+     *
+     * Each item is an array with the following keys possible:
+     * - tag: string, required, the Chip content
+     * - image: string, optional, an optional image source
+     */
     public $items = [];
+
+    /**
+     * @var string the placeholder when there are no tags.
+     */
     public $placeholder;
+
+    /**
+     * @var string the placeholder for every additional tag.
+     */
     public $secondaryPlaceholder;
+
+    /**
+     * @var array the autocomplete data.
+     * @see http://next.materializecss.com/autocomplete.html
+     */
     public $autocompleteOptions = [];
 
+    /**
+     * Initialize the widget.
+     */
     public function init()
     {
         parent::init();
@@ -64,6 +95,11 @@ class ChipInput extends BaseInputWidget
         $this->registerPlugin('Chips', "#{$this->containerOptions['id']} .chips");
     }
 
+    /**
+     * Execute the widget.
+     *
+     * @return string the widget markup.
+     */
     public function run()
     {
         $tag = ArrayHelper::remove($this->containerOptions, 'tag', 'div');

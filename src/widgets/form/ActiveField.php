@@ -13,8 +13,6 @@ use macgyer\yii2materializecss\widgets\Icon;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
-// TODO: checkbox list
-// TODO: radio list
 // TODO: file input
 
 
