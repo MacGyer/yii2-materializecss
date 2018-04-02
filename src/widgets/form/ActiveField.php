@@ -515,7 +515,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * @param array $items the data item used to generate the radio buttons. The array values are the labels, while the
      * array keys are the corresponding radio values.
      * @param array $options options (name => config) for the radio button list. For the list of available options please
-     * refer to the `$options` parameter of [[\macgyer\yii2materializecss\lib::activeRadioList()]].
+     * refer to the `$options` parameter of [[\macgyer\yii2materializecss\lib\Html::activeRadioList()]].
      * @return $this the field object itself.
      */
     public function radioList($items, $options = [])

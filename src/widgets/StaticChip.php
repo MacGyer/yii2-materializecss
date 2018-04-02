@@ -16,7 +16,7 @@ use yii\helpers\ArrayHelper;
  * StaticChip renders small units of information.
  *
  * An Usual use case is the displaying of contact information.
- * If you need tagging support in forms or inputs generally, please [[ChipInput|ChipInput]].
+ * If you need tagging support in forms or inputs generally, please use [[\macgyer\yii2materializecss\widgets\form\ChipInput|ChipInput]].
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  *
