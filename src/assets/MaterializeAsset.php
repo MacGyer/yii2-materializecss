@@ -28,6 +28,10 @@ class MaterializeAsset extends AssetBundle
     public $css = [
         'css/materialize.min.css'
     ];
+    
+    public $js = [
+        'js/materialize.min.js'
+    ];
 
     /**
      * @var array list of bundle class names that this bundle depends on.
