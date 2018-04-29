@@ -14,7 +14,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Fixed action buttons (FAB) are sets of actions grouped by a single button.
+ * Floating action buttons (FAB) are sets of actions grouped by a single button.
  *
  * Imagine you have an calendar app with a single "create" button. Your user shall be able to create calendar entries and
  * contacts. Those actions require a dedicated button. For UI reasons you can group both (or as much buttons as you like)
@@ -32,7 +32,7 @@ use yii\helpers\ArrayHelper;
  * </div>
  * ```
  *
- * @see http://materializecss.com/buttons.html#floating
+ * @see http://next.materializecss.com/floating-action-button.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage navigation
