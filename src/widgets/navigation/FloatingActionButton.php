@@ -37,22 +37,23 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage navigation
  */
-class FixedActionButton extends BaseWidget
+class FloatingActionButton extends BaseWidget
 {
     /**
      * @var array list of button items in the fixed action button. Each element can be either an HTML string
      * or an array representing a single item with the following specification:
      *
      * - label: string, required, the label of the item link
+     * - encodeLabel: boolean, whether the label should be HTML-encoded. Defaults to true.
      * - url: string|array, optional, the url of the item link. This will be processed by [yii\helpers\Url::to()](http://www.yiiframework.com/doc-2.0/yii-helpers-baseurl.html#to()-detail).
      * - visible: boolean, optional, whether this menu item is visible. Defaults to true.
      * - linkOptions: array, optional, the HTML attributes of the item link.
      * - options: array, optional, the HTML attributes of the item.
      **/
-    public $items;
+    public $items = [];
 
     /**
-     * @var boolean whether the labels for the items should be HTML-encoded.
+     * @var boolean whether all labels of the items should be HTML-encoded.
      */
     public $encodeLabels = true;
 
@@ -140,31 +141,35 @@ class FixedActionButton extends BaseWidget
         Html::addCssClass($this->buttonOptions, ['widget' => 'btn-floating']);
 
         if ($this->clickToToggle) {
-            Html::addCssClass($this->options, ['container' => 'click-to-toggle']);
+            $this->clientOptions['hoverEnabled'] = false;
         }
 
         if ($this->horizontal) {
+            $this->clientOptions['direction'] = 'left';
             Html::addCssClass($this->options, ['containerLayout' => 'horizontal']);
         }
 
         if ($this->toolbar) {
+            $this->clientOptions['toolbarEnabled'] = true;
             Html::addCssClass($this->options, ['toolbar' => 'toolbar']);
         }
+
+        $this->registerPlugin('FloatingActionButton');
     }
 
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
-     * @see Button|Button
-     * @uses Button|Button
-     * @uses [[renderItems()]]
+     * @throws InvalidConfigException
+     * @throws \Exception
+     * @see  Button|Button
      */
     public function run()
     {
-        $html = Html::beginTag('div', $this->options);
+        $html[] = Html::beginTag('div', $this->options);
 
         // Visible button
-        $html .= Button::widget([
+        $html[] = Button::widget([
             'tagName' => $this->buttonTagName,
             'label' => $this->buttonLabel,
             'encodeLabel' => $this->buttonEncodeLabel,
@@ -172,10 +177,10 @@ class FixedActionButton extends BaseWidget
             'icon' => $this->buttonIcon
         ]);
 
-        $html .= $this->renderItems();
-        $html .= Html::endTag('div');
+        $html[] = $this->renderItems();
+        $html[] = Html::endTag('div');
 
-        return $html;
+        return implode("\n", $html);
     }
 
     /**
@@ -202,18 +207,15 @@ class FixedActionButton extends BaseWidget
                 throw new InvalidConfigException("The 'label' option is required.");
             }
 
-            $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
+            $encodeLabel = isset($item['encodeLabel']) ? $item['encodeLabel'] : $this->encodeLabels;
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
 
             $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
+            Html::addCssClass($linkOptions, ['link' => 'btn-floating']);
 
-            $url = array_key_exists('url', $item) ? $item['url'] : null;
-            if ($url === null) {
-                $content = $label;
-            } else {
-                $content = Html::a($label, $url, $linkOptions);
-            }
+            $url = array_key_exists('url', $item) ? $item['url'] : '#';
+            $content = Html::a($label, $url, $linkOptions);
 
             $elements[] = Html::tag('li', $content, $itemOptions);
         }
