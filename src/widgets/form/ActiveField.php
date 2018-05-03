@@ -148,7 +148,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * To use the HTML5 autocomplete feature, set this option to `on`. To explicitely disable the HTML5 autocomplete, set
      * this option to `off`. Either `on` or `off` disables the Materialize autocomplete feature.
      *
-     * @see http://next.materializecss.com/autocomplete.html
+     * @see https://materializecss.com/autocomplete.html
      */
     protected function initAutoComplete(&$options = [])
     {
@@ -178,7 +178,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * @param array $options the tag options as name-value-pairs.
      *
-     * @see http://next.materializecss.com/text-inputs.html#character-counter
+     * @see https://materializecss.com/text-inputs.html#character-counter
      */
     protected function initCharacterCounter(&$options = [])
     {

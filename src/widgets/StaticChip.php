@@ -20,7 +20,7 @@ use yii\helpers\ArrayHelper;
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  *
- * @see http://next.materializecss.com/chips.html
+ * @see https://materializecss.com/chips.html
  * @package widgets
  */
 class StaticChip extends BaseWidget

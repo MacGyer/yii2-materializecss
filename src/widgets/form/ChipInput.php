@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage form
  *
- * @see http://next.materializecss.com/chips.html#basic
+ * @see https://materializecss.com/chips.html#basic
  */
 class ChipInput extends BaseInputWidget
 {
@@ -63,7 +63,7 @@ class ChipInput extends BaseInputWidget
 
     /**
      * @var array the autocomplete data.
-     * @see http://next.materializecss.com/autocomplete.html
+     * @see https://materializecss.com/autocomplete.html
      */
     public $autocompleteOptions = [];
 

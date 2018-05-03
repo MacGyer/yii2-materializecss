@@ -55,7 +55,7 @@ use yii\helpers\ArrayHelper;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage navigation
- * @see http://next.materializecss.com/breadcrumbs.html
+ * @see https://materializecss.com/breadcrumbs.html
  */
 class Breadcrumbs extends \yii\widgets\Breadcrumbs
 {

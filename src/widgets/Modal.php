@@ -37,7 +37,7 @@ use yii\helpers\ArrayHelper;
  * ```
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
- * @see http://next.materializecss.com/modals.html
+ * @see https://materializecss.com/modals.html
  */
 class Modal extends BaseWidget
 {
@@ -107,7 +107,7 @@ class Modal extends BaseWidget
      * - fixedFooter
      * - bottomSheet
      *
-     * @see http://next.materializecss.com/modals.html
+     * @see https://materializecss.com/modals.html
      */
     public $modalType = self::TYPE_LEAN;
 

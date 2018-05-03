@@ -51,7 +51,7 @@ use yii\helpers\ArrayHelper;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  *
- * @see http://next.materializecss.com/collapsible.html
+ * @see https://materializecss.com/collapsible.html
  */
 class Collapsible extends BaseWidget
 {

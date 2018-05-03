@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage media
  *
- * @see http://next.materializecss.com/media.html#materialbox
+ * @see https://materializecss.com/media.html#materialbox
  */
 class MaterialBox extends BaseWidget
 {

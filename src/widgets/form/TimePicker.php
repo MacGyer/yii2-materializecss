@@ -16,21 +16,21 @@ use macgyer\yii2materializecss\lib\Html;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
- * @see http://next.materializecss.com/pickers.html#time-picker
+ * @see https://materializecss.com/pickers.html#time-picker
  */
 class TimePicker extends BaseInputWidget
 {
     /**
      * @var array the options for the underlying datepicker JS plugin.
      *
-     * @see http://next.materializecss.com/pickers.html#time-picker
+     * @see https://materializecss.com/pickers.html#time-picker
      */
     public $clientOptions = [];
 
     /**
      * @var array the event handlers for the underlying date picker JS plugin.
      *
-     * @see http://next.materializecss.com/pickers.html#time-picker
+     * @see https://materializecss.com/pickers.html#time-picker
      */
     public $clientEvents = [];
 

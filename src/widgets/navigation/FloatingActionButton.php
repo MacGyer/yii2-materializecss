@@ -32,7 +32,7 @@ use yii\helpers\ArrayHelper;
  * </div>
  * ```
  *
- * @see http://next.materializecss.com/floating-action-button.html
+ * @see https://materializecss.com/floating-action-button.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage navigation

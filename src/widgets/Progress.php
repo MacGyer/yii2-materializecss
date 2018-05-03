@@ -77,7 +77,7 @@ class Progress extends BaseWidget
      * - indeterminate (default)
      * - determinate
      *
-     * @see http://next.materializecss.com/preloader.html
+     * @see https://materializecss.com/preloader.html
      */
     public $type = self::TYPE_INDETERMINATE;
 
@@ -91,7 +91,7 @@ class Progress extends BaseWidget
      * <div class="determinate" style="width: 70%"></div>
      * ```
      *
-     * @see http://next.materializecss.com/preloader.html
+     * @see https://materializecss.com/preloader.html
      */
     public $value = 0;
 

@@ -21,7 +21,7 @@ use yii\helpers\ArrayHelper;
  *
  * The button can be displayed with an optional icon. This class uses the [[Icon|Icon]] widget to show icons.
  *
- * @see http://next.materializecss.com/buttons.html
+ * @see https://materializecss.com/buttons.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  */

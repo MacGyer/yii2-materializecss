@@ -15,7 +15,7 @@ use macgyer\yii2materializecss\lib\Html;
  *
  * Materialize is using a modified version of the JS library pickadate.js.
  *
- * @see http://next.materializecss.com/pickers.html#date-picker
+ * @see https://materializecss.com/pickers.html#date-picker
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
@@ -25,14 +25,14 @@ class DatePicker extends BaseInputWidget
     /**
      * @var array the options for the underlying datepicker JS plugin.
      *
-     * @see http://next.materializecss.com/pickers.html#date-picker
+     * @see https://materializecss.com/pickers.html#date-picker
      */
     public $clientOptions = [];
 
     /**
      * @var array the event handlers for the underlying date picker JS plugin.
      *
-     * @see http://next.materializecss.com/pickers.html#date-picker
+     * @see https://materializecss.com/pickers.html#date-picker
      */
     public $clientEvents = [];
 

@@ -20,8 +20,8 @@ use yii\web\View;
  * @package widgets
  * @subpackage media
  *
- * @see http://next.materializecss.com/parallax.html
- * @see http://next.materializecss.com/parallax-demo.html
+ * @see https://materializecss.com/parallax.html
+ * @see https://materializecss.com/parallax-demo.html
  */
 class Parallax extends BaseWidget
 {

@@ -28,7 +28,7 @@ use yii\web\JsExpression;
  * @package widgets
  * @subpackage form
  *
- * @see http://next.materializecss.com/range.html
+ * @see https://materializecss.com/range.html
  * @see https://refreshless.com/nouislider/
  */
 class RangeInput extends BaseInputWidget

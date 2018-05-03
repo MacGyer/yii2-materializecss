@@ -24,14 +24,14 @@ use yii\helpers\ArrayHelper;
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
- * @see http://next.materializecss.com/icons.html
+ * @see https://materializecss.com/icons.html
  */
 class Icon extends BaseWidget
 {
     /**
      * @var string the name of the icon.
      *
-     * @see http://next.materializecss.com/icons.html
+     * @see https://materializecss.com/icons.html
      */
     public $name;
 
