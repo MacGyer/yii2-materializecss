@@ -66,7 +66,6 @@ class SideNav extends Nav
 
     /**
      * Initializes the widget.
-     * @throws InvalidConfigException
      */
     public function init()
     {
@@ -92,8 +91,6 @@ class SideNav extends Nav
     /**
      * Executes the widget.
      * @return string
-     * @uses [[registerClientScript]]
-     * @uses [[renderItems]]
      */
     public function run()
     {
@@ -178,6 +175,7 @@ class SideNav extends Nav
      *
      * @see Button|Button
      * @return string
+     * @throws \Exception
      */
     protected function renderToggleButton()
     {
@@ -189,7 +187,7 @@ class SideNav extends Nav
      */
     protected function registerClientScript()
     {
-        $this->registerPlugin('sideNav', '.sidenav-toggle');
+        $this->registerPlugin('Sidenav', '.sidenav-toggle');
     }
 
     /**
