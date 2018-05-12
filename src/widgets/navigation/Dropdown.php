@@ -7,7 +7,6 @@
 
 namespace macgyer\yii2materializecss\widgets\navigation;
 
-use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 use macgyer\yii2materializecss\widgets\Button;
@@ -21,23 +20,34 @@ use yii\helpers\ArrayHelper;
  *
  * ```php
  * <div class="dropdown">
- *     <a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
- *     <?php
- *         echo Dropdown::widget([
- *             'items' => [
- *                 ['label' => 'DropdownA', 'url' => '/'],
- *                 ['label' => 'DropdownB', 'url' => '#'],
- *             ],
- *             'toggleTarget' => 'dropdown1'
- *         ]);
- *     ?>
+ *      <?= \macgyer\yii2materializecss\widgets\navigation\Dropdown::widget([
+ *          'items' => [
+ *              ['label' => 'DropdownA', 'url' => '/'],
+ *              ['label' => 'DropdownB', 'url' => '#'],
+ *          ],
+ *          'toggleButtonOptions' => [
+ *              'label' => 'Drop Me!'
+ *          ]
+ *      ]); ?>
  * </div>
  * ```
  *
- * Please make sure that you provide the trigger with a `data-activates` attribute and specify the value of this attribute
- * in the [[toggleTarget]] property of the widget.
+ * produces
  *
- * @see http://materializecss.com/navbar.html#navbar-dropdown
+ * ```
+ * <div class="dropdown">
+ *      <button type="button" id="w1" class="dropdown-trigger btn" data-target="w0">Drop Me!</button>
+ *      <ul id="w0" class="dropdown-content" tabindex="0">
+ *          <li tabindex="0"><a href="/" tabindex="-1">DropdownA</a></li>
+ *          <li tabindex="0"><a href="#" tabindex="-1">DropdownB</a></li>
+ *      </ul>
+ * </div>
+ * ```
+ *
+ * If you are using a custom toggle button, please make sure to correctly set the `data-target` attribute in your toggle button.
+ * It has to match the `id` attribute of the dropdown.
+ *
+ * @see https://materializecss.com/dropdown.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage navigation
@@ -74,6 +84,11 @@ class Dropdown extends BaseWidget
      */
     public $submenuOptions;
 
+    /**
+     * @var array the configuration options for the dropdown toggle button. See [[Button|Button]] for detailed information
+     * on available options.
+     * To prevent the toggle button from being rendered, set this options to `false`.
+     */
     public $toggleButtonOptions = [];
 
     /**
@@ -88,13 +103,10 @@ class Dropdown extends BaseWidget
         }
         parent::init();
 
-        $this->options['id'] = $this->getUniqueId();
-        Html::addCssClass($this->options, ['widget' => 'dropdown-content']);
-
-        if (!isset($this->toggleButtonOptions['options']['data-target'])) {
-            $this->toggleButtonOptions['options']['data-target'] = $this->options['id'];
+        if (!isset($this->options['id'])) {
+            $this->options['id'] = $this->getUniqueId();
         }
-        Html::addCssClass($this->toggleButtonOptions['options'], ['toggle-button' => 'dropdown-trigger']);
+        Html::addCssClass($this->options, ['widget' => 'dropdown-content']);
 
         $this->registerPlugin('Dropdown', '.dropdown-trigger');
     }
@@ -104,19 +116,29 @@ class Dropdown extends BaseWidget
      *
      * @return string the result of widget execution to be outputted.
      * @throws InvalidConfigException
-     * @see MaterializePluginAsset|MaterializePluginAsset
      * @see \macgyer\yii2materializecss\lib\MaterializeWidgetTrait|MaterializeWidgetTrait
      */
     public function run()
     {
-        $html[] = $this->renderToggleButton();
+        if ($this->toggleButtonOptions !== false) {
+            $html[] = $this->renderToggleButton();
+        }
         $html[] = $this->renderItems($this->items, $this->options);
         return implode("\n", $html);
     }
 
+    /**
+     * Renders the dropdown toggle button.
+     *
+     * @return string the markup of the toggle button.
+     * @throws \Exception
+     */
     protected function renderToggleButton()
     {
-        $this->toggleButtonOptions['tagName'] = 'a';
+        if (!isset($this->toggleButtonOptions['options']['data-target'])) {
+            $this->toggleButtonOptions['options']['data-target'] = $this->options['id'];
+        }
+        Html::addCssClass($this->toggleButtonOptions['options'], ['toggle-button' => 'dropdown-trigger']);
 
         return Button::widget($this->toggleButtonOptions);
     }

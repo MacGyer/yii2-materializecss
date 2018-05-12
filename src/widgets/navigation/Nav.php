@@ -215,11 +215,11 @@ class Nav extends BaseWidget
             $items = '';
         } else {
             $toggleTarget = 'dropdown_' . md5(uniqid());
-            $linkOptions['data-activates'] = $toggleTarget;
+            $linkOptions['data-target'] = $toggleTarget;
             Html::addCssClass($options, ['widget' => 'dropdown']);
-            Html::addCssClass($linkOptions, ['widget' => 'dropdown-button']);
+            Html::addCssClass($linkOptions, ['widget' => 'dropdown-trigger']);
             if ($this->dropDownCaret !== '') {
-                $label .= ' ' . $this->dropDownCaret;
+                $label .= $this->dropDownCaret;
             }
             if (is_array($items)) {
                 if ($this->activateItems) {
@@ -250,19 +250,25 @@ class Nav extends BaseWidget
      */
     protected function renderDropdown($items, $parentItem, $targetId)
     {
+        $dropdownOptions = ArrayHelper::getValue($parentItem, 'dropDownOptions', []);
+        if (!isset($dropdownOptions['id'])) {
+            $dropdownOptions['id'] = $targetId;
+        }
+
         return Dropdown::widget([
-            'toggleTarget' => $targetId,
-            'options' => ArrayHelper::getValue($parentItem, 'dropDownOptions', []),
+            'options' => $dropdownOptions,
             'items' => $items,
             'encodeLabels' => $this->encodeLabels,
-            'clientOptions' => false,
-            'view' => $this->getView(),
+            'toggleButtonOptions' => false,
+//            'clientOptions' => false,
+//            'view' => $this->getView(),
         ]);
     }
 
     /**
      * Renders the side navigation and corresponding toggle button.
      * @return string the rendered side navigation markup.
+     * @throws \Exception
      */
     protected function renderSideNav()
     {
