@@ -66,7 +66,6 @@ class SideNav extends Nav
      * @var array the configuration options for the toggle button.
      * The toggle button is rendered by the [[Button]] widget. See the docs for all available options.
      *
-     *
      * @see Button|Button
      */
     public $toggleButtonOptions = [];
@@ -184,6 +183,16 @@ class SideNav extends Nav
         return Html::tag('li', $content, $listItemOptions);
     }
 
+    /**
+     * Renders a submenu as Collapsible in side navigation element.
+     *
+     * @param string $link the trigger link.
+     * @param array $items the submenu items.
+     * @param bool $isParentActive whether the submenu's parent list element shall get an 'active' state.
+     * @return string the Collapsible markup.
+     *
+     * @throws \Exception
+     */
     protected function renderCollapsible($link, $items = [], $isParentActive = false)
     {
         $itemOptions = [];
@@ -205,7 +214,13 @@ class SideNav extends Nav
         ]);
     }
 
-    protected function buildCollapsibleBody($items)
+    /**
+     * Build the needed markup for the collapsible body, i. e. the `<ul>` containing the submenu links.
+     *
+     * @param array $items the submenu items.
+     * @return string the Collapsible body markup.
+     */
+    protected function buildCollapsibleBody($items = [])
     {
         $html[] = Html::beginTag('ul');
 

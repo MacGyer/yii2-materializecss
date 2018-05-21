@@ -213,6 +213,11 @@ class NavBar extends BaseWidget
         return implode("\n", $html);
     }
 
+    /**
+     * Initializes the side nav options.
+     *
+     * @param string $sidenavId the side nav element's HTML id attribute.
+     */
     protected function initSidenav($sidenavId)
     {
         $this->sidenavToggleButtonOptions = ArrayHelper::merge([
@@ -246,6 +251,12 @@ class NavBar extends BaseWidget
         ]);
     }
 
+    /**
+     * Renders the side nav toggle button.
+     *
+     * @return string the button markup.
+     * @throws \Exception
+     */
     protected function renderSidenavToggleButton()
     {
         return Button::widget($this->sidenavToggleButtonOptions);
