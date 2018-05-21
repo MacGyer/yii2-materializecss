@@ -9,6 +9,7 @@ namespace macgyer\yii2materializecss\widgets\navigation;
 
 use macgyer\yii2materializecss\lib\Html;
 use macgyer\yii2materializecss\widgets\Button;
+use macgyer\yii2materializecss\widgets\Collapsible;
 use macgyer\yii2materializecss\widgets\navigation\Nav;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -57,8 +58,14 @@ class SideNav extends Nav
     public $clientOptions = [];
 
     /**
+     * @var bool whether the toggle button shall be rendered.
+     */
+    public $renderToggleButton = true;
+
+    /**
      * @var array the configuration options for the toggle button.
      * The toggle button is rendered by the [[Button]] widget. See the docs for all available options.
+     *
      *
      * @see Button|Button
      */
@@ -71,32 +78,39 @@ class SideNav extends Nav
     {
         parent::init();
 
-        $this->options['id'] = $this->getToggleId();
-        Html::addCssClass($this->options, ['widget' => 'side-nav']);
+        $this->activateParents = true;
 
-        if (!$this->toggleButtonOptions) {
-            $this->toggleButtonOptions = [
-                'label' => '',
+        if (!isset($this->options['id'])) {
+            $this->options['id'] = $this->getUniqueId('sidenav_');
+        }
+        Html::addCssClass($this->options, ['widget' => 'sidenav']);
+
+        if ($this->renderToggleButton) {
+            $this->toggleButtonOptions = ArrayHelper::merge([
+                'label' => false,
                 'icon' => [
                     'name' => 'menu'
                 ],
                 'type' => Button::TYPE_FLAT,
-            ];
+            ], $this->toggleButtonOptions);
+
+            Html::addCssClass($this->toggleButtonOptions['options'], ['toggleButton' => 'sidenav-trigger']);
+            $this->toggleButtonOptions['options']['data-target'] = $this->options['id'];
         }
 
-        Html::addCssClass($this->toggleButtonOptions['options'], ['toggleButton' => 'sidenav-toggle']);
-        $this->toggleButtonOptions['options']['data-activates'] = $this->options['id'];
+        $this->registerPlugin('Sidenav', '.sidenav');
     }
 
     /**
      * Executes the widget.
      * @return string
+     * @throws \Exception
      */
     public function run()
     {
-        $this->registerClientScript();
-
-        $html[] = $this->renderToggleButton();
+        if ($this->renderToggleButton) {
+            $html[] = $this->renderToggleButton();
+        }
         $html[] = $this->renderItems();
 
         return implode("\n", $html);
@@ -134,7 +148,7 @@ class SideNav extends Nav
         }
         $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
         $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
-        $options = ArrayHelper::getValue($item, 'options', []);
+        $listItemOptions = ArrayHelper::getValue($item, 'options', []);
         $items = ArrayHelper::getValue($item, 'items');
         $url = ArrayHelper::getValue($item, 'url', '#');
         $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
@@ -146,12 +160,10 @@ class SideNav extends Nav
         }
 
         if (empty($items)) {
-            $items = '';
+            $content = Html::a($label, $url, $linkOptions);
         } else {
-            $toggleTarget = 'dropdown_' . md5(uniqid());
-            $linkOptions['data-activates'] = $toggleTarget;
-            Html::addCssClass($options, ['widget' => 'dropdown']);
-            Html::addCssClass($linkOptions, ['widget' => 'dropdown-button']);
+            Html::addCssClass($listItemOptions, ['widget' => 'submenu']);
+            Html::addCssClass($linkOptions, ['widget' => 'submenu-opener']);
             if ($this->dropDownCaret !== '') {
                 $label .= ' ' . $this->dropDownCaret;
             }
@@ -159,15 +171,54 @@ class SideNav extends Nav
                 if ($this->activateItems) {
                     $items = $this->isChildActive($items, $active);
                 }
-                $items = $this->renderDropdown($items, $item, $toggleTarget);
+                $items = $this->renderCollapsible(Html::a($label, $url, $linkOptions), $items, $active);
             }
+            $content = $items;
         }
+
 
         if ($this->activateItems && $active) {
-            Html::addCssClass($options, 'active');
+            Html::addCssClass($listItemOptions, 'active');
         }
 
-        return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);
+        return Html::tag('li', $content, $listItemOptions);
+    }
+
+    protected function renderCollapsible($link, $items = [], $isParentActive = false)
+    {
+        $itemOptions = [];
+        if ($isParentActive) {
+            Html::addCssClass($itemOptions, ['item-activation' => 'active']);
+        }
+
+        $collapsibleItems = [
+            [
+                'header' => ['content' => $link],
+                'body' => ['content' => $this->buildCollapsibleBody($items)],
+                'options' => $itemOptions
+            ],
+        ];
+
+        return Collapsible::widget([
+            'items' => $collapsibleItems,
+            'type' => Collapsible::TYPE_ACCORDION,
+        ]);
+    }
+
+    protected function buildCollapsibleBody($items)
+    {
+        $html[] = Html::beginTag('ul');
+
+        foreach ($items as $item) {
+            $url = ArrayHelper::getValue($item, 'url', null);
+            $label = ArrayHelper::getValue($item, 'label', '');
+            $options = ArrayHelper::getValue($item, 'options', []);
+            $link = Html::a($label, $url, $options);
+            $html[] = Html::tag('li', $link);
+        }
+
+        $html[] = Html::endTag('ul');
+        return implode("\n", $html);
     }
 
     /**
@@ -180,23 +231,5 @@ class SideNav extends Nav
     protected function renderToggleButton()
     {
         return Button::widget($this->toggleButtonOptions);
-    }
-
-    /**
-     * Registers the Materialize SideNav client plugin.
-     */
-    protected function registerClientScript()
-    {
-        $this->registerPlugin('Sidenav', '.sidenav-toggle');
-    }
-
-    /**
-     * Generates unique element ID.
-     * @return string
-     */
-    protected function getToggleId()
-    {
-        $unique = md5(uniqid());
-        return "sidenav_$unique";
     }
 }
