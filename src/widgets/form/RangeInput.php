@@ -248,7 +248,7 @@ JS
         NoUiSliderAsset::register($view);
 
         $id = $this->sliderOptions['id'];
-        $varName = 'slider_' . sha1(uniqid());
+        $varName = $this->getUniqueId('slider_');
 
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '{}' : Json::htmlEncode($this->clientOptions);

@@ -104,7 +104,7 @@ class Dropdown extends BaseWidget
         parent::init();
 
         if (!isset($this->options['id'])) {
-            $this->options['id'] = $this->getUniqueId();
+            $this->options['id'] = $this->getUniqueId('dropdown_');
         }
         Html::addCssClass($this->options, ['widget' => 'dropdown-content']);
 
@@ -192,14 +192,5 @@ class Dropdown extends BaseWidget
         }
 
         return Html::tag('ul', implode("\n", $lines), $options);
-    }
-
-    /**
-     * @return string
-     */
-    private function getUniqueId()
-    {
-        $uniqid = sha1(uniqid('dropdown_', true));
-        return "dropdown_$uniqid";
     }
 }

@@ -110,4 +110,13 @@ trait MaterializeWidgetTrait
             $view->registerJs(implode("\n", $js), View::POS_END);
         }
     }
+
+    /**
+     * @return string
+     */
+    protected function getUniqueId($prefix = 'u_')
+    {
+        $uniqid = sha1(uniqid($prefix, true));
+        return "{$prefix}{$uniqid}";
+    }
 }
