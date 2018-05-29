@@ -21,7 +21,7 @@ use yii\helpers\ArrayHelper;
  *
  * The button can be displayed with an optional icon. This class uses the [[Icon|Icon]] widget to show icons.
  *
- * @see http://materializecss.com/buttons.html
+ * @see https://materializecss.com/buttons.html
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  */
@@ -41,6 +41,21 @@ class Button extends BaseWidget
      * Sets the [[type]] of the button to "flat".
      */
     const TYPE_FLAT = 'flat';
+
+    /**
+     * Sets the [[size]] of the button to the default size.
+     */
+    const SIZE_DEFAULT = 'default';
+
+    /**
+     * Sets the [[size]] of the button to "small".
+     */
+    const SIZE_SMALL = 'small';
+
+    /**
+     * Sets the [[size]] of the button to "large".
+     */
+    const SIZE_LARGE = 'large';
 
     /**
      * @var string the tag used to render the button.
@@ -88,9 +103,17 @@ class Button extends BaseWidget
     public $type = self::TYPE_RAISED;
 
     /**
-     * @var boolean whether the button shall be of larger size.
+     * @var string the size of button to be rendered.
+     *
+     * The following options are supported:
+     * - default
+     * - small
+     * - large
+     *
+     * This property defaults to "default". To set the type, use the corresponding `TYPE_*` constant of this class.
+     * If no type from this range is given, the button will be of the "default" type.
      */
-    public $large = false;
+    public $size = self::SIZE_DEFAULT;
 
     /**
      * @var boolean whether the button shall be disabled.
@@ -113,9 +136,16 @@ class Button extends BaseWidget
                 break;
         }
 
-        if ($this->large) {
-            Html::addCssClass($this->options, ['btn_size' => 'btn-large']);
+        switch ($this->size) {
+            case self::SIZE_SMALL:
+            case self::SIZE_LARGE:
+                Html::addCssClass($this->options, ['btn_size' => "btn-$this->size"]);
+                break;
         }
+
+//        if ($this->large) {
+//            Html::addCssClass($this->options, ['btn_size' => 'btn-large']);
+//        }
 
         if ($this->disabled) {
             Html::addCssClass($this->options, ['btn_disabled' => 'disabled']);

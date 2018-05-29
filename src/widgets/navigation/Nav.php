@@ -111,32 +111,6 @@ class Nav extends BaseWidget
     public $dropDownCaret;
 
     /**
-     * @var array the options for the underlying JS sideNav() plugin.
-     * The following options are supported:
-     * - menuWidth: 300, // Default is 240
-     * - edge: 'right', // Choose the horizontal origin
-     * - closeOnClick: true, // Closes side-nav on `<a>` clicks, useful for Angular/Meteor
-     * - draggable: true // Choose whether you can drag to open on touch screens
-     *
-     * @see http://materializecss.com/side-nav.html#options
-     */
-    public $sideNavClientOptions = [];
-
-    /**
-     * @var array the configuration options for the toggle button.
-     * The toggle button is rendered by the [[\macgyer\yii2materializecss\widgets\Button|Button]] widget. See the docs for all available options.
-     *
-     * @see \macgyer\yii2materializecss\widgets\Button|Button
-     */
-    public $sideNavToggleButtonOptions = [];
-
-    /**
-     * @var boolean whether to render a side navigation.
-     * Set this option to `false` if you do not want the side navigation to be rendered automatically.
-     */
-    public $renderSideNav = true;
-
-    /**
      * Initializes the widget.
      */
     public function init()
@@ -160,10 +134,6 @@ class Nav extends BaseWidget
     {
         MaterializeAsset::register($this->getView());
         $html[] = $this->renderItems();
-
-        if ($this->renderSideNav === true) {
-            $html[] = $this->renderSideNav();
-        }
 
         return implode("\n", $html);
     }
@@ -214,12 +184,12 @@ class Nav extends BaseWidget
         if (empty($items)) {
             $items = '';
         } else {
-            $toggleTarget = 'dropdown_' . md5(uniqid());
-            $linkOptions['data-activates'] = $toggleTarget;
+            $toggleTarget = $this->getUniqueId('dropdown_');
+            $linkOptions['data-target'] = $toggleTarget;
             Html::addCssClass($options, ['widget' => 'dropdown']);
-            Html::addCssClass($linkOptions, ['widget' => 'dropdown-button']);
+            Html::addCssClass($linkOptions, ['widget' => 'dropdown-trigger']);
             if ($this->dropDownCaret !== '') {
-                $label .= ' ' . $this->dropDownCaret;
+                $label .= $this->dropDownCaret;
             }
             if (is_array($items)) {
                 if ($this->activateItems) {
@@ -250,26 +220,16 @@ class Nav extends BaseWidget
      */
     protected function renderDropdown($items, $parentItem, $targetId)
     {
+        $dropdownOptions = ArrayHelper::getValue($parentItem, 'dropDownOptions', []);
+        if (!isset($dropdownOptions['id'])) {
+            $dropdownOptions['id'] = $targetId;
+        }
+
         return Dropdown::widget([
-            'toggleTarget' => $targetId,
-            'options' => ArrayHelper::getValue($parentItem, 'dropDownOptions', []),
+            'options' => $dropdownOptions,
             'items' => $items,
             'encodeLabels' => $this->encodeLabels,
-            'clientOptions' => false,
-            'view' => $this->getView(),
-        ]);
-    }
-
-    /**
-     * Renders the side navigation and corresponding toggle button.
-     * @return string the rendered side navigation markup.
-     */
-    protected function renderSideNav()
-    {
-        return SideNav::widget([
-            'items' => $this->items,
-            'toggleButtonOptions' => $this->sideNavToggleButtonOptions,
-            'clientOptions' => $this->sideNavClientOptions,
+            'toggleButtonOptions' => false,
         ]);
     }
 

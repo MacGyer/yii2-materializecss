@@ -11,6 +11,7 @@ use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
+use yii\web\View;
 
 /**
  * Parallax renders an image container where the background image is scrolled at another speed than the foreground.
@@ -19,8 +20,8 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage media
  *
- * @see http://materializecss.com/parallax.html
- * @see http://materializecss.com/parallax-demo.html
+ * @see https://materializecss.com/parallax.html
+ * @see https://materializecss.com/parallax-demo.html
  */
 class Parallax extends BaseWidget
 {
@@ -54,7 +55,7 @@ class Parallax extends BaseWidget
             $this->imageSrc = $imageSrc;
         }
 
-        $this->registerPlugin('parallax', '.parallax');
+        $this->registerPlugin('Parallax', '.parallax');
     }
 
     /**

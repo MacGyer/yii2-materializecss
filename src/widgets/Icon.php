@@ -18,20 +18,20 @@ use yii\helpers\ArrayHelper;
  * Please note that the Materialize icons are shipped in a separate font file. This font file is automatically registered
  * by the [[\macgyer\yii2materializecss\assets\MaterializeAsset|MaterializeAsset]].
  *
- * If you do not load the default [[\macgyer\yii2materializecss\assets\MaterializeAsset|MaterializeAsset]] make sure to at least load 
- * [[\macgyer\yii2materializecss\assets\MaterializeFontAsset|MaterializeFontAsset]] (or another source providing the font file) to correctly 
+ * If you do not load the default [[\macgyer\yii2materializecss\assets\MaterializeAsset|MaterializeAsset]] make sure to at least load
+ * [[\macgyer\yii2materializecss\assets\MaterializeFontAsset|MaterializeFontAsset]] (or another source providing the font file) to correctly
  * display the icons.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
- * @see http://materializecss.com/icons.html
+ * @see https://materializecss.com/icons.html
  */
 class Icon extends BaseWidget
 {
     /**
      * @var string the name of the icon.
      *
-     * @see http://materializecss.com/icons.html
+     * @see https://materializecss.com/icons.html
      */
     public $name;
 

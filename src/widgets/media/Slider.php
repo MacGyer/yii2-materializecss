@@ -40,7 +40,7 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage media
  *
- * @see http://materializecss.com/media.html#slider
+ * @see http://nextmaterializecss.com/media.html#slider
  */
 class Slider extends BaseWidget
 {
@@ -92,14 +92,29 @@ class Slider extends BaseWidget
     public $slides = [];
 
     /**
-     * @var boolean whether to show the slider's navigation indicators
+     * @var boolean whether to show the slider's navigation indicators.
      */
     public $showIndicators = true;
 
     /**
-     * @var boolean whether this is a fullscreen slider
+     * @var boolean whether this is a fullscreen slider.
      */
     public $fullscreen = false;
+
+    /**
+     * @var int the slider height.
+     */
+    public $height = 400;
+
+    /**
+     * @var int the duration of the transition animation in ms.
+     */
+    public $duration = 500;
+
+    /**
+     * @var int the duration each slide is shown in ms.
+     */
+    public $interval = 6000;
 
     /**
      * Initialize the widget.
@@ -115,7 +130,11 @@ class Slider extends BaseWidget
         }
 
         $this->clientOptions['indicators'] = $this->showIndicators;
-        $this->registerPlugin('slider', '.slider');
+        $this->clientOptions['height'] = $this->height;
+        $this->clientOptions['duration'] = $this->duration;
+        $this->clientOptions['interval'] = $this->interval;
+
+        $this->registerPlugin('Slider', '.slider');
     }
 
     /**

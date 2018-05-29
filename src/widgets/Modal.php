@@ -37,7 +37,7 @@ use yii\helpers\ArrayHelper;
  * ```
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
- * @see http://materializecss.com/modals.html
+ * @see https://materializecss.com/modals.html
  */
 class Modal extends BaseWidget
 {
@@ -107,7 +107,7 @@ class Modal extends BaseWidget
      * - fixedFooter
      * - bottomSheet
      *
-     * @see http://materializecss.com/modals.html
+     * @see https://materializecss.com/modals.html
      */
     public $modalType = self::TYPE_LEAN;
 
@@ -174,6 +174,41 @@ class Modal extends BaseWidget
     public $footerOptions = [];
 
     /**
+     * @var float the opacity of the Modal overlay. Valid values are 0 through 1.
+     */
+    public $overlayOpacity = 0.5;
+
+    /**
+     * @var int duration of the opening transition in ms.
+     */
+    public $inDuration = 250;
+
+    /**
+     * @var int duration of the closing transition in ms.
+     */
+    public $outDuration = 250;
+
+    /**
+     * @var boolean whether the page scrolling is disabled when the Modal is open.
+     */
+    public $preventScrolling = true;
+
+    /**
+     * @var boolean whether the Modal can be closed by keyboard or click.
+     */
+    public $dismissible = true;
+
+    /**
+     * @var string|mixed the starting top offset.
+     */
+    public $startingTopOffset = '4%';
+
+    /**
+     * @var string|mixed the ending top offset.
+     */
+    public $endingTopOffset = '10%';
+
+    /**
      * Initializes the widget.
      * @uses [[renderCloseButton()]]
      * @uses [[registerPlugin()]]
@@ -203,7 +238,7 @@ class Modal extends BaseWidget
 
         echo $html;
 
-        $this->registerPlugin('modal');
+        $this->registerPlugin('Modal');
     }
 
     /**
@@ -346,8 +381,12 @@ class Modal extends BaseWidget
             ], $this->toggleButton);
         }
 
-        if ($this->clientOptions !== false) {
-            $this->clientOptions = ArrayHelper::merge(['show' => false], $this->clientOptions);
-        }
+        $this->clientOptions['opacity'] = $this->overlayOpacity;
+        $this->clientOptions['inDuration'] = $this->inDuration;
+        $this->clientOptions['outDuration'] = $this->outDuration;
+        $this->clientOptions['preventScrolling'] = $this->preventScrolling;
+        $this->clientOptions['dismissible'] = $this->dismissible;
+        $this->clientOptions['startingTop'] = $this->startingTopOffset;
+        $this->clientOptions['endingTop'] = $this->endingTopOffset;
     }
 }

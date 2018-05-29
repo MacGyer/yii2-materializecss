@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
 
 /**
  * MaterializeAsset provides the required Materialize CSS files.
- * 
+ *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package assets
  */
@@ -33,6 +33,6 @@ class MaterializeAsset extends AssetBundle
      * @var array list of bundle class names that this bundle depends on.
      */
     public $depends = [
-        'macgyer\yii2materializecss\assets\MaterializeFontAsset',
+        MaterializeFontAsset::class,
     ];
 }

@@ -44,13 +44,14 @@ use yii\helpers\ArrayHelper;
  *              'tag' => 'p',
  *              'data-body-category' => 'example',
  *          ],
+ *          'options' => ['class' => 'active'], // to make this item pre-selected
  *      ],
  * ]
  * ```
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  *
- * @see http://materializecss.com/collapsible.html
+ * @see https://materializecss.com/collapsible.html
  */
 class Collapsible extends BaseWidget
 {
@@ -91,7 +92,12 @@ class Collapsible extends BaseWidget
         if ($this->isPopoutStyle) {
             Html::addCssClass($this->options, ['popout' => 'popout']);
         }
-        $this->options['data-collapsible'] = $this->type;
+
+        if ($this->type == self::TYPE_EXPANDABLE) {
+            $this->clientOptions['accordion'] = false;
+        }
+
+        $this->registerPlugin('Collapsible');
     }
 
     /**

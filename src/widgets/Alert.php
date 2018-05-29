@@ -13,11 +13,11 @@ use Yii;
 use yii\helpers\ArrayHelper;
 
 /**
- * Alert renders Yii's session flash messages. 
- * 
- * All flash messages are displayed in the sequence they were assigned using 
- * [yii\web\Session::setFlash()](http://www.yiiframework.com/doc-2.0/yii-web-session.html#setFlash()-detail). 
- * 
+ * Alert renders Yii's session flash messages.
+ *
+ * All flash messages are displayed in the sequence they were assigned using
+ * [yii\web\Session::setFlash()](http://www.yiiframework.com/doc-2.0/yii-web-session.html#setFlash()-detail).
+ *
  * You can set messages as follows:
  *
  * ```php
@@ -62,7 +62,7 @@ class Alert extends BaseWidget
 
     /**
      * @var array the HTML attributes for the widget container tag.
-     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on 
+     * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on
      * how attributes are being rendered.
      */
     public $options = [];
@@ -81,8 +81,7 @@ class Alert extends BaseWidget
 
     /**
      * Executes the widget.
-     * @return string the result of widget execution to be outputted.
-     * 
+     *
      * @uses [yii\web\Session](http://www.yiiframework.com/doc-2.0/yii-web-session.html)
      */
     public function run()

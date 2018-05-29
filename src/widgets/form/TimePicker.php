@@ -11,67 +11,28 @@ use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * TimePicker renders a time picker input element.
+ * TimePicker renders a time picker input element with a modified version of pickadate.js.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage form
- * @see http://materializecss.com/forms.html#time-picker
+ * @see https://materializecss.com/pickers.html#time-picker
  */
 class TimePicker extends BaseInputWidget
 {
     /**
-     * @var boolean whether time format is 12 or 24 hour.
-     */
-    public $isTwelveHourFormat = false;
-
-    /**
-     * @var string the label for the "select time" button.
-     */
-    public $okLabel = 'OK';
-
-    /**
-     * @var string the label for the "clear time" button.
-     */
-    public $clearLabel = 'Clear';
-
-    /**
-     * @var string the label for the "cancel time selection" button.
-     */
-    public $cancelLabel = 'Cancel';
-
-    /**
-     * @var string the default time displayed when picker is opened.
+     * @var array the options for the underlying datepicker JS plugin.
      *
-     * Examples: `'now'`, `'1:55PM'`, `'18:30'`
+     * @see https://materializecss.com/pickers.html#time-picker
      */
-    public $defaultValue = 'now';
+    public $clientOptions = [];
 
     /**
-     * Initialize the widget.
+     * @var array the event handlers for the underlying date picker JS plugin.
+     *
+     * @see https://materializecss.com/pickers.html#time-picker
      */
-    public function init()
-    {
-        parent::init();
-
-        if (!isset($this->clientOptions['donetext'])) {
-            $this->clientOptions['donetext'] = $this->okLabel;
-        }
-
-        if (!isset($this->clientOptions['cleartext'])) {
-            $this->clientOptions['cleartext'] = $this->clearLabel;
-        }
-
-        if (!isset($this->clientOptions['canceltext'])) {
-            $this->clientOptions['canceltext'] = $this->cancelLabel;
-        }
-
-        if (isset($this->defaultValue)) {
-            $this->clientOptions['default'] = $this->defaultValue;
-        }
-
-        $this->clientOptions['twelvehour'] = $this->isTwelveHourFormat;
-    }
+    public $clientEvents = [];
 
     /**
      * Execute the widget.
@@ -79,9 +40,9 @@ class TimePicker extends BaseInputWidget
      */
     public function run()
     {
-        Html::addCssClass($this->options, 'timepicker');
+        $this->registerPlugin('Timepicker', '.timepicker');
 
-        $this->registerPlugin('pickatime');
+        Html::addCssClass($this->options, 'timepicker');
 
         if ($this->hasModel()) {
             $this->options['data-value'] = isset($this->value) ? $this->value : Html::getAttributeValue($this->model, $this->attribute);

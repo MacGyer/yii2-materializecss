@@ -52,10 +52,10 @@ use yii\helpers\ArrayHelper;
  * ]);
  * ```
  *
- * @see [yii\widgets\Breadcrumbs](http://www.yiiframework.com/doc-2.0/yii-widgets-breadcrumbs.html)
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  * @subpackage navigation
+ * @see https://materializecss.com/breadcrumbs.html
  */
 class Breadcrumbs extends \yii\widgets\Breadcrumbs
 {
@@ -108,7 +108,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     public $activeItemTemplate = "<span class=\"breadcrumb active\">{link}</span>\n";
 
     /**
-     * Initializes the widget.
+     * Initialize the widget.
      */
     public function init()
     {
@@ -126,30 +126,33 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     }
 
     /**
-     * Renders the widget.
+     * Render the widget.
      * @return string the result of widget execution to be outputted.
+     * @throws InvalidConfigException
      */
     public function run()
     {
         if (empty($this->links)) {
-            return;
+            return '';
         }
 
-        echo Html::beginTag('nav', $this->containerOptions);
-        echo Html::beginTag($this->tag, $this->options);
+        $html[] = Html::beginTag('nav', $this->containerOptions);
+        $html[] = Html::beginTag($this->tag, $this->options);
 
         if ($this->innerContainerOptions !== false) {
             $innerContainerTag = ArrayHelper::remove($this->innerContainerOptions, 'tag', 'div');
-            echo Html::beginTag($innerContainerTag, $this->innerContainerOptions);
+            $html[] = Html::beginTag($innerContainerTag, $this->innerContainerOptions);
         }
-        echo implode('', $this->prepareLinks());
+        $html[] = implode('', $this->prepareLinks());
 
         if ($this->innerContainerOptions !== false) {
-            echo Html::endTag($innerContainerTag);
+            $html[] = Html::endTag($innerContainerTag);
         }
 
-        echo Html::endTag($this->tag);
-        echo Html::endTag('nav');
+        $html[] = Html::endTag($this->tag);
+        $html[] = Html::endTag('nav');
+
+        return implode("\n", $html);
     }
 
     /**

@@ -13,16 +13,17 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
 /**
- * Chip renders small units of information.
+ * StaticChip renders small units of information.
  *
- * An Usual use case is the displaying of tags or contact information.
+ * An usual use case is the displaying of contact information.
+ * If you need tagging support in forms or inputs generally, please use [[\macgyer\yii2materializecss\widgets\form\ChipInput|ChipInput]].
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  *
- * @see http://materializecss.com/chips.html
+ * @see https://materializecss.com/chips.html
  * @package widgets
  */
-class Chip extends BaseWidget
+class StaticChip extends BaseWidget
 {
     /**
      * @var array the HTML attributes for the widget container tag. The following special options are recognized:
@@ -59,11 +60,11 @@ class Chip extends BaseWidget
     /**
      * @var array the options for the optional [[Icon|Icon]].
      *
-     * If there is an icon present in the chip element, Materialize will 
+     * If there is an icon present in the chip element, Materialize will
      * treat it as a close (i. e. remove) trigger.
      *
      * To specify an [[Icon|Icon]] you can use the following parameters:
-     * 
+     *
      * ```php
      * [
      *     'name' => 'name of the icon',                    // optional, defaults to 'close'
@@ -104,29 +105,32 @@ class Chip extends BaseWidget
     /**
      * Executes the widget.
      * @return string the result of widget execution to be outputted.
+     * @throws \Exception
      * @uses [[Icon]]
      */
     public function run()
     {
         $tag = ArrayHelper::remove($this->options, 'tag', 'div');
-        $html = Html::beginTag($tag, $this->options);
+        $html[] = Html::beginTag($tag, $this->options);
 
         if ($this->imageOptions) {
             $src = ArrayHelper::remove($this->imageOptions, 'src', '');
-            $html .= Html::img($src, $this->imageOptions);
+            $html[] = Html::img($src, $this->imageOptions);
         }
 
-        $html .= $this->encodeContent ? Html::encode($this->content) : $this->content;
+        $html[] = $this->encodeContent ? Html::encode($this->content) : $this->content;
 
         if ($this->renderIcon) {
-            $html .= Icon::widget([
+            Html::addCssClass($this->icon['options'], ['close-trigger' => 'close']);
+
+            $html[] = Icon::widget([
                 'name' => ArrayHelper::getValue($this->icon, 'name', null),
                 'position' => ArrayHelper::getValue($this->icon, 'position', ''),
                 'options' => ArrayHelper::getValue($this->icon, 'options', [])
             ]);
         }
 
-        $html .= Html::endTag($tag);
-        return $html;
+        $html[] = Html::endTag($tag);
+        return implode("\n", $html);
     }
 }

@@ -44,6 +44,16 @@ use macgyer\yii2materializecss\lib\Html;
 class Progress extends BaseWidget
 {
     /**
+     * Sets the [[type]] of the progress bar to 'determinate'.
+     */
+    const TYPE_DETERMINATE = 'determinate';
+
+    /**
+     * Sets the [[type]] of the progress bar to 'indeterminate'. This is the default.
+     */
+    const TYPE_INDETERMINATE = 'indeterminate';
+
+    /**
      * @var array the HTML attributes for the widget container tag
      *
      * @see [yii\helpers\BaseHtml::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail)
@@ -67,9 +77,9 @@ class Progress extends BaseWidget
      * - indeterminate (default)
      * - determinate
      *
-     * @see http://materializecss.com/preloader.html
+     * @see https://materializecss.com/preloader.html
      */
-    public $type = 'indeterminate';
+    public $type = self::TYPE_INDETERMINATE;
 
     /**
      * @var integer the (initial) value for 'determinate' progress bars.
@@ -81,7 +91,7 @@ class Progress extends BaseWidget
      * <div class="determinate" style="width: 70%"></div>
      * ```
      *
-     * @see http://materializecss.com/preloader.html
+     * @see https://materializecss.com/preloader.html
      */
     public $value = 0;
 
@@ -95,7 +105,7 @@ class Progress extends BaseWidget
         Html::addCssClass($this->options, ['widget' => 'progress']);
         Html::addCssClass($this->progressOptions, ['type' => $this->type]);
 
-        if ($this->type === 'determinate') {
+        if ($this->type === self::TYPE_DETERMINATE) {
             Html::addCssStyle($this->progressOptions, ['width' => $this->value . '%']);
         }
     }

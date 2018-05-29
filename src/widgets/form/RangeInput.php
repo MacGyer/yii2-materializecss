@@ -28,7 +28,7 @@ use yii\web\JsExpression;
  * @package widgets
  * @subpackage form
  *
- * @see http://materializecss.com/forms.html#range
+ * @see https://materializecss.com/range.html
  * @see https://refreshless.com/nouislider/
  */
 class RangeInput extends BaseInputWidget
@@ -189,6 +189,14 @@ JS
     {
         $html[] = Html::beginTag('div', ['class' => 'range-field']);
 
+        // workaround for: https://github.com/Dogfalo/materialize/issues/5761
+        if (!isset($this->inputOptions['min'])) {
+            $this->inputOptions['min'] = 0;
+        }
+        if (!isset($this->inputOptions['max'])) {
+            $this->inputOptions['max'] = 100;
+        }
+
         if ($this->hasModel()) {
             $html[] = Html::activeInput('range', $this->model, $this->attribute, $this->inputOptions);
         } else {
@@ -225,7 +233,7 @@ JS
     protected function renderHiddenInput()
     {
         if ($this->hasModel()) {
-            return Html::activeTextInput($this->model, $this->attribute, $this->inputOptions);
+            return Html::activeHiddenInput($this->model, $this->attribute, $this->inputOptions);
         } else {
             return Html::hiddenInput($this->name, $this->value, $this->inputOptions);
         }
@@ -240,7 +248,7 @@ JS
         NoUiSliderAsset::register($view);
 
         $id = $this->sliderOptions['id'];
-        $varName = 'slider_' . sha1(uniqid());
+        $varName = $this->getUniqueId('slider_');
 
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '{}' : Json::htmlEncode($this->clientOptions);

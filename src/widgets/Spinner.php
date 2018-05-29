@@ -81,7 +81,7 @@ class Spinner extends BaseWidget
      *
      * If this is set to "true" the spinner will continously alternate its colors between blue, red, yellow and green.
      *
-     * @see http://materializecss.com/preloader.html
+     * @see https://materializecss.com/preloader.html
      */
     public $flashColors = false;
 

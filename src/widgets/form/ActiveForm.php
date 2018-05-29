@@ -20,7 +20,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
      * @var string the default field class name when calling [[field()]] to create a new field.
      * @see http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html#$fieldConfig-detail
      */
-    public $fieldClass = 'macgyer\yii2materializecss\widgets\form\ActiveField';
+    public $fieldClass = ActiveField::class;
 
     /**
      * @var string the CSS class that is added to a field container when the associated attribute has validation error.
