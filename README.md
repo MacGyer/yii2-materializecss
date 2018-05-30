@@ -6,10 +6,11 @@
 
 ----
 
-This is the current, actively developed 3.x branch which will implement Materialize version 1.0 and thus breaking backwards compatibility.
-**Please note: This branch is work in progress right now. No release has been published. Do not use in production versions until further notice.**
+This is the current, actively developed 3.x branch which is implementing Materialize version 1.0 and thus breaking backwards compatibility.
+**Please note: This branch is in beta phase right now. You might use it, but on your own liability.**
 
 [Go to 1.x version](https://github.com/MacGyer/yii2-materializecss/tree/1.x)
+
 [Go to 2.x version](https://github.com/MacGyer/yii2-materializecss/tree/2.x)
 
 ----
@@ -21,7 +22,7 @@ See [official documentation](http://macgyer.github.io/yii2-materializecss/) for 
 
 **New**: Have a look at the [official demo page](https://yii2-materializecss.pluspunkt-coding.de) to see the repo in action.
 
-Current Materialize version implemented: 1.0.0-beta
+Current Materialize version implemented: 1.0.0-rc.1
 
 ## Installation
 
@@ -78,7 +79,7 @@ The following widgets are currently available:
 * DatePicker
 * DetailView
 * Dropdown
-* Fixed Action Button
+* FloatingActionButton
 * GridView with ActionColumn
 * Icon
 * LinkPager
@@ -123,18 +124,7 @@ You can copy those templates to any location you wish for further customization.
 
 ## Known issues
 
-Despite the styling issues in the side navigation overlay the dependency has been updated to v0.100.1. 
-See [Issue #4046](https://github.com/Dogfalo/materialize/issues/4046) for details. 
-
-Unfortunately the issue still exists in the latest release, but can be fixed temporarily with the following CSS styles:
-
-```
-#sidenav-overlay {
-    z-index: 996;
-}
-```
-
-Hopefully one of the upcoming releases of Materialize will fix the issue.
+Systems operating on normal parameters :)
 
 
 ## Sample layout
