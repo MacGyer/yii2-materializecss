@@ -12,6 +12,7 @@ use macgyer\yii2materializecss\lib\Html;
 use macgyer\yii2materializecss\widgets\Icon;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
+use yii\web\JsExpression;
 
 // TODO: file input
 
@@ -67,7 +68,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
-    public $errorOptions = ['class' => 'help-block'];
+    public $errorOptions = ['class' => 'help-block helper-text', 'tag' => 'span'];
 
     /**
      * @var array the default options for the label tags. The parameter passed to [label()](http://www.yiiframework.com/doc-2.0/yii-widgets-activefield.html#label()-detail) will be
@@ -121,6 +122,10 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         if ($this->form->enableClientScript === true && $this->form->enableClientValidation === true) {
             Html::addCssClass($this->inputOptions, ['inputValidation' => 'validate']);
+        }
+
+        if ($this->model->hasErrors()) {
+            Html::addCssClass($this->inputOptions, $this->form->errorCssClass);
         }
 
         if ($this->showCharacterCounter === true) {
@@ -695,5 +700,89 @@ class ActiveField extends \yii\widgets\ActiveField
         $this->initAutoComplete($options);
 
         return parent::input('week', $options);
+    }
+
+    public function error($options = [])
+    {
+        if ($options === false) {
+            $this->parts['{error}'] = '';
+            return $this;
+        }
+        $options = array_merge($this->errorOptions, $options);
+        $this->parts['{error}'] = Html::error($this->model, $this->attribute, $options);
+
+        return $this;
+    }
+
+    protected function getClientOptions()
+    {
+        $attribute = Html::getAttributeName($this->attribute);
+        if (!in_array($attribute, $this->model->activeAttributes(), true)) {
+            return [];
+        }
+
+        $clientValidation = $this->isClientValidationEnabled();
+        $ajaxValidation = $this->isAjaxValidationEnabled();
+
+        if ($clientValidation) {
+            $validators = [];
+            foreach ($this->model->getActiveValidators($attribute) as $validator) {
+                /* @var $validator \yii\validators\Validator */
+                $js = $validator->clientValidateAttribute($this->model, $attribute, $this->form->getView());
+                if ($validator->enableClientValidation && $js != '') {
+                    if ($validator->whenClient !== null) {
+                        $js = "if (({$validator->whenClient})(attribute, value)) { $js }";
+                    }
+                    $validators[] = $js;
+                }
+            }
+        }
+
+        if (!$ajaxValidation && (!$clientValidation || empty($validators))) {
+            return [];
+        }
+
+        $options = [];
+
+        $inputID = $this->getInputId();
+        $options['id'] = Html::getInputId($this->model, $this->attribute);
+        $options['name'] = $this->attribute;
+
+        $options['container'] = isset($this->selectors['container']) ? $this->selectors['container'] : ".field-$inputID";
+        $options['input'] = isset($this->selectors['input']) ? $this->selectors['input'] : "#$inputID";
+        if (isset($this->selectors['error'])) {
+            $options['error'] = $this->selectors['error'];
+        } elseif (isset($this->errorOptions['class'])) {
+            $options['error'] = '.' . implode('.', preg_split('/\s+/', $this->errorOptions['class'], -1, PREG_SPLIT_NO_EMPTY));
+        } else {
+            $options['error'] = isset($this->errorOptions['tag']) ? $this->errorOptions['tag'] : 'span';
+        }
+
+        $options['encodeError'] = !isset($this->errorOptions['encode']) || $this->errorOptions['encode'];
+        if ($ajaxValidation) {
+            $options['enableAjaxValidation'] = true;
+        }
+        foreach (['validateOnChange', 'validateOnBlur', 'validateOnType', 'validationDelay'] as $name) {
+            $options[$name] = $this->$name === null ? $this->form->$name : $this->$name;
+        }
+
+        if (!empty($validators)) {
+            $options['validate'] = new JsExpression("function (attribute, value, messages, deferred, \$form) {" . implode('', $validators) . "$(attribute.container + ' ' + attribute.error).attr('data-error', messages[0]); messages[0] ? $(attribute.input).addClass('{$this->form->errorCssClass}').removeClass('{$this->form->successCssClass}') : $(attribute.input).removeClass('{$this->form->errorCssClass}').addClass('{$this->form->successCssClass}')}");
+        }
+
+        if ($this->addAriaAttributes === false) {
+            $options['updateAriaInvalid'] = false;
+        }
+
+        // only get the options that are different from the default ones (set in yii.activeForm.js)
+        return array_diff_assoc($options, [
+            'validateOnChange' => true,
+            'validateOnBlur' => true,
+            'validateOnType' => false,
+            'validationDelay' => 500,
+            'encodeError' => true,
+            'error' => '.help-block helper-text',
+            'updateAriaInvalid' => true,
+        ]);
     }
 }
