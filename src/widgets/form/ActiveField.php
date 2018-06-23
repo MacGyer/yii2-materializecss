@@ -702,6 +702,9 @@ class ActiveField extends \yii\widgets\ActiveField
         return parent::input('week', $options);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function error($options = [])
     {
         if ($options === false) {
@@ -714,6 +717,10 @@ class ActiveField extends \yii\widgets\ActiveField
         return $this;
     }
 
+    /**
+     * Returns the JS options for the field.
+     * @return array the JS options.
+     */
     protected function getClientOptions()
     {
         $attribute = Html::getAttributeName($this->attribute);
@@ -767,7 +774,7 @@ class ActiveField extends \yii\widgets\ActiveField
         }
 
         if (!empty($validators)) {
-            $options['validate'] = new JsExpression("function (attribute, value, messages, deferred, \$form) {" . implode('', $validators) . "$(attribute.container + ' ' + attribute.error).attr('data-error', messages[0]); messages[0] ? $(attribute.input).addClass('{$this->form->errorCssClass}').removeClass('{$this->form->successCssClass}') : $(attribute.input).removeClass('{$this->form->errorCssClass}').addClass('{$this->form->successCssClass}')}");
+            $options['validate'] = new JsExpression("function (attribute, value, messages, deferred, \$form) {" . implode('', $validators) . "}");
         }
 
         if ($this->addAriaAttributes === false) {
