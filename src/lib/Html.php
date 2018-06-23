@@ -539,4 +539,20 @@ class Html extends BaseHtml
 
         return $hidden . static::input($type, $name, $value, $options);
     }
+
+    public static function error($model, $attribute, $options = [])
+    {
+        $attribute = static::getAttributeName($attribute);
+        $errorSource = ArrayHelper::remove($options, 'errorSource');
+        if ($errorSource !== null) {
+            $error = call_user_func($errorSource, $model, $attribute);
+        } else {
+            $error = $model->getFirstError($attribute);
+        }
+        $tag = ArrayHelper::remove($options, 'tag', 'span');
+        $encode = ArrayHelper::remove($options, 'encode', true);
+
+        $options['data-error'] = $error;
+        return Html::tag($tag, $encode ? Html::encode($error) : $error, $options);
+    }
 }

@@ -37,6 +37,22 @@ class ActiveForm extends \yii\widgets\ActiveForm
      */
     public function init()
     {
+        if (!isset($this->options['id'])) {
+            $this->options['id'] = $this->getId();
+        }
+
+        if (!isset($this->options['data-success-class'])) {
+            $this->options['data-success-class'] = $this->successCssClass;
+        }
+
+        if (!isset($this->options['data-error-class'])) {
+            $this->options['data-error-class'] = $this->errorCssClass;
+        }
+
+        if ($this->enableClientValidation) {
+            $this->registerAfterValidateHandler();
+        }
+
         parent::init();
     }
 
@@ -50,5 +66,23 @@ class ActiveForm extends \yii\widgets\ActiveForm
     public function field($model, $attribute, $options = [])
     {
         return parent::field($model, $attribute, $options);
+    }
+
+    /**
+     * Register the necessary JS handlers to set error messages and validation state indicators.
+     */
+    protected function registerAfterValidateHandler()
+    {
+        $view = $this->getView();
+        $id = $this->options['id'];
+
+        $view->registerJs(<<<JS
+$('#{$id}').on('afterValidateAttribute', function (evt, attribute, messages) {
+    var yiiForm = $(this);
+    $(attribute.container + ' ' + attribute.error).attr('data-error', messages[0]);
+    messages[0] ? $(attribute.input).addClass(yiiForm.attr('data-error-class')).removeClass(yiiForm.attr('data-success-class')) : $(attribute.input).addClass(yiiForm.attr('data-success-class')).removeClass(yiiForm.attr('data-error-class'));
+});
+JS
+        );
     }
 }
