@@ -151,7 +151,7 @@ class Select extends BaseInputWidget
             $this->items = ArrayHelper::merge(['' => $placeholder], $this->items);
 
             $placeholderOption = [
-                '' => ['disabled' => true, 'selected' => true],
+                '' => ['disabled' => true],
             ];
             $this->options['options'] = ArrayHelper::merge($placeholderOption, $this->options['options']);
         }
