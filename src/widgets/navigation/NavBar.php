@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/MacGyer/yii2-materializecss
  * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
@@ -41,8 +42,8 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage navigation
  */
-class NavBar extends BaseWidget
-{
+class NavBar extends BaseWidget {
+
     /**
      * @var array the HTML attributes for the widget container tag. The following special options are recognized:
      *
@@ -149,8 +150,7 @@ class NavBar extends BaseWidget
     /**
      * Initializes the widget.
      */
-    public function init()
-    {
+    public function init() {
         parent::init();
         $html = [];
 
@@ -184,8 +184,7 @@ class NavBar extends BaseWidget
     /**
      * Renders the widget.
      */
-    public function run()
-    {
+    public function run() {
         if ($this->renderSidenav) {
             $sidenavId = $this->getUniqueId('sidenav_');
             $this->initSidenav($sidenavId);
@@ -218,15 +217,14 @@ class NavBar extends BaseWidget
      *
      * @param string $sidenavId the side nav element's HTML id attribute.
      */
-    protected function initSidenav($sidenavId)
-    {
+    protected function initSidenav($sidenavId) {
         $this->sidenavToggleButtonOptions = ArrayHelper::merge([
-            'label' => false,
-            'icon' => [
-                'name' => 'menu'
-            ],
-            'type' => Button::TYPE_FLAT,
-        ], $this->sidenavToggleButtonOptions);
+                    'label' => false,
+                    'icon' => [
+                        'name' => 'menu'
+                    ],
+                    'type' => Button::TYPE_FLAT,
+                        ], $this->sidenavToggleButtonOptions);
 
         if (!isset($this->sidenavToggleButtonOptions['options']['data-target'])) {
             $this->sidenavToggleButtonOptions['options']['data-target'] = $sidenavId;
@@ -241,13 +239,12 @@ class NavBar extends BaseWidget
      * @return string the rendered side navigation markup.
      * @throws \Exception
      */
-    protected function renderSidenav($sidenavId)
-    {
+    protected function renderSidenav($sidenavId) {
         return SideNav::widget([
-            'items' => $this->sidenavItems,
-            'renderToggleButton' => false,
-            'clientOptions' => $this->sidenavClientOptions,
-            'options' => ['id' => $sidenavId],
+                    'items' => $this->sidenavItems,
+                    'renderToggleButton' => false,
+                    'clientOptions' => $this->sidenavClientOptions,
+                    'options' => ['id' => $sidenavId],
         ]);
     }
 
@@ -257,8 +254,19 @@ class NavBar extends BaseWidget
      * @return string the button markup.
      * @throws \Exception
      */
-    protected function renderSidenavToggleButton()
-    {
-        return Button::widget($this->sidenavToggleButtonOptions);
+    protected function renderSidenavToggleButton() {
+        // legacy code  Button::widget($this->sidenavToggleButtonOptions);
+//        return  Button::widget($this->sidenavToggleButtonOptions);
+        //01 - test if isn't empty
+        $name = $target = $class = '';
+        if (isset($this->sidenavToggleButtonOptions)):
+            $info = $this->sidenavToggleButtonOptions;
+            $name = $info['icon']['name'];
+            $target = $info['options']['data-target'];
+            $class = $info['options']['class']['trigger'];
+        endif;
+
+        return "<a href='#' class='{$class}' data-target='{$target}' > <i class='material-icons'>{$name}</i></a>";
     }
+
 }

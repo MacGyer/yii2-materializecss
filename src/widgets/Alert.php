@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/MacGyer/yii2-materializecss
  * @copyright Copyright (c) 2016 ... MacGyer for pluspunkt coding
@@ -35,8 +36,8 @@ use yii\helpers\ArrayHelper;
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
  */
-class Alert extends BaseWidget
-{
+class Alert extends BaseWidget {
+
     /**
      * @var array the default alert levels.
      * This array is setup as $key => $value, where:
@@ -47,10 +48,10 @@ class Alert extends BaseWidget
      * default levels use [[alertLevels]]
      */
     protected $predefinedAlertLevels = [
-        'error'   => 'error',
-        'danger'  => 'danger',
+        'error' => 'error',
+        'danger' => 'danger',
         'success' => 'success',
-        'info'    => 'info',
+        'info' => 'info',
         'warning' => 'warning',
         'default' => 'default',
     ];
@@ -59,6 +60,19 @@ class Alert extends BaseWidget
      * @var array custom alert levels
      */
     public $alertLevels = [];
+
+    /**
+     *
+     * @var type materialize pre defined css
+     */
+    public $colorMaterialize = [
+        'error' => ' red darken-4 white-text',
+        'danger' => 'red white-text',
+        'success' => 'teal white-text',
+        'info' => 'blue white-text',
+        'warning' => 'orange white-text',
+        'default' => 'default white-text',
+    ];
 
     /**
      * @var array the HTML attributes for the widget container tag.
@@ -72,8 +86,7 @@ class Alert extends BaseWidget
      *
      * @uses [yii\helper\BaseArrayHelper::merge()](http://www.yiiframework.com/doc-2.0/yii-helpers-basearrayhelper.html#merge()-detail)
      */
-    public function init()
-    {
+    public function init() {
         parent::init();
 
         $this->alertLevels = ArrayHelper::merge($this->predefinedAlertLevels, $this->alertLevels);
@@ -84,8 +97,7 @@ class Alert extends BaseWidget
      *
      * @uses [yii\web\Session](http://www.yiiframework.com/doc-2.0/yii-web-session.html)
      */
-    public function run()
-    {
+    public function run() {
         $flashes = Yii::$app->session->getAllFlashes();
         $appendCss = isset($this->options['class']) ? ' ' . $this->options['class'] : '';
 
@@ -94,12 +106,12 @@ class Alert extends BaseWidget
                 $data = (array) $data;
                 foreach ($data as $i => $message) {
                     /* initialize css class for each alert box */
-                    $this->options['class'] = 'alert ' . $this->alertLevels[$type] . $appendCss;
+                    $this->options['class'] = 'alert alert-dismissible ' . $this->alertLevels[$type] . $appendCss;
 
                     /* assign unique id to each alert box */
                     $this->options['id'] = $this->getId() . '-' . $type . '-' . $i;
 
-                    echo $this->renderHtml($message, $this->options);
+                    echo $this->renderHtml($message, $this->options, $this->alertLevels[$type]);
                 }
 
                 Yii::$app->session->removeFlash($type);
@@ -113,14 +125,19 @@ class Alert extends BaseWidget
      * @param array $options the HTML attributes for the container tag
      * @return string
      */
-    private function renderHtml($message, $options = [])
-    {
+    private function renderHtml($message, $options = [], $type) {
+        $class =($this->colorMaterialize[$type] ?? '');
+//        echo var_dump($type); success
+//        die;
+
         $html = Html::beginTag('div', $options);
-        $html .= '<div class="card-panel">';
+        $html .= '<div class="card-panel hoverable  ' .  $class. ' ">';
         $html .= $message;
+        $html .= ' <a href="#" class="right white-text" onclick="$(".alert-dissmissable").remove(".'.$type.'");" aria-label="close">&times;</a>';
         $html .= '</div>';
         $html .= Html::endTag('div');
 
         return $html;
     }
+
 }
