@@ -71,7 +71,7 @@ class Alert extends BaseWidget {
         'success' => 'teal white-text',
         'info' => 'blue white-text',
         'warning' => 'orange white-text',
-        'default' => 'default white-text',
+        'default' => 'grey white-text',
     ];
 
     /**
