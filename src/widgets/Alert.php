@@ -111,7 +111,7 @@ class Alert extends BaseWidget {
                     /* assign unique id to each alert box */
                     $this->options['id'] = $this->getId() . '-' . $type . '-' . $i;
 
-                    echo $this->renderHtml($message, $this->options, $this->alertLevels[$type]);
+                    echo $this->renderHtml($message, $this->options, $this->alertLevels[$type], $this->options['id']);
                 }
 
                 Yii::$app->session->removeFlash($type);
@@ -125,15 +125,13 @@ class Alert extends BaseWidget {
      * @param array $options the HTML attributes for the container tag
      * @return string
      */
-    private function renderHtml($message, $options = [], $type) {
-        $class =($this->colorMaterialize[$type] ?? '');
-//        echo var_dump($type); success
-//        die;
+    private function renderHtml($message, $options = [], $type, $id) {
+        $class = ($this->colorMaterialize[$type] ?? '');
 
         $html = Html::beginTag('div', $options);
-        $html .= '<div class="card-panel hoverable  ' .  $class. ' ">';
+        $html .= '<div class="card-panel hoverable  ' . $class . ' ">';
         $html .= $message;
-        $html .= ' <a href="#" class="right white-text" onclick="$(".alert-dissmissable").remove(".'.$type.'");" aria-label="close">&times;</a>';
+        $html .= ' <a href="#" class="right white-text" onclick="(function(){ document.getElementById(' . "'$id'" . ').remove(); }) ();"  aria-label="close">&times;</a>';
         $html .= '</div>';
         $html .= Html::endTag('div');
 
