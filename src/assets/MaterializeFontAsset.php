@@ -18,9 +18,14 @@ use yii\web\AssetBundle;
 class MaterializeFontAsset extends AssetBundle
 {
     /**
+     * @var string the directory that contains the source asset files for this asset bundle.
+     */
+    public $sourcePath = '@npm/material-icons';
+
+    /**
      * @var array list of CSS files that this bundle contains.
      */
     public $css = [
-        '//fonts.googleapis.com/icon?family=Material+Icons'
+        'iconfont/material-icons.min.css'
     ];
 }
