@@ -28,11 +28,4 @@ class MaterializeAsset extends AssetBundle
     public $css = [
         'css/materialize.min.css'
     ];
-
-    /**
-     * @var array list of bundle class names that this bundle depends on.
-     */
-    public $depends = [
-        MaterializeFontAsset::class,
-    ];
 }
