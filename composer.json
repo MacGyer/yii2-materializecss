@@ -13,12 +13,12 @@
             "role": "Developer"
         }
     ],
-    "version": "3.1.0",
     "require": {
         "php": "^7.4 || ^8.0",
         "yiisoft/yii2": "~2.0.0",
 
-        "npm-asset/materializecss--materialize": "1.1.0"
+        "npm-asset/materializecss--materialize": "1.1.0",
+        "npm-asset/material-icons": "*"
     },
     "autoload": {
         "psr-4": {
