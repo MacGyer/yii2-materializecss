@@ -152,7 +152,7 @@ class SwitchButton extends BaseInputWidget
             $this->inputOptions['name'] = $this->name;
         }
 
-        $this->inputOptions['uncheck'] = isset($this->uncheck) ? $this->uncheck : is_null($this->uncheck) ? null : '0';
+        $this->inputOptions['uncheck'] = isset($this->uncheck) ? $this->uncheck : '0';
         $this->inputOptions['value'] = isset($this->value) ? $this->value : '1';
     }
 
