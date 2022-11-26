@@ -58,7 +58,7 @@ class MaterialBox extends BaseWidget
         if (!$this->imageSrc) {
             $imageSrc = ArrayHelper::remove($this->imageOptions, 'src', null);
             if (!$imageSrc) {
-                throw new InvalidConfigException("Image src must be defined.");
+                throw new InvalidConfigException('Image src must be defined.');
             }
 
             $this->imageSrc = $imageSrc;
@@ -68,6 +68,11 @@ class MaterialBox extends BaseWidget
 
         if ($this->imageCaption !== false) {
             $this->imageOptions['data-caption'] = $this->encodeImageCaption ? Html::encode($this->imageCaption) : $this->imageCaption;
+        }
+
+        $alt = Html::encode(ArrayHelper::getValue($this->imageOptions, 'alt'));
+        if (!$alt) {
+            $this->imageOptions['alt'] = Html::encode($this->imageCaption);
         }
     }
 
