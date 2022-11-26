@@ -6,16 +6,18 @@
 
 ----
 
-This is the current, actively developed 3.x branch which is implementing Materialize version 1.0 and thus breaking backwards compatibility.
+This is the current, actively developed 4.x branch which is implementing Materialize version 1.1 and thus breaking backwards compatibility.
 
 [Go to 1.x version](https://github.com/MacGyer/yii2-materializecss/tree/1.x)
 
 [Go to 2.x version](https://github.com/MacGyer/yii2-materializecss/tree/2.x)
 
+[Go to 3.x version](https://github.com/MacGyer/yii2-materializecss/tree/3.x)
+
 ----
 
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
-[Materialize](http://materializecss.com/) is a modern responsive front-end framework based on Material Design.
+[Materialize](https://materializecss.github.io/materialize/) is a modern responsive front-end framework based on Material Design.
 
 See [official documentation](http://macgyer.github.io/yii2-materializecss/) for detailed information.
 
@@ -28,17 +30,22 @@ Current Materialize version implemented: 1.0.0.
 The preferred way of installation is through Composer.
 If you don't have Composer you can get it here: https://getcomposer.org/
 
-You also should install the Composer Asset Plugin to handle NPM and Bower assets:
-```
-$ composer global require "fxp/composer-asset-plugin:~1.4"
+You also should also reference Asset Packagist in the ```repositories``` section to handle NPM and Bower assets:
+```json
+"repositories": [
+    {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+    }
+]
 ```
 
 Or you can make use of Asset Packagist: <https://asset-packagist.org/>
 
 To install the package add the following to the ```require``` section of your composer.json:
-```
+```json
 "require": {
-    "macgyer/yii2-materializecss": "~3.0.0"
+    "macgyer/yii2-materializecss": "^4.0"
 },
 ```
 
@@ -64,6 +71,18 @@ public $depends = [
     // more dependencies
 ];
 ```
+
+### Material Icons
+
+To be compatible with GDPR (EU) the MaterializeFontAsset is not loaded automatically via the MaterializeAsset. The font asset requests the Material Icon font from Google servers (as stated in the Materialize docs). 
+
+If you are **not** affected by GDPR, simply load the MaterializeFontAsset in your layout or AppAsset.
+
+Otherwise you need to self-host the Material Icon font (i. e. do not request them from Google). You could use ```material-icons``` (https://www.npmjs.com/package/material-icons) to load the font files, CSS and SCSS from NPM and include them in your build process.
+
+### SCSS
+
+Customizing Materialize via SCSS is easy. Integrate the Materialize SCSS in your own SCSS files and build your own version. Do not use the MaterializeAsset then as it loads the pre-built CSS provided by Materialize.
 
 ## Widgets
 
@@ -136,6 +155,13 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 4.0.0 - 2022-11-27
+* implement Materialize v1.1.0 (community fork https://materializecss.github.io/materialize/)
+* PHP 8 support
+* use NPM instead of Bower
+* **Breaking changes included**:
+  * MaterializeFontAsset not loaded automatically
 
 ### 3.0.0 - 2018-11-16
 * implement Materialize v1.0.0

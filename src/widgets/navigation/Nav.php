@@ -7,7 +7,7 @@
 
 namespace macgyer\yii2materializecss\widgets\navigation;
 
-use macgyer\yii2materializecss\assets\MaterializeAsset;
+use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 use Yii;
@@ -132,7 +132,7 @@ class Nav extends BaseWidget
      */
     public function run()
     {
-        MaterializeAsset::register($this->getView());
+        MaterializePluginAsset::register($this->getView());
         $html[] = $this->renderItems();
 
         return implode("\n", $html);
