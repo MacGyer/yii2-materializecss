@@ -19,18 +19,16 @@ This is the current, actively developed 4.x branch which is implementing Materia
 This package integrates the Materialize CSS framework into [Yii2](http://www.yiiframework.com/).
 [Materialize](https://materializecss.github.io/materialize/) is a modern responsive front-end framework based on Material Design.
 
-See [official documentation](http://macgyer.github.io/yii2-materializecss/) for detailed information.
+Have a look at the [official documentation page](https://yii2-materializecss.pluspunkt-coding.de) to see the repo in action (v4 only).
 
-Have a look at the [official demo page](https://yii2-materializecss.pluspunkt-coding.de) to see the repo in action (needs adaption to v3)
-
-Current Materialize version implemented: 1.0.0.
+Current Materialize version implemented: 1.1.0.
 
 ## Installation
 
 The preferred way of installation is through Composer.
 If you don't have Composer you can get it here: https://getcomposer.org/
 
-You also should also reference Asset Packagist in the ```repositories``` section to handle NPM and Bower assets:
+You also should reference Asset Packagist in the ```repositories``` section to handle NPM and Bower assets:
 ```json
 "repositories": [
     {
@@ -39,8 +37,6 @@ You also should also reference Asset Packagist in the ```repositories``` section
     }
 ]
 ```
-
-Or you can make use of Asset Packagist: <https://asset-packagist.org/>
 
 To install the package add the following to the ```require``` section of your composer.json:
 ```json
