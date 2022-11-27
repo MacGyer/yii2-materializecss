@@ -11,7 +11,7 @@ use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * TimePicker renders a time picker input element with a modified version of pickadate.js.
+ * TimePicker renders a time picker input element.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
  * @package widgets
