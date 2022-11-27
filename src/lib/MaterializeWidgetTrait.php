@@ -103,7 +103,7 @@ trait MaterializeWidgetTrait
             /** @var View $view */
             $view = $this->getView();
             $id = $this->options['id'];
-            $js[] = "var elem_$id = document.getElementById('$id');";
+            $js[] = "let elem_$id = document.getElementById('$id');";
             foreach ($this->clientEvents as $event => $handler) {
                 $js[] = "elem_$id.addEventListener('$event', $handler);";
             }
