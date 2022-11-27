@@ -152,7 +152,7 @@ class SwitchButton extends BaseInputWidget
             $this->inputOptions['name'] = $this->name;
         }
 
-        $this->inputOptions['uncheck'] = isset($this->uncheck) ? $this->uncheck : is_null($this->uncheck) ? null : '0';
+        $this->inputOptions['uncheck'] = isset($this->uncheck) ? $this->uncheck : '0';
         $this->inputOptions['value'] = isset($this->value) ? $this->value : '1';
     }
 
@@ -245,6 +245,7 @@ class SwitchButton extends BaseInputWidget
         return Icon::widget([
             'name' => ArrayHelper::getValue($this->$iconProperty, 'name', null),
             'position' => ArrayHelper::getValue($this->$iconProperty, 'position', null),
+            'size' => ArrayHelper::getValue($this->$iconProperty, 'size', Icon::SIZE_SMALL),
             'options' => ArrayHelper::getValue($this->$iconProperty, 'options', [])
         ]);
     }

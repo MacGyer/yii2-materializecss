@@ -55,7 +55,7 @@ class RangeInput extends BaseInputWidget
 
     /**
      * @var boolean whether to use noUiSlider.
-     * @see http://materializecss.com/forms.html#range
+     * @see https://materializecss.github.io/materialize/range.html
      */
     public $useNoUiSlider = true;
 
@@ -131,7 +131,7 @@ class RangeInput extends BaseInputWidget
             }
 
             if (!isset($this->sliderOptions['id'])) {
-                $this->sliderOptions['id'] = $this->getId();
+                $this->sliderOptions['id'] = "{$this->getId()}-slider";
             }
 
             $this->addUpdateEvent();
@@ -145,14 +145,15 @@ class RangeInput extends BaseInputWidget
      */
     protected function addUpdateEvent()
     {
+        $containerId = $this->options['id'];
         $sliderId = $this->sliderOptions['id'];
         $this->inputOptions['data-slider-target'] = $sliderId;
 
         if (!isset($this->clientEvents['update'])) {
             $this->clientEvents['update'] = new JsExpression(<<<JS
 function (values, handle) {
-    var value = values[handle];
-    $('[data-slider-target="{$sliderId}"]').val(value);
+    let value = values[handle];
+    document.querySelector('#$containerId [data-slider-target="{$sliderId}"]').value = value;
 }
 JS
             );
@@ -188,14 +189,6 @@ JS
     protected function renderHtml5RangeInput()
     {
         $html[] = Html::beginTag('div', ['class' => 'range-field']);
-
-        // workaround for: https://github.com/Dogfalo/materialize/issues/5761
-        if (!isset($this->inputOptions['min'])) {
-            $this->inputOptions['min'] = 0;
-        }
-        if (!isset($this->inputOptions['max'])) {
-            $this->inputOptions['max'] = 100;
-        }
 
         if ($this->hasModel()) {
             $html[] = Html::activeInput('range', $this->model, $this->attribute, $this->inputOptions);
@@ -253,7 +246,7 @@ JS
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '{}' : Json::htmlEncode($this->clientOptions);
             $view->registerJs(<<<JS
-var $varName = document.getElementById('$id');
+let $varName = document.getElementById('$id');
 noUiSlider.create($varName, {$options});
 JS
             );

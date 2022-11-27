@@ -49,7 +49,7 @@ class Parallax extends BaseWidget
         if (!$this->imageSrc) {
             $imageSrc = ArrayHelper::remove($this->imageOptions, 'src', null);
             if (!$imageSrc) {
-                throw new InvalidConfigException("Image src must be defined.");
+                throw new InvalidConfigException('Image src must be defined.');
             }
 
             $this->imageSrc = $imageSrc;

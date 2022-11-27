@@ -7,7 +7,7 @@
 
 namespace macgyer\yii2materializecss\widgets\navigation;
 
-use macgyer\yii2materializecss\assets\MaterializeAsset;
+use macgyer\yii2materializecss\assets\MaterializePluginAsset;
 use macgyer\yii2materializecss\lib\BaseWidget;
 use macgyer\yii2materializecss\lib\Html;
 use Yii;
@@ -42,7 +42,7 @@ use yii\helpers\ArrayHelper;
  * ```
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @see http://materializecss.com/navbar.html
+ * @see https://materializecss.github.io/materialize/navbar.html
  * @package widgets
  * @subpackage navigation
  */
@@ -106,7 +106,7 @@ class Nav extends BaseWidget
      * Defaults to `null` which means `<i class="material-icons right">arrow_drop_down</i>` will be used.
      * To disable the caret, set this property to be an empty string.
      *
-     * @see http://materializecss.com/navbar.html#navbar-dropdown
+     * @see https://materializecss.github.io/materialize/navbar.html#navbar-dropdown
      */
     public $dropDownCaret;
 
@@ -132,7 +132,7 @@ class Nav extends BaseWidget
      */
     public function run()
     {
-        MaterializeAsset::register($this->getView());
+        MaterializePluginAsset::register($this->getView());
         $html[] = $this->renderItems();
 
         return implode("\n", $html);
@@ -216,7 +216,7 @@ class Nav extends BaseWidget
      * @throws \Exception
      * @since 2.0.1
      *
-     * @see http://materializecss.com/navbar.html#navbar-dropdown
+     * @see https://materializecss.github.io/materialize/navbar.html#navbar-dropdown
      */
     protected function renderDropdown($items, $parentItem, $targetId)
     {

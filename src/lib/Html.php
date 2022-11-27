@@ -112,7 +112,7 @@ class Html extends BaseHtml
      * @param string $attribute the attribute name or expression.
      * @param array $options the tag options in terms of name-value pairs.
      *
-     * @see http://materializecss.com/forms.html#character-counter
+     * @see https://materializecss.github.io/materialize/text-inputs.html#character-counter
      */
     private static function normalizeMaxLength($model, $attribute, &$options)
     {

@@ -11,9 +11,7 @@ use macgyer\yii2materializecss\lib\BaseInputWidget;
 use macgyer\yii2materializecss\lib\Html;
 
 /**
- * DatePicker renders an date picker input element.
- *
- * Materialize is using a modified version of the JS library pickadate.js.
+ * DatePicker renders a date picker input element.
  *
  * @see https://materializecss.com/pickers.html#date-picker
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>

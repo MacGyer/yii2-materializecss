@@ -111,7 +111,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * Note: the `characterCounter()` is currently available for input types `text` and `password`, and for `textarea`.
      *
-     * @see http://materializecss.com/forms.html#character-counter
+     * @see https://materializecss.github.io/materialize/text-inputs.html#character-counter
      */
     public $showCharacterCounter = false;
 
@@ -475,7 +475,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *   the Materialize character counter JS plugin is initialized for this field.
      *
      * @return $this the field object itself.
-     * @see http://materializecss.com/forms.html#character-counter
+     * @see https://materializecss.github.io/materialize/text-inputs.html#input
      */
     public function passwordInput($options = [])
     {
@@ -602,8 +602,8 @@ class ActiveField extends \yii\widgets\ActiveField
      * - autocomplete: string|array, see [[initAutoComplete()]] for details
      *
      * @return $this the field object itself.
-     * @see http://materializecss.com/forms.html#character-counter
-     * @see http://materializecss.com/forms.html#autocomplete
+     * @see https://materializecss.github.io/materialize/text-inputs.html#textarea
+     * @see https://materializecss.github.io/materialize/autocomplete.html
      * @see https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete
      */
     public function textarea($options = [])
@@ -633,8 +633,8 @@ class ActiveField extends \yii\widgets\ActiveField
      * - autocomplete: string|array, see [[initAutoComplete()]] for details
      *
      * @return $this the field object itself.
-     * @see http://materializecss.com/forms.html#character-counter
-     * @see http://materializecss.com/forms.html#autocomplete
+     * @see https://materializecss.github.io/materialize/text-inputs.html#textarea
+     * @see https://materializecss.github.io/materialize/autocomplete.html
      * @see https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete
      */
     public function textInput($options = [])
