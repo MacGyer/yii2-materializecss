@@ -245,6 +245,7 @@ class SwitchButton extends BaseInputWidget
         return Icon::widget([
             'name' => ArrayHelper::getValue($this->$iconProperty, 'name', null),
             'position' => ArrayHelper::getValue($this->$iconProperty, 'position', null),
+            'size' => ArrayHelper::getValue($this->$iconProperty, 'size', Icon::SIZE_SMALL),
             'options' => ArrayHelper::getValue($this->$iconProperty, 'options', [])
         ]);
     }
