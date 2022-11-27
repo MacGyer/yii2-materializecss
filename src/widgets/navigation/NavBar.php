@@ -37,7 +37,7 @@ use yii\helpers\ArrayHelper;
  * NavBar::end();
  * ```
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @see http://materializecss.com/navbar.html
+ * @see https://materializecss.github.io/materialize/navbar.html
  * @package widgets
  * @subpackage navigation
  */
@@ -54,7 +54,7 @@ class NavBar extends BaseWidget
 
     /**
      * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
-     * @see http://materializecss.com/navbar.html
+     * @see https://materializecss.github.io/materialize/navbar.html
      */
     public $brandLabel = false;
 

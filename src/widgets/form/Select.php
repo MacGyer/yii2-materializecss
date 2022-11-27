@@ -37,7 +37,7 @@ class Select extends BaseInputWidget
      *      2 => [
      *          'label' => 'Option 2',
      *
-     *          // The 'data-icon' and 'class' attributes are Materialize specific. Refer to http://materializecss.com/forms.html#select
+     *          // The 'data-icon' and 'class' attributes are Materialize specific. Refer to https://materializecss.github.io/materialize/select.html
      *          // for information about adding icons to select options.
      *          'options' => [
      *              'data-icon' => 'http://lorempixel.com/40/40/people/1',

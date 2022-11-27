@@ -20,7 +20,7 @@ use yii\helpers\ArrayHelper;
  * See [[Nav::$items]] for details on item structure.
  *
  * @author Christoph Erdmann <yii2-materializecss@pluspunkt-coding.de>
- * @see http://materializecss.com/side-nav.html
+ * @see https://materializecss.github.io/materialize/sidenav.html
  * @package widgets
  * @subpackage navigation
  */
@@ -53,7 +53,7 @@ class SideNav extends Nav
      * - closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
      * - draggable: true // Choose whether you can drag to open on touch screens
      *
-     * @see http://materializecss.com/side-nav.html#options
+     * @see https://materializecss.github.io/materialize/sidenav.html#options
      */
     public $clientOptions = [];
 

@@ -156,6 +156,7 @@ You can find the sample layout file in ```src/layout/main.php```.
 * implement Materialize v1.1.0 (community fork https://materializecss.github.io/materialize/)
 * PHP 8 support
 * use NPM instead of Bower
+* use constants to configure [Icon](https://github.com/MacGyer/yii2-materializecss/blob/master/src/widgets/Icon.php)
 * **Breaking changes included**:
   * MaterializeFontAsset not loaded automatically
 

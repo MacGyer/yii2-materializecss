@@ -40,7 +40,7 @@ use yii\helpers\ArrayHelper;
  * @package widgets
  * @subpackage media
  *
- * @see http://materializecss.com/carousel.html
+ * @see https://materializecss.github.io/materialize/carousel.html
  */
 class Carousel extends BaseWidget
 {
@@ -68,7 +68,7 @@ class Carousel extends BaseWidget
      * - content: the content of the fixed item. Please note: this can be HTML and will not be encoded.
      *
      * If you do not want the fixed item to be rendered, set this option to `false`.
-     * @see http://materializecss.com/carousel.html#special
+     * @see https://materializecss.github.io/materialize/carousel.html#special
      */
     public $fixedItemOptions = false;
 
@@ -115,7 +115,7 @@ class Carousel extends BaseWidget
 
     /**
      * @var boolean whether to start with first slide at the end.
-     * @see http://materializecss.com/carousel.html#options
+     * @see https://materializecss.github.io/materialize/carousel.html#options
      */
     public $noWrap = false;
 

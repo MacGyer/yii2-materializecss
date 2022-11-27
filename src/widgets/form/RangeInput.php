@@ -55,7 +55,7 @@ class RangeInput extends BaseInputWidget
 
     /**
      * @var boolean whether to use noUiSlider.
-     * @see http://materializecss.com/forms.html#range
+     * @see https://materializecss.github.io/materialize/range.html
      */
     public $useNoUiSlider = true;
 

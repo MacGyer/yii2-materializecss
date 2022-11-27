@@ -122,7 +122,7 @@ class Modal extends BaseWidget
      * - label: string, the label of the button. Defaults to '&times;'.
      *
      * The rest of the options will be rendered as the HTML attributes of the button tag.
-     * Please refer to the [Modal plugin help](http://materializecss.com/modals.html)
+     * Please refer to the [Modal plugin help](https://materializecss.github.io/materialize/modals.html)
      * for the supported HTML attributes.
      * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */
@@ -155,7 +155,7 @@ class Modal extends BaseWidget
      * - label: string, the label of the button. Defaults to 'Show'.
      *
      * The rest of the options will be rendered as the HTML attributes of the button tag.
-     * Please refer to the [Modal plugin help](http://materializecss.com/modals.html)
+     * Please refer to the [Modal plugin help](https://materializecss.github.io/materialize/modals.html)
      * for the supported HTML attributes.
      * @see [\yii\helpers\Html::renderTagAttributes()](http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail) for details on how attributes are being rendered.
      */

@@ -37,7 +37,7 @@ trait MaterializeWidgetTrait
      * @var array the options for the underlying Materialize JS plugin.
      * Please refer to the corresponding Materialize documentation web page.
      *
-     * @see http://materializecss.com/
+     * @see https://materializecss.github.io/materialize/
      */
     public $clientOptions = [];
 
@@ -45,7 +45,7 @@ trait MaterializeWidgetTrait
      * @var array the event handlers for the underlying Materialize JS plugin.
      * Please refer to the corresponding Materialize documentation web page.
      *
-     * @see http://materializecss.com/
+     * @see https://materializecss.github.io/materialize/
      */
     public $clientEvents = [];
 
