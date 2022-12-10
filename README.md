@@ -21,7 +21,7 @@ This package integrates the Materialize CSS framework into [Yii2](http://www.yii
 
 Have a look at the [official documentation page](https://yii2-materializecss.pluspunkt-coding.de) to see the repo in action (v4 only).
 
-Current Materialize version implemented: 1.1.0.
+Current Materialize version implemented: 1.2.0.
 
 ## Installation
 
@@ -151,6 +151,9 @@ your own layout or replace the respective ```views/layouts/main.php``` with the 
 You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
+
+### 4.1.0 - 2022-12-10
+* update to Materialize v1.2.0
 
 ### 4.0.0 - 2022-11-27
 * implement Materialize v1.1.0 (community fork https://materializecss.github.io/materialize/)
