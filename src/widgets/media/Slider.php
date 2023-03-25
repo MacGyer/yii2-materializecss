@@ -117,6 +117,16 @@ class Slider extends BaseWidget
     public $interval = 6000;
 
     /**
+     * @var boolean whether slider should pause when receive keyboard focus.
+     */
+    public $pauseOnFocus = true;
+
+    /**
+     * @var boolean whether slider should pause when hovered by mouse.
+     */
+    public $pauseOnHover = true;
+
+    /**
      * Initialize the widget.
      */
     public function init()
@@ -133,6 +143,8 @@ class Slider extends BaseWidget
         $this->clientOptions['height'] = $this->height;
         $this->clientOptions['duration'] = $this->duration;
         $this->clientOptions['interval'] = $this->interval;
+        $this->clientOptions['pauseOnFocus'] = $this->pauseOnFocus;
+        $this->clientOptions['pauseOnHover'] = $this->pauseOnHover;
 
         $this->registerPlugin('Slider', '.slider');
     }
