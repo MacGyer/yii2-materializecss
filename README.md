@@ -152,6 +152,10 @@ You can find the sample layout file in ```src/layout/main.php```.
 
 ## Change log
 
+### 4.1.1 - 2023-03-25
+* update to Materialize v1.2.2
+* added Slider properties `pauseOnHover` and `pauseOnFocus`
+
 ### 4.1.0 - 2022-12-10
 * update to Materialize v1.2.0
 
